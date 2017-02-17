@@ -1,3 +1,0 @@
-/home/h3/Desktop/Source_code-master/LSI_2017/C/Official/build/CMakeFiles/edit_cache.dir
-/home/h3/Desktop/Source_code-master/LSI_2017/C/Official/build/CMakeFiles/rebuild_cache.dir
-/home/h3/Desktop/Source_code-master/LSI_2017/C/Official/build/CMakeFiles/hog.dir

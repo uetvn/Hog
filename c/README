@@ -4,7 +4,7 @@
 // Created date   : Mon 05 Dec 2016
 // Author         : Ngoc-Sinh Nguyen - Ho Huy Hung
 // Last modified  : Thu 17 Jan 2017
-// Desc           : 
+// Desc           :
 *******************************************************************************/
 
 LSI 2017: "Human Detection by Histogram of Oriented Gradients"
@@ -12,12 +12,12 @@ LSI 2017: "Human Detection by Histogram of Oriented Gradients"
 Files/Folder Structure:
 	+ CMakeLists.txt	cmake
 	+ lsi_2017.c		Source main file
-	+ png			    main library: main algorithm, read/write png, scale ..
-    + others            support 
+	+ png			main library: main algorithm, read/write png, scale ..
+	+ others		support
 
 Compile and Run:
 	1. Create "build" directory
-	2. Move images and matrix files and auto file to "build" directory
+	2. Move all file in "install" directory to "build" directory
 	3. Go to "build" directory
 	4. Run "cmake path/to/CMakeList.txt"
 	5. Run "make"
@@ -25,8 +25,8 @@ Compile and Run:
 
 Example comple and run in linux:
 	sislab$ mkdir -p build/
-	sislab$ mv *matrix.txt *.png *.sh build/
-    sislab$ cd build/
+	sislab$ mv install/* build/
+	sislab$ cd build/
 	sislab$ cmake ../
 	sislab$ make
 	sislab$ ./hog -i test_scale4.png
