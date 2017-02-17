@@ -52,51 +52,33 @@ float *Cal_HOG_cell(uint8 *ex_cell)
 int *Cal_dx(uint8 *ex_cell)
 {
         int	*result = malloc(sizeof(result) * length_cell);
-	uint8	left;
 	uint8	mid;
-	uint8	right;
 	uint8	counter	= 0;
         uint8	i;
         for (i = 1; i <= cellSize; i++) {
 		mid	= cellSize_extend*i + 1;
-		left	= mid - 1;
-		right	= mid + 1;
-                result[counter++] = ex_cell[right] - ex_cell[left];
+                result[counter++] = ex_cell[mid + 1] - ex_cell[mid - 1];
 
-		mid	= cellSize_extend*i + 2;
-		left	= mid - 1;
-		right	= mid + 1;
-                result[counter++] = ex_cell[right] - ex_cell[left];
+		mid++;
+                result[counter++] = ex_cell[mid + 1] - ex_cell[mid - 1];
 
-		mid	= cellSize_extend*i + 3;
-		left	= mid - 1;
-		right	= mid + 1;
-                result[counter++] = ex_cell[right] - ex_cell[left];
+		mid++;
+                result[counter++] = ex_cell[mid + 1] - ex_cell[mid - 1];
 
-		mid	= cellSize_extend*i + 4;
-		left	= mid - 1;
-		right	= mid + 1;
-                result[counter++] = ex_cell[right] - ex_cell[left];
+		mid++;
+                result[counter++] = ex_cell[mid + 1] - ex_cell[mid - 1];
 
-		mid	= cellSize_extend*i + 5;
-		left	= mid - 1;
-		right	= mid + 1;
-                result[counter++] = ex_cell[right] - ex_cell[left];
+		mid++;
+                result[counter++] = ex_cell[mid + 1] - ex_cell[mid - 1];
 
-		mid	= cellSize_extend*i + 6;
-		left	= mid - 1;
-		right	= mid + 1;
-                result[counter++] = ex_cell[right] - ex_cell[left];
+		mid++;
+                result[counter++] = ex_cell[mid + 1] - ex_cell[mid - 1];
 
-		mid	= cellSize_extend*i + 7;
-		left	= mid - 1;
-		right	= mid + 1;
-                result[counter++] = ex_cell[right] - ex_cell[left];
+		mid++;
+                result[counter++] = ex_cell[mid + 1] - ex_cell[mid - 1];
 
-		mid	= cellSize_extend*i + 8;
-		left	= mid - 1;
-		right	= mid + 1;
-                result[counter++] = ex_cell[right] - ex_cell[left];
+		mid++;
+                result[counter++] = ex_cell[mid + 1] - ex_cell[mid - 1];
         }
 	for (i = 0; i < length_cell; i++)
 		result[i]  = result[i] < 0 ? 0 : result[i];
@@ -120,42 +102,21 @@ int *Cal_dy(uint8 *ex_cell)
 		mid	= cellSize_extend*i + 1;
 		up	= mid - cellSize_extend;
                 down	= mid + cellSize_extend;
-		result[counter++] = ex_cell[down] - ex_cell[up];
+		result[counter++] = ex_cell[down++] - ex_cell[up++];
 
-		mid	= cellSize_extend*i + 2;
-		up	= mid - cellSize_extend;
-                down	= mid + cellSize_extend;
-                result[counter++] = ex_cell[down] - ex_cell[up];
+                result[counter++] = ex_cell[down++] - ex_cell[up++];
 
-		mid	= cellSize_extend*i + 3;
-		up	= mid - cellSize_extend;
-                down	= mid + cellSize_extend;
-                result[counter++] = ex_cell[down] - ex_cell[up];
+                result[counter++] = ex_cell[down++] - ex_cell[up++];
 
-		mid	= cellSize_extend*i + 4;
-		up	= mid - cellSize_extend;
-                down	= mid + cellSize_extend;
-                result[counter++] = ex_cell[down] - ex_cell[up];
+                result[counter++] = ex_cell[down++] - ex_cell[up++];
 
-		mid	= cellSize_extend*i + 5;
-		up	= mid - cellSize_extend;
-                down	= mid + cellSize_extend;
-                result[counter++] = ex_cell[down] - ex_cell[up];
+                result[counter++] = ex_cell[down++] - ex_cell[up++];
 
-		mid	= cellSize_extend*i + 6;
-		up	= mid - cellSize_extend;
-                down	= mid + cellSize_extend;
-                result[counter++] = ex_cell[down] - ex_cell[up];
+                result[counter++] = ex_cell[down++] - ex_cell[up++];
 
-		mid	= cellSize_extend*i + 7;
-		up	= mid - cellSize_extend;
-                down	= mid + cellSize_extend;
-                result[counter++] = ex_cell[down] - ex_cell[up];
+                result[counter++] = ex_cell[down++] - ex_cell[up++];
 
-		mid	= cellSize_extend*i + 8;
-		up	= mid - cellSize_extend;
-                down	= mid + cellSize_extend;
-                result[counter++] = ex_cell[down] - ex_cell[up];
+                result[counter++] = ex_cell[down++] - ex_cell[up++];
         }
 
 	for (i = 0; i < length_cell; i++)
@@ -179,75 +140,52 @@ float *Cal_magnit(int *dx, int *dy)
 		result[p] = dx[p] * dx[p] + dy[p] * dy[p];
 		result[p] = sqrt(result[p]);
 
-		p = cellSize + i;
+		p += cellSize;
 		result[p] = dx[p] * dx[p] + dy[p] * dy[p];
 		result[p] = sqrt(result[p]);
 
-		p = 2*cellSize + i;
+		p += cellSize;
 		result[p] = dx[p] * dx[p] + dy[p] * dy[p];
 		result[p] = sqrt(result[p]);
 
-		p = 3*cellSize + i;
+		p += cellSize;
 		result[p] = dx[p] * dx[p] + dy[p] * dy[p];
 		result[p] = sqrt(result[p]);
 
-		p = 4*cellSize + i;
+		p += cellSize;
 		result[p] = dx[p] * dx[p] + dy[p] * dy[p];
 		result[p] = sqrt(result[p]);
 
-		p = 5*cellSize + i;
+		p += cellSize;
 		result[p] = dx[p] * dx[p] + dy[p] * dy[p];
 		result[p] = sqrt(result[p]);
 
-		p = 6*cellSize + i;
+		p += cellSize;
 		result[p] = dx[p] * dx[p] + dy[p] * dy[p];
 		result[p] = sqrt(result[p]);
 
-		p = 7*cellSize + i;
+		p += cellSize;
 		result[p] = dx[p] * dx[p] + dy[p] * dy[p];
 		result[p] = sqrt(result[p]);
 /* Using LUT
-		float	*LUT	= readFileFloat("LUT.txt", 16*16);
+		float	*LUT	= readFileFloat("LUT.txt", 16);
+		uint32 dx2;
+		uint32 dy2;
+
 		p = j*cellSize + i;
-		if (dx[p] < 16 && dy[p] < 16) {
-			uint8	pointer	= dx[p]*16 + dy[p];
-			result[p] = LUT[pointer];
-		}
-		else {
-			result[p] = dx[p] * dx[p] + dy[p] * dy[p];
-			result[p] = sqrt(result[p]);
-		}
-*/
-	}
-/*
-	float	*Gauss_mask	= readFileFloats("mask_matrix.txt", 4 * length_cell);
-	uint8	start_pointer;
-	switch (serial) {
-	case 1:
-		start_pointer = 0;
-		break;
-	case 2:
-		start_pointer = cellSize;
-		break;
-	case 3:
-		start_pointer = cellSize * sizeBlock;
-		break;
-	case 4:
-		start_pointer = cellSize * sizeBlock + cellSize;
-		break;
-	default:
-		printf("Error mult Gauss matrix.\n");
-		return NULL;
-	}
+		if (dx[p] < 16)
+			dx2 = LUT[dx[i]];
+		else
+			dx2 = dx[p] * dx[p];
 
-	uint8	shift;
-	for (i = 0; i < length_cell; i++) {
-		shift	= i / cellSize * sizeBlock + i % cellSize;
-		result[i] *= Gauss_mask[start_pointer + shift];
-	}
 
-	free(Gauss_mask);
+		if (dy[p] < 16)
+			dy2 = LUT[dy[i]];
+		else
+			dy2 = dy[p] * dy[p];
 */
+
+	}
 	return result;
 }
 
@@ -267,31 +205,31 @@ float *Cal_angle(int *dx, int *dy)
 		result[p] = (float) dy[p] / (dx[p] + TINY_INT);
 		result[p] = PI_DEGREE * atan(result[p]) / PI;
 
-		p = cellSize + i;
+		p += cellSize;
 		result[p] = (float) dy[p] / (dx[p] + TINY_INT);
 		result[p] = PI_DEGREE * atan(result[p]) / PI;
 
-		p = 2*cellSize + i;
-		result[p] = (float) dy[p] / (dx[p] + TINY_INT);
-		result[p] = PI_DEGREE * atan(result[p]) / PI;
-		p = 3*cellSize + i;
-
+		p += cellSize;
 		result[p] = (float) dy[p] / (dx[p] + TINY_INT);
 		result[p] = PI_DEGREE * atan(result[p]) / PI;
 
-		p = 4*cellSize + i;
+		p += cellSize;
 		result[p] = (float) dy[p] / (dx[p] + TINY_INT);
 		result[p] = PI_DEGREE * atan(result[p]) / PI;
 
-		p = 5*cellSize + i;
+		p += cellSize;
 		result[p] = (float) dy[p] / (dx[p] + TINY_INT);
 		result[p] = PI_DEGREE * atan(result[p]) / PI;
 
-		p = 6*cellSize + i;
+		p += cellSize;
 		result[p] = (float) dy[p] / (dx[p] + TINY_INT);
 		result[p] = PI_DEGREE * atan(result[p]) / PI;
 
-		p = 7*cellSize + i;
+		p += cellSize;
+		result[p] = (float) dy[p] / (dx[p] + TINY_INT);
+		result[p] = PI_DEGREE * atan(result[p]) / PI;
+
+		p += cellSize;
 		result[p] = (float) dy[p] / (dx[p] + TINY_INT);
 		result[p] = PI_DEGREE * atan(result[p]) / PI;
 	}
@@ -317,25 +255,25 @@ float *HOG(float *magnit, float *angle)
 		p = i;
 		Add_HOG_pixel(result, magnit[p], angle[p]);
 
-		p = cellSize + i;
+		p += cellSize;
 		Add_HOG_pixel(result, magnit[p], angle[p]);
 
-		p = 2*cellSize + i;
+		p += cellSize;
 		Add_HOG_pixel(result, magnit[p], angle[p]);
 
-		p = 3*cellSize + i;
+		p += cellSize;
 		Add_HOG_pixel(result, magnit[p], angle[p]);
 
-		p = 4*cellSize + i;
+		p += cellSize;
 		Add_HOG_pixel(result, magnit[p], angle[p]);
 
-		p = 5*cellSize + i;
+		p += cellSize;
 		Add_HOG_pixel(result, magnit[p], angle[p]);
 
-		p = 6*cellSize + i;
+		p += cellSize;
 		Add_HOG_pixel(result, magnit[p], angle[p]);
 
-		p = 7*cellSize + i;
+		p += cellSize;
 		Add_HOG_pixel(result, magnit[p], angle[p]);
 	}
 
