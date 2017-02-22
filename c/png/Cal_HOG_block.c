@@ -52,34 +52,17 @@ float *Cal_HOG_cell(uint8 *ex_cell)
 int *Cal_dx(uint8 *ex_cell)
 {
         int	*result = malloc(sizeof(result) * length_cell);
-	uint8	mid;
-	uint8	counter	= 0;
-        uint8	i;
-        for (i = 1; i <= cellSize; i++) {
-		mid	= cellSize_extend*i + 1;
-                result[counter++] = ex_cell[mid + 1] - ex_cell[mid - 1];
-
-		mid++;
-                result[counter++] = ex_cell[mid + 1] - ex_cell[mid - 1];
-
-		mid++;
-                result[counter++] = ex_cell[mid + 1] - ex_cell[mid - 1];
-
-		mid++;
-                result[counter++] = ex_cell[mid + 1] - ex_cell[mid - 1];
-
-		mid++;
-                result[counter++] = ex_cell[mid + 1] - ex_cell[mid - 1];
-
-		mid++;
-                result[counter++] = ex_cell[mid + 1] - ex_cell[mid - 1];
-
-		mid++;
-                result[counter++] = ex_cell[mid + 1] - ex_cell[mid - 1];
-
-		mid++;
-                result[counter++] = ex_cell[mid + 1] - ex_cell[mid - 1];
-        }
+	uint8	i;
+	for (i = 0; i <= cellSize; i++) {
+		result[i]	= ex_cell[i + 12] - ex_cell[i + 10];
+		result[i + 8]	= ex_cell[i + 22] - ex_cell[i + 20];
+		result[i + 16]	= ex_cell[i + 32] - ex_cell[i + 30];
+		result[i + 24]	= ex_cell[i + 42] - ex_cell[i + 40];
+		result[i + 32]	= ex_cell[i + 52] - ex_cell[i + 50];
+		result[i + 40]	= ex_cell[i + 62] - ex_cell[i + 60];
+		result[i + 48]	= ex_cell[i + 72] - ex_cell[i + 70];
+		result[i + 56]	= ex_cell[i + 82] - ex_cell[i + 80];
+	}
 	for (i = 0; i < length_cell; i++)
 		result[i]  = result[i] < 0 ? 0 : result[i];
 
@@ -93,32 +76,18 @@ int *Cal_dx(uint8 *ex_cell)
 int *Cal_dy(uint8 *ex_cell)
 {
         int	*result = malloc(sizeof(result) * length_cell);
-	uint8	up;
-	uint8	mid;
-	uint8	down;
-	uint8	counter	= 0;
-        uint8	i;
-        for (i = 1; i <= cellSize; i++) {
-		mid	= cellSize_extend*i + 1;
-		up	= mid - cellSize_extend;
-                down	= mid + cellSize_extend;
-		result[counter++] = ex_cell[down++] - ex_cell[up++];
 
-                result[counter++] = ex_cell[down++] - ex_cell[up++];
-
-                result[counter++] = ex_cell[down++] - ex_cell[up++];
-
-                result[counter++] = ex_cell[down++] - ex_cell[up++];
-
-                result[counter++] = ex_cell[down++] - ex_cell[up++];
-
-                result[counter++] = ex_cell[down++] - ex_cell[up++];
-
-                result[counter++] = ex_cell[down++] - ex_cell[up++];
-
-                result[counter++] = ex_cell[down++] - ex_cell[up++];
-        }
-
+	uint8	i;
+	for (i = 0; i < cellSize; i++) {
+		result[i]	= ex_cell[i + 21] - ex_cell[i + 1];
+		result[i + 8]	= ex_cell[i + 31] - ex_cell[i + 11];
+		result[i + 16]	= ex_cell[i + 41] - ex_cell[i + 21];
+		result[i + 24]	= ex_cell[i + 51] - ex_cell[i + 31];
+		result[i + 32]	= ex_cell[i + 61] - ex_cell[i + 41];
+		result[i + 40]	= ex_cell[i + 71] - ex_cell[i + 51];
+		result[i + 48]	= ex_cell[i + 81] - ex_cell[i + 61];
+		result[i + 56]	= ex_cell[i + 91] - ex_cell[i + 71];
+	}
 	for (i = 0; i < length_cell; i++)
 		result[i]  = result[i] < 0 ? 0 : result[i];
 
