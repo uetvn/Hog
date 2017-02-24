@@ -10,7 +10,7 @@
 -->
 Introduction
 ============
-- Register 1, 2 lưa 2 dữ liệu trước và dữ liệu liền kề.
+- Register 1, 2 lưu 2 dữ liệu trước và dữ liệu liền kề.
 - Bộ so sánh sẽ so sánh 2 dữ liệu này.
 - Kết quả so sanh sẽ đưa vào FSM để kiểm tra trạng thái dữ liệu có bằng nhau hay không, từ đó điều khiển Latch ký tự và counter khi nào tăng, khi nào reset.
 - Nếu bằng nhau, FSM sẽ điều khiển tăng counter lên.

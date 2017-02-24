@@ -1,0 +1,212 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+d/home/h3/Git/Human-detection-by-HOG/vhdl/Multiplier
+Ecomparator
+Z0 w1487805026
+Z1 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z2 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+Z3 d/home/h3/Git/Human-detection-by-HOG/vhdl/Running_Length_encoding
+Z4 8/home/h3/Git/Human-detection-by-HOG/vhdl/Running_Length_encoding/Comparator.vhd
+Z5 F/home/h3/Git/Human-detection-by-HOG/vhdl/Running_Length_encoding/Comparator.vhd
+l0
+L13
+V=aZclk6kkX3CU2KLKg`YF1
+!s100 ]LN<K>0<C2zOkaPTKei;n1
+Z6 OV;C;10.5b;63
+32
+Z7 !s110 1487805791
+!i10b 1
+Z8 !s108 1487805791.000000
+Z9 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/home/h3/Git/Human-detection-by-HOG/vhdl/Running_Length_encoding/Comparator.vhd|
+Z10 !s107 /home/h3/Git/Human-detection-by-HOG/vhdl/Running_Length_encoding/Comparator.vhd|
+!i113 1
+Z11 o-work work -2002 -explicit
+Z12 tExplicit 1 CvgOpt 0
+Abehavioral
+R1
+R2
+DEx4 work 10 comparator 0 22 =aZclk6kkX3CU2KLKg`YF1
+l23
+L22
+VPA:2=<^Z=>>cJ=H2OLbIG0
+!s100 6HI742d>fN^O;6Of4k:ef1
+R6
+32
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Edlatch
+Z13 w1487804865
+R1
+R2
+R3
+Z14 8/home/h3/Git/Human-detection-by-HOG/vhdl/Running_Length_encoding/DLatch.vhd
+Z15 F/home/h3/Git/Human-detection-by-HOG/vhdl/Running_Length_encoding/DLatch.vhd
+l0
+L13
+VmcSnUAg8_ME60R7VOIoU81
+!s100 lK9zdN8^J?UIN[2g4R[a10
+R6
+32
+Z16 !s110 1487805792
+!i10b 1
+Z17 !s108 1487805792.000000
+Z18 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/home/h3/Git/Human-detection-by-HOG/vhdl/Running_Length_encoding/DLatch.vhd|
+Z19 !s107 /home/h3/Git/Human-detection-by-HOG/vhdl/Running_Length_encoding/DLatch.vhd|
+!i113 1
+R11
+R12
+Abehavioral
+R1
+R2
+DEx4 work 6 dlatch 0 22 mcSnUAg8_ME60R7VOIoU81
+l24
+L22
+VXFVEVhdeJ<nzGaWm37;981
+!s100 dIaAe0KWe7YKdSUbm1Ycf0
+R6
+32
+R16
+!i10b 1
+R17
+R18
+R19
+!i113 1
+R11
+R12
+Eencoding
+w1487806676
+R1
+R2
+R3
+8/home/h3/Git/Human-detection-by-HOG/vhdl/Running_Length_encoding/EncodingTop.vhd
+F/home/h3/Git/Human-detection-by-HOG/vhdl/Running_Length_encoding/EncodingTop.vhd
+l0
+L13
+VLaTFT0zo1I`39KXa[^WfW2
+!s100 ACC_DCddLnah6AD6KHGUd3
+R6
+32
+!s110 1487806679
+!i10b 1
+!s108 1487806679.000000
+!s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/home/h3/Git/Human-detection-by-HOG/vhdl/Running_Length_encoding/EncodingTop.vhd|
+!s107 /home/h3/Git/Human-detection-by-HOG/vhdl/Running_Length_encoding/EncodingTop.vhd|
+!i113 1
+R11
+R12
+Pencoding_components
+R1
+R2
+w1487805298
+R3
+8/home/h3/Git/Human-detection-by-HOG/vhdl/Running_Length_encoding/encoding_components.vhd
+F/home/h3/Git/Human-detection-by-HOG/vhdl/Running_Length_encoding/encoding_components.vhd
+l0
+L13
+VZ1]KY0<[@e`>h[giL2dlB3
+!s100 Xl[B8mB:^6IZCX^]S8g;F2
+R6
+32
+!s110 1487805904
+!i10b 1
+!s108 1487805904.000000
+!s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/home/h3/Git/Human-detection-by-HOG/vhdl/Running_Length_encoding/encoding_components.vhd|
+!s107 /home/h3/Git/Human-detection-by-HOG/vhdl/Running_Length_encoding/encoding_components.vhd|
+!i113 1
+R11
+R12
+Emultiplexer
+Z20 w1487805218
+R1
+R2
+R3
+Z21 8/home/h3/Git/Human-detection-by-HOG/vhdl/Running_Length_encoding/Multiplexer.vhd
+Z22 F/home/h3/Git/Human-detection-by-HOG/vhdl/Running_Length_encoding/Multiplexer.vhd
+l0
+L13
+VZ0TkPekCMcW5az7>U082j2
+!s100 7MVjo`?V:1WNi_5N2n^9>2
+R6
+32
+Z23 !s110 1487805907
+!i10b 1
+Z24 !s108 1487805907.000000
+Z25 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/home/h3/Git/Human-detection-by-HOG/vhdl/Running_Length_encoding/Multiplexer.vhd|
+Z26 !s107 /home/h3/Git/Human-detection-by-HOG/vhdl/Running_Length_encoding/Multiplexer.vhd|
+!i113 1
+R11
+R12
+Abehavioral
+R1
+R2
+DEx4 work 11 multiplexer 0 22 Z0TkPekCMcW5az7>U082j2
+l24
+L23
+VcT7SA[hTdbP;l[2899GP=2
+!s100 O<di5Kl@7]>71[zZbIcWT2
+R6
+32
+R23
+!i10b 1
+R24
+R25
+R26
+!i113 1
+R11
+R12
+Eregis
+Z27 w1487806653
+Z28 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
+Z29 DPx4 ieee 18 std_logic_unsigned 0 22 ;eZjO2D4ZDz<]0>8AL<ne1
+R1
+R2
+R3
+Z30 8/home/h3/Git/Human-detection-by-HOG/vhdl/Running_Length_encoding/Regis1.vhd
+Z31 F/home/h3/Git/Human-detection-by-HOG/vhdl/Running_Length_encoding/Regis1.vhd
+l0
+L14
+VzHW7FA8Q1h=La=J<`g:kH0
+!s100 JlYTJ6LIHd2`l>[_0iF3O1
+R6
+32
+Z32 !s110 1487806663
+!i10b 1
+Z33 !s108 1487806663.000000
+Z34 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/home/h3/Git/Human-detection-by-HOG/vhdl/Running_Length_encoding/Regis1.vhd|
+Z35 !s107 /home/h3/Git/Human-detection-by-HOG/vhdl/Running_Length_encoding/Regis1.vhd|
+!i113 1
+R11
+R12
+Abehavioral
+R28
+R29
+R1
+R2
+DEx4 work 5 regis 0 22 zHW7FA8Q1h=La=J<`g:kH0
+l23
+L21
+V^ZD]@5_:TENa7ll`jlXJ91
+!s100 QIXVX<:1>fci2f@8D7=EC0
+R6
+32
+R32
+!i10b 1
+R33
+R34
+R35
+!i113 1
+R11
+R12

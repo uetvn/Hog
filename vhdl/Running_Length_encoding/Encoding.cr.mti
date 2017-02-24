@@ -1,0 +1,67 @@
+/home/h3/Git/Human-detection-by-HOG/vhdl/Running_Length_encoding/EncodingTop.vhd {0 {vcom -work work -2002 -explicit -stats=none /home/h3/Git/Human-detection-by-HOG/vhdl/Running_Length_encoding/EncodingTop.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity Encoding
+-- Compiling architecture Behavioral of Encoding
+-- Loading package encoding_components
+** Error (suppressible): /home/h3/Git/Human-detection-by-HOG/vhdl/Running_Length_encoding/EncodingTop.vhd(40): (vcom-1141) Identifier "Regis1" does not identify a component declaration.
+** Error: /home/h3/Git/Human-detection-by-HOG/vhdl/Running_Length_encoding/EncodingTop.vhd(44): Signal "ctCounter" is type ieee.std_logic_1164.STD_LOGIC; expecting type ieee.std_logic_1164.STD_LOGIC_VECTOR.
+** Error: /home/h3/Git/Human-detection-by-HOG/vhdl/Running_Length_encoding/EncodingTop.vhd(52): near "L1": (vcom-1576) expecting ';'.
+** Error: /home/h3/Git/Human-detection-by-HOG/vhdl/Running_Length_encoding/EncodingTop.vhd(55): Statement cannot be labeled.
+** Error (suppressible): /home/h3/Git/Human-detection-by-HOG/vhdl/Running_Length_encoding/EncodingTop.vhd(55): (vcom-1141) Identifier "Latch" does not identify a component declaration.
+** Error: /home/h3/Git/Human-detection-by-HOG/vhdl/Running_Length_encoding/EncodingTop.vhd(60): VHDL Compiler exiting
+
+} {10.0 13.0 14.0 15.0} {}} /home/h3/Git/Human-detection-by-HOG/vhdl/Running_Length_encoding/Regis.vhd {1 {vcom -work work -2002 -explicit -stats=none /home/h3/Git/Human-detection-by-HOG/vhdl/Running_Length_encoding/Regis.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Compiling entity Regis
+-- Compiling architecture Behavioral of Regis
+
+} {} {}} /home/h3/Git/Human-detection-by-HOG/vhdl/Running_Length_encoding/Multiplexer.vhd {1 {vcom -work work -2002 -explicit -stats=none /home/h3/Git/Human-detection-by-HOG/vhdl/Running_Length_encoding/Multiplexer.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity Multiplexer
+-- Compiling architecture Behavioral of Multiplexer
+
+} {} {}} /home/h3/Git/Human-detection-by-HOG/vhdl/Running_Length_encoding/Regis1.vhd {1 {vcom -work work -2002 -explicit -stats=none /home/h3/Git/Human-detection-by-HOG/vhdl/Running_Length_encoding/Regis1.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Compiling entity Regis
+-- Compiling architecture Behavioral of Regis
+
+} {} {}} /home/h3/Git/Human-detection-by-HOG/vhdl/Running_Length_encoding/Comparator.vhd {1 {vcom -work work -2002 -explicit -stats=none /home/h3/Git/Human-detection-by-HOG/vhdl/Running_Length_encoding/Comparator.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity Comparator
+-- Compiling architecture Behavioral of Comparator
+
+} {} {}} /home/h3/Git/Human-detection-by-HOG/vhdl/Running_Length_encoding/DLatch.vhd {1 {vcom -work work -2002 -explicit -stats=none /home/h3/Git/Human-detection-by-HOG/vhdl/Running_Length_encoding/DLatch.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity DLatch
+-- Compiling architecture Behavioral of DLatch
+
+} {} {}} /home/h3/Git/Human-detection-by-HOG/vhdl/Running_Length_encoding/encoding_components.vhd {1 {vcom -work work -2002 -explicit -stats=none /home/h3/Git/Human-detection-by-HOG/vhdl/Running_Length_encoding/encoding_components.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling package encoding_components
+
+} {} {}}
