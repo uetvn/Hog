@@ -22,21 +22,21 @@ Package rgb2gray_components is
 	Component MultRed is
         	Port (  Clk:    IN std_logic;
                 	Data:   IN std_logic_vector(7 downto 0);
-                	Result: OUT std_logic_vector(7 downto 0)
+                	Result: OUT std_logic_vector(31 downto 0)
         	);
 	End component;
 
 	Component MultGreen is
         	Port (  Clk:    IN std_logic;
                 	Data:   IN std_logic_vector(7 downto 0);
-                	Result: OUT std_logic_vector(7 downto 0)
+                	Result: OUT std_logic_vector(31 downto 0)
         	);
 	End component;
 
 	Component MultBlue is
         	Port (  Clk:    IN std_logic;
                 	Data:   IN std_logic_vector(7 downto 0);
-                	Result: OUT std_logic_vector(7 downto 0)
+                	Result: OUT std_logic_vector(31 downto 0)
         	);
 	End component;
 End package;

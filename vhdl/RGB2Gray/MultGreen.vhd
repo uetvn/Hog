@@ -3,22 +3,23 @@
 -- File name      : MultGreen.vhd
 -- Created date   : Thứ sáu, 24 Tháng hai Năm 2017 12:05:44 ICT
 -- Author         : Huy Hung Ho
--- Last modified  : Thứ sáu, 24 Tháng hai Năm 2017 15:58:12 ICT
+-- Last modified  : Mon 27 Feb 2017
 -- Desc           :
 --	YR:	19595:	0100110010001011
---	YG:	7471:	0001110100101111
---	YB:	38470:	1001011001000110
+--	YB:	7471:	0001110100101111
+--	YG:	38470:	1001011001000110
 --	AdderGreen
---	= Data<<12 + Data<<11 + Data<<10 + Data<<8 + Data<<5 + Data<<3 + Data<<2 + Data<<1 + Data;
+--	= Data<<15 + Data<<12 + Data<<10 + Data<<9 + Data<<6 + Data<<2 + Data<<1
 --------------------------------------------------------------------------------
 
 Library IEEE;
 Use IEEE.std_logic_1164.all;
+Use IEEE.numeric_std.all;
 
 Entity MultGreen is
 	Port (	Clk:	IN std_logic;
 		Data:	IN std_logic_vector(7 downto 0);
-		Result:	OUT std_logic_vector(7 downto 0)
+		Result:	OUT std_logic_vector(31 downto 0)
 	);
 End MultGreen;
 
@@ -34,20 +35,18 @@ Architecture Behavioral of MultGreen is
 
 	Signal	Cin:	std_logic := '0';
 	Signal	Cout:	std_logic := '0';
-	Signal	In1, In2, In3, In4:		std_logic_vector(31 downto 0);
-	Signal	In5, In6, In7, In8, In9:	std_logic_vector(31 downto 0);
-	Signal	Out1, Out2, Out3, Out4:		std_logic_vector(31 downto 0);
-	Signal	Out5, Out6, Out7, Out8:		std_logic_vector(31 downto 0);
+	Signal	In1, In2, In3, In4:	std_logic_vector(31 downto 0);
+	Signal	In5, In6, In7:		std_logic_vector(31 downto 0);
+	Signal	Out1, Out2, Out3:	std_logic_vector(31 downto 0);
+	Signal	Out4, Out5, Out6:	std_logic_vector(31 downto 0);
 Begin
-	In1 <= "000000000000" & Data & "000000000000";
-	In2 <= "0000000000000" & Data & "00000000000";
+	In1 <= "000000000" & Data & "000000000000000";
+	In2 <= "000000000000" & Data & "000000000000";
 	In3 <= "00000000000000" & Data & "0000000000";
-	In4 <= "0000000000000000" & Data & "00000000";
-	In5 <= "0000000000000000000" & Data & "00000";
-	In6 <= "000000000000000000000" & Data & "000";
-	In7 <= "0000000000000000000000" & Data & "00";
-	In8 <= "00000000000000000000000" & Data & "0";
-	In9 <= "000000000000000000000000" & Data     ;
+	In4 <= "000000000000000" & Data & "000000000";
+	In5 <= "000000000000000000" & Data & "000000";
+	In6 <= "0000000000000000000000" & Data & "00";
+	In7 <= "00000000000000000000000" & Data & "0";
 
 	F1:	AdderNbit generic map(32)
 		port map (	a => In1,
@@ -74,45 +73,27 @@ Begin
 		);
 
 	F4:	AdderNbit generic map(32)
-		port map (	a => In7,
-			  	b => In8,
+		port map (	a => Out1,
+			  	b => Out2,
 				Cin => Cin,
 				S => Out4,
 				Cout => Cout
 		);
 
 	F5:	AdderNbit generic map(32)
-		port map (	a => Out1,
-			  	b => Out2,
+		port map (	a => In7,
+			  	b => Out3,
 				Cin => Cin,
 				S => Out5,
 				Cout => Cout
 		);
 
 	F6:	AdderNbit generic map(32)
-		port map (	a => Out3,
-			  	b => Out4,
+		port map (	a => Out4,
+			  	b => Out5,
 				Cin => Cin,
-				S => Out6,
+				S => Result,
 				Cout => Cout
 		);
-
-	F7:	AdderNbit generic map(32)
-		port map (	a => Out5,
-			  	b => Out6,
-				Cin => Cin,
-				S => Out7,
-				Cout => Cout
-		);
-
-	F8:	AdderNbit generic map(32)
-		port map (	a => Out7,
-			  	b => In9,
-				Cin => Cin,
-				S => Out8,
-				Cout => Cout
-		);
-
-	Result <= Out8(23 downto 16);
 End Behavioral;
 

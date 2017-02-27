@@ -18,7 +18,7 @@ Use IEEE.std_logic_1164.all;
 Entity MultRed is
 	Port (	Clk:	IN std_logic;
 		Data:	IN std_logic_vector(7 downto 0);
-		Result:	OUT std_logic_vector(7 downto 0)
+		Result:	OUT std_logic_vector(31 downto 0)
 	);
 End MultRed;
 
@@ -37,7 +37,7 @@ Architecture Behavioral of MultRed is
 	Signal	In1, In2, In3, In4:	std_logic_vector(31 downto 0);
 	Signal	In5, In6, In7:		std_logic_vector(31 downto 0);
 	Signal	Out1, Out2, Out3:	std_logic_vector(31 downto 0);
-	Signal	Out4, Out5, Out6:	std_logic_vector(31 downto 0);
+	Signal	Out4, Out5:		std_logic_vector(31 downto 0);
 Begin
 	In1 <= "0000000000" & Data & "00000000000000";
 	In2 <= "0000000000000" & Data & "00000000000";
@@ -91,10 +91,8 @@ Begin
 		port map (	a => Out4,
 			  	b => Out5,
 				Cin => Cin,
-				S => Out6,
+				S => Result,
 				Cout => Cout
 		);
-
-	Result <= Out6(23 downto 16);
 End Behavioral;
 
