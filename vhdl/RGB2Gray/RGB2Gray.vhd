@@ -10,21 +10,22 @@
 Library IEEE;
 Use IEEE.std_logic_1164.all;
 Use IEEE.numeric_std.all;
+Use work.helper.all;
 
 Entity RGB2Gray is
 	Port (
 		Clk:		IN std_logic;
-		Data1:		IN std_logic_vector(7 downto 0);
-		Data2:		IN std_logic_vector(7 downto 0);
-		Data3:		IN std_logic_vector(7 downto 0);
-		Product:	OUT std_logic_vector(7 downto 0)
+		Data1:		IN byte;
+		Data2:		IN byte;
+		Data3:		IN byte;
+		Product:	OUT byte
 	);
 End RGB2Gray;
 
 Architecture Behavioral of RGB2Gray is
-	Use work.rgb2gray_components.all;
-	Constant Bias: std_logic_vector(31 downto 0) :=
-	std_logic_vector(to_unsigned(32768, 32));
+	Use	work.rgb2gray_components.all;
+
+	Constant	Bias: std_logic_vector(31 downto 0) := std_logic_vector(to_unsigned(32768, 32));
 
 	Signal	Mout1, Mout2, Mout3:	std_logic_vector(31 downto 0);
 	Signal	Temp1, Temp2, Temp3:	std_logic_vector(31 downto 0);

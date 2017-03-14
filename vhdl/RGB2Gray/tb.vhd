@@ -3,40 +3,48 @@
 -- File name      : tb.vhd
 -- Created date   : Mon 27 Feb 2017
 -- Author         : Huy Hung Ho
--- Last modified  : Mon 27 Feb 2017
+-- Last modified  : Tue 14 Mar 2017
 -- Desc           :
 --------------------------------------------------------------------------------
 
 Library IEEE;
 Use IEEE.std_logic_1164.all;
 Use IEEE.numeric_std.all;
+Use work.helper.all;
 
 Entity tb is
 End tb;
 
 Architecture Behavioral of tb is
-	Component RGB2Gray is
-        Port (
-                Clk:            IN std_logic;
-                Data1:          IN std_logic_vector(7 downto 0);
-                Data2:          IN std_logic_vector(7 downto 0);
-                Data3:          IN std_logic_vector(7 downto 0);
-                Product:        OUT std_logic_vector(7 downto 0)
-        );
+	Use work.ram_pkg.all;
+
+	Component RGBtoGrayTop is
+		Port (
+			Clk:	IN std_logic;
+			Start:	IN std_logic;
+			Done:	OUT std_logic
+		);
 	End component;
 
-	Signal	Clk:	std_logic;
-	Signal period:	time := 1 ns;
-	Signal	Data1, Data2, Data3:	std_logic_vector(7 downto 0);
-	Signal	Product:		std_logic_vector(7 downto 0);
+	Signal	Clk, Start, Done:	std_logic;
+	Signal	period:			time := 1 ns;
+
+	Signal	data1, data2, data3:	byte := (others => '0');
+	Signal	data1_next, data2_next, data3_next:	byte := (others => '0');
+	Signal	Gray:			byte;
+	Signal	address_in, in_next:		addr_load := (others => '0');
+	Signal	address_out, out_next:		addr_store := (others => '0');
 Begin
-	uut:	RGB2Gray
-		port map (	Clk => Clk,
-				Data1 => Data1,
-				Data2 => Data2,
-				Data3 => Data3,
-				Product => Product
-		);
+	uut:	RGBtoGrayTop
+		port map (Clk, Start, Done);
+
+	ram_in:	single_ram generic map (8, 10)
+		port map (address_in, data1, data2, data3, '1', '1', '0');
+
+	ram_out: dual_ram generic map (8, 10)
+		port map (address_out, gray, '0', '0', '0', address_out, gray,
+		'0', '0', '0');
+
 
 	-- Clock process definitions
 	Clock: Process
@@ -47,29 +55,28 @@ Begin
 		wait for period/2;
 	End process Clock;
 
-	Main:	process
+	Set:	process (Clk)
 	Begin
-		wait for 10 ns;
-		Data1 <= std_logic_vector(to_unsigned(0, 8));
-		Data2 <= std_logic_vector(to_unsigned(0, 8));
-		Data3 <= std_logic_vector(to_unsigned(0, 8));
+		if rising_edge(Clk) then
+			data1_next <= std_logic_vector(unsigned(data1) + 1);
+			data2_next <= std_logic_vector(unsigned(data2) + 1);
+			data3_next <= std_logic_vector(unsigned(data3) + 1);
 
-		wait for 10 ns;
-		Data1 <= std_logic_vector(to_unsigned(255, 8));
-		Data2 <= std_logic_vector(to_unsigned(255, 8));
-		Data3 <= std_logic_vector(to_unsigned(255, 8));
-
-		wait for 10 ns;
-		Data1 <= std_logic_vector(to_unsigned(50, 8));
-		Data2 <= std_logic_vector(to_unsigned(10, 8));
-		Data3 <= std_logic_vector(to_unsigned(240, 8));
-
-		wait for 10 ns;
-		Data1 <= std_logic_vector(to_unsigned(200, 8));
-		Data2 <= std_logic_vector(to_unsigned(100, 8));
-		Data3 <= std_logic_vector(to_unsigned(17, 8));
-
-		wait;
+			in_next <= std_logic_vector(unsigned(address_in) + 1);
+			out_next <= std_logic_vector(unsigned(address_out) + 1);
+		end if;
 	End process;
-End Behavioral;
 
+	data1 <= data1_next;
+	data2 <= data2_next;
+	data3 <= data3_next;
+	address_in <= in_next;
+	address_out <= out_next;
+
+	Main: process
+	Begin
+		start <= '1';
+		wait until Done='1';
+	end process;
+
+End Behavioral;

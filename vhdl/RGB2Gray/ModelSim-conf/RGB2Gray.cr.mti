@@ -1,36 +1,16 @@
-/home/h3/Git/Human-detection-by-HOG/vhdl/RGB2Gray/rgb2gray_components.vhd {1 {vcom -work work -2002 -explicit -stats=none /home/h3/Git/Human-detection-by-HOG/vhdl/RGB2Gray/rgb2gray_components.vhd
-Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Compiling package rgb2gray_components
-
-} {} {}} /home/h3/Git/Human-detection-by-HOG/vhdl/RGB2Gray/MultRed.vhd {1 {vcom -work work -2002 -explicit -stats=none /home/h3/Git/Human-detection-by-HOG/vhdl/RGB2Gray/MultRed.vhd
-Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Compiling entity MultRed
--- Compiling architecture Behavioral of MultRed
-
-} {} {}} /home/h3/Git/Human-detection-by-HOG/vhdl/RGB2Gray/AdderNbit.vhd {1 {vcom -work work -2002 -explicit -stats=none /home/h3/Git/Human-detection-by-HOG/vhdl/RGB2Gray/AdderNbit.vhd
-Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Compiling entity AdderNbit
--- Compiling architecture Behavioral of AdderNbit
-
-} {} {}} /home/h3/Git/Human-detection-by-HOG/vhdl/RGB2Gray/tb.vhd {1 {vcom -work work -2002 -explicit -stats=none /home/h3/Git/Human-detection-by-HOG/vhdl/RGB2Gray/tb.vhd
+/media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/RGBtoGray_pkg.vhd {1 {vcom -work work -2002 -explicit -stats=none /media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/RGBtoGray_pkg.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
 -- Loading package STANDARD
 -- Loading package TEXTIO
 -- Loading package std_logic_1164
 -- Loading package NUMERIC_STD
--- Compiling entity tb
--- Compiling architecture Behavioral of tb
+-- Loading package helper
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Loading package ram_pkg
+-- Compiling package RGBtoGray_pkg
 
-} {} {}} /home/h3/Git/Human-detection-by-HOG/vhdl/RGB2Gray/MultBlue.vhd {1 {vcom -work work -2002 -explicit -stats=none /home/h3/Git/Human-detection-by-HOG/vhdl/RGB2Gray/MultBlue.vhd
+} {} {}} /home/h3/Git/Human-detection-by-HOG/vhdl/RGB2Gray/MultBlue.vhd {1 {vcom -work work -2002 -explicit -stats=none /media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/MultBlue.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
 -- Loading package STANDARD
 -- Loading package TEXTIO
@@ -38,7 +18,29 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  
 -- Compiling entity MultBlue
 -- Compiling architecture Behavioral of MultBlue
 
-} {} {}} /home/h3/Git/Human-detection-by-HOG/vhdl/RGB2Gray/MultGreen.vhd {1 {vcom -work work -2002 -explicit -stats=none /home/h3/Git/Human-detection-by-HOG/vhdl/RGB2Gray/MultGreen.vhd
+} {} {}} /media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/RGBtoGrayTop.vhd {1 {vcom -work work -2002 -explicit -stats=none /media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/RGBtoGrayTop.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Loading package NUMERIC_STD
+-- Loading package helper
+-- Loading package ram_pkg
+-- Compiling entity RGBtoGrayTop
+-- Compiling architecture Behavioral of RGBtoGrayTop
+-- Loading package RGBtoGray_pkg
+
+} {} {}} /home/h3/Git/Human-detection-by-HOG/vhdl/RGB2Gray/FullAdder.vhd {1 {vcom -work work -2002 -explicit -stats=none /media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/FullAdder.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity FullAdder
+-- Compiling architecture Behavioral of FullAdder
+
+} {} {}} /home/h3/Git/Human-detection-by-HOG/vhdl/RGB2Gray/MultGreen.vhd {1 {vcom -work work -2002 -explicit -stats=none /media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/MultGreen.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
 -- Loading package STANDARD
 -- Loading package TEXTIO
@@ -47,22 +49,110 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  
 -- Compiling entity MultGreen
 -- Compiling architecture Behavioral of MultGreen
 
-} {} {}} /home/h3/Git/Human-detection-by-HOG/vhdl/RGB2Gray/FullAdder.vhd {1 {vcom -work work -2002 -explicit -stats=none /home/h3/Git/Human-detection-by-HOG/vhdl/RGB2Gray/FullAdder.vhd
+} {} {}} /media/h3/Study/Git/Human-detection-by-HOG/vhdl/RAM/dual_ram.vhd {1 {vcom -work work -2002 -explicit -stats=none /media/h3/Study/Git/Human-detection-by-HOG/vhdl/RAM/dual_ram.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
 -- Loading package STANDARD
 -- Loading package TEXTIO
 -- Loading package std_logic_1164
--- Compiling entity FullAdder
--- Compiling architecture Behavioral of FullAdder
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Compiling entity dual_ram
+-- Compiling architecture rtl of dual_ram
 
-} {} {}} /home/h3/Git/Human-detection-by-HOG/vhdl/RGB2Gray/RGB2Gray.vhd {1 {vcom -work work -2002 -explicit -stats=none /home/h3/Git/Human-detection-by-HOG/vhdl/RGB2Gray/RGB2Gray.vhd
+} {} {}} /home/h3/Git/Human-detection-by-HOG/vhdl/RGB2Gray/rgb2gray_components.vhd {1 {vcom -work work -2002 -explicit -stats=none /media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/rgb2gray_components.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling package rgb2gray_components
+
+} {} {}} /media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/tb_pixel.vhd {1 {vcom -work work -2002 -explicit -stats=none /media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/tb_pixel.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
 -- Loading package STANDARD
 -- Loading package TEXTIO
 -- Loading package std_logic_1164
 -- Loading package NUMERIC_STD
+-- Compiling entity tb_pixel
+-- Compiling architecture Behavioral of tb_pixel
+
+} {} {}} /media/h3/Study/Git/Human-detection-by-HOG/vhdl/Helper/helper.vhd {1 {vcom -work work -2002 -explicit -stats=none /media/h3/Study/Git/Human-detection-by-HOG/vhdl/Helper/helper.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling package helper
+
+} {} {}} /home/h3/Git/Human-detection-by-HOG/vhdl/RGB2Gray/RGB2Gray.vhd {1 {vcom -work work -2002 -explicit -stats=none /media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/RGB2Gray.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package helper
 -- Compiling entity RGB2Gray
 -- Compiling architecture Behavioral of RGB2Gray
 -- Loading package rgb2gray_components
+
+} {} {}} /media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/Controller.vhd {1 {vcom -work work -2002 -explicit -stats=none /media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/Controller.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Loading package ram_pkg
+-- Loading package helper
+-- Compiling entity Controlller
+-- Compiling architecture Behavioral of Controlller
+
+} {} {}} /media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/tb.vhd {1 {vcom -work work -2002 -explicit -stats=none /media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/tb.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package helper
+-- Compiling entity tb
+-- Compiling architecture Behavioral of tb
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Loading package ram_pkg
+
+} {} {}} /home/h3/Git/Human-detection-by-HOG/vhdl/RGB2Gray/AdderNbit.vhd {1 {vcom -work work -2002 -explicit -stats=none /media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/AdderNbit.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity AdderNbit
+-- Compiling architecture Behavioral of AdderNbit
+
+} {} {}} /home/h3/Git/Human-detection-by-HOG/vhdl/RGB2Gray/MultRed.vhd {1 {vcom -work work -2002 -explicit -stats=none /media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/MultRed.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity MultRed
+-- Compiling architecture Behavioral of MultRed
+
+} {} {}} /media/h3/Study/Git/Human-detection-by-HOG/vhdl/RAM/single_ram.vhd {1 {vcom -work work -2002 -explicit -stats=none /media/h3/Study/Git/Human-detection-by-HOG/vhdl/RAM/single_ram.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Compiling entity single_ram
+-- Compiling architecture rtl of single_ram
+
+} {} {}} /media/h3/Study/Git/Human-detection-by-HOG/vhdl/RAM/ram_pkg.vhd {1 {vcom -work work -2002 -explicit -stats=none /media/h3/Study/Git/Human-detection-by-HOG/vhdl/RAM/ram_pkg.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Compiling package ram_pkg
 
 } {} {}}
