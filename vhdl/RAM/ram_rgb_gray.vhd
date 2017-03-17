@@ -43,9 +43,12 @@ Architecture rtl of ram_rgb_gray is
 
 	Type	RAM	is array (integer range <>) of byte;
 	Signal	mem	: RAM (0 to ram_depth-1)
-		:= (	0	=> "11111111",
-			1	=> "00000000",
-			2	=> "00010001",
+		:= (	0	=> X"FF",
+			1	=> X"00",
+			2	=> X"11",
+			3	=> X"F5",
+			4	=> X"FE",
+			5	=> X"45",
 			others => (others => '0'));
 Begin
 	----------------Code Starts Here------------------

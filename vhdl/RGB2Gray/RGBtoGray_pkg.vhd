@@ -9,7 +9,6 @@
 Library IEEE;
 Use IEEE.std_logic_1164.all;
 Use work.helper.all;
-Use work.ram_pkg.all;
 
 Package RGBtoGray_pkg is
         Component RGB2Gray is

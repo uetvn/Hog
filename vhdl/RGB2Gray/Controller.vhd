@@ -13,7 +13,7 @@ Use IEEE.numeric_std.all;
 Use work.ram_pkg.all;
 Use work.helper.all;
 
-Entity Controlller is
+Entity Controller is
 	Port (
 		Clk:	IN std_logic;
 		Start:	IN std_logic;
@@ -22,13 +22,14 @@ Entity Controlller is
 		Store:	OUT std_logic;
 		Shift:	OUT std_logic
 	);
-End Controlller;
+End Controller;
 
-Architecture Behavioral of Controlller is
+Architecture Behavioral of Controller is
 	Type	states is (HaltS, InitS, LoadS, StoreS, ShiftS);
 	Signal	state:	states := HaltS;
 	Signal	CNT:	unsigned(addr_width-1 downto 0);
 Begin
+	Done	<= '1' when state = HaltS	else '0';
 	Load	<= '1' when state = LoadS	else '0';
 	Store	<= '1' when state = StoreS	else '0';
 	Shift	<= '1' when state = ShiftS	else '0';
@@ -45,11 +46,12 @@ Begin
 				when LoadS	=> state <= StoreS;
 				when StoreS	=> state <= ShiftS;
 				--when HOGS	=> state <= ShiftS;
-				when ShiftS	=> if (CNT = Cell_extend_width) then
+				when ShiftS	=> if (CNT = Cell_extend_width)
+						then
 							state <= HaltS;
-						   else
+						else
 							state <= LoadS;
-						   end if;
+						end if;
 			end case;
 		end if;
 	End process;

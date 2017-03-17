@@ -7,6 +7,7 @@
  * Desc           :
  */
 #include <stdio.h>
+#include <stdlib.h>
 
 static const int YR = 19595, YB = 7471, YG = 38470;
 
@@ -16,14 +17,17 @@ static const int YR = 19595, YB = 7471, YG = 38470;
  * - g    is green ingredient
  * - b    is blue ingredient
  */
-char RGB2Gray(char r, char g, char b)
+int RGB2Gray(int r, int g, int b)
 {
         unsigned int tmp = ((r * YR  + g * YG + b * YB + 32768) >> 16);
         return tmp > 255 ? 255 : (tmp & 0xFF);
 }
 
-int main ()
+int main (int argc, char ** argv)
 {
-	printf("%d \n", RGB2Gray(200, 100, 17));
+	int	red	= atoi(argv[1]);
+	int	green	= atoi(argv[2]);
+	int	blue	= atoi(argv[3]);
+	printf("%d \n", RGB2Gray(red, green, blue));
 	return 0;
 }

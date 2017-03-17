@@ -482,3 +482,953 @@ quit -sim
 # End time: 11:34:21 on Mar 17,2017, Elapsed time: 0:03:48
 # Errors: 0, Warnings: 1
 # Compile of Controller.vhd was successful.
+# Compile of RGB2Gray.vhd was successful.
+# Compile of rgb2gray_components.vhd was successful.
+# Compile of ram_pkg.vhd was successful.
+# Compile of helper.vhd was successful.
+# Compile of RGBtoGrayTop.vhd was successful.
+# Compile of Controller.vhd was successful.
+# Compile of RGBtoGray_pkg.vhd was successful.
+# Compile of tb.vhd was successful.
+# Compile of ram_rgb_gray.vhd was successful with warnings.
+# 9 compiles, 0 failed with no errors.
+vsim work.ram_rgb_gray
+# vsim work.ram_rgb_gray 
+# Start time: 11:37:59 on Mar 17,2017
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.helper
+# Loading work.ram_rgb_gray(rtl)
+add wave -position insertpoint  \
+sim:/ram_rgb_gray/addr_width \
+sim:/ram_rgb_gray/address_0 \
+sim:/ram_rgb_gray/data_01 \
+sim:/ram_rgb_gray/data_02 \
+sim:/ram_rgb_gray/data_03 \
+sim:/ram_rgb_gray/cs_0 \
+sim:/ram_rgb_gray/we_0 \
+sim:/ram_rgb_gray/oe_0 \
+sim:/ram_rgb_gray/address_1 \
+sim:/ram_rgb_gray/data_1 \
+sim:/ram_rgb_gray/cs_1 \
+sim:/ram_rgb_gray/we_1 \
+sim:/ram_rgb_gray/oe_1 \
+sim:/ram_rgb_gray/data_01_out \
+sim:/ram_rgb_gray/data_02_out \
+sim:/ram_rgb_gray/data_03_out \
+sim:/ram_rgb_gray/data_1_out \
+sim:/ram_rgb_gray/mem \
+sim:/ram_rgb_gray/ram_depth
+run
+quit -sim
+# End time: 11:38:55 on Mar 17,2017, Elapsed time: 0:00:56
+# Errors: 0, Warnings: 0
+vsim work.controlller
+# vsim work.controlller 
+# Start time: 11:39:00 on Mar 17,2017
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.helper
+# Loading work.ram_pkg
+# Loading work.controlller(behavioral)
+run
+add wave -position insertpoint  \
+sim:/controlller/Clk \
+sim:/controlller/Start \
+sim:/controlller/Done \
+sim:/controlller/Load \
+sim:/controlller/Store \
+sim:/controlller/Shift \
+sim:/controlller/state \
+sim:/controlller/CNT
+force -freeze sim:/controlller/Clk 1 0, 0 {50 ps} -r 100
+run
+force -freeze sim:/controlller/Start 1 0
+run
+# WARNING: No extended dataflow license exists
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# WARNING: No extended dataflow license exists
+quit -sim
+# End time: 11:40:20 on Mar 17,2017, Elapsed time: 0:01:20
+# Errors: 24, Warnings: 2
+vsim work.rgbtograytop
+# vsim work.rgbtograytop 
+# Start time: 11:40:33 on Mar 17,2017
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading ieee.numeric_std(body)
+# Loading work.helper
+# Loading work.ram_pkg
+# Loading work.rgbtogray_pkg
+# Loading work.rgbtograytop(behavioral)
+# Loading work.rgb2gray_components
+# Loading work.rgb2gray(behavioral)
+# Loading work.multred(behavioral)
+# Loading work.addernbit(behavioral)
+# Loading work.fulladder(behavioral)
+# Loading work.multgreen(behavioral)
+# Loading work.multblue(behavioral)
+# Loading work.ram_rgb_gray(rtl)
+# ** Warning: (vsim-3473) Component instance "Ctrl : Controller" is not bound.
+#    Time: 0 ps  Iteration: 0  Instance: /rgbtograytop File: /media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/RGBtoGrayTop.vhd
+add wave -position insertpoint  \
+sim:/rgbtograytop/Clk \
+sim:/rgbtograytop/Start \
+sim:/rgbtograytop/Done \
+sim:/rgbtograytop/red \
+sim:/rgbtograytop/green \
+sim:/rgbtograytop/blue \
+sim:/rgbtograytop/gray \
+sim:/rgbtograytop/address_0 \
+sim:/rgbtograytop/address_1 \
+sim:/rgbtograytop/Load \
+sim:/rgbtograytop/Store \
+sim:/rgbtograytop/Shift
+force -freeze sim:/rgbtograytop/Clk 1 0, 0 {50 ps} -r 100
+force -freeze sim:/rgbtograytop/Start 1 0
+run
+run
+quit -sim
+# End time: 11:41:03 on Mar 17,2017, Elapsed time: 0:00:30
+# Errors: 0, Warnings: 1
+vsim work.controlller
+# vsim work.controlller 
+# Start time: 11:41:31 on Mar 17,2017
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.helper
+# Loading work.ram_pkg
+# Loading work.controlller(behavioral)
+add wave -position insertpoint  \
+sim:/controlller/Clk \
+sim:/controlller/Start \
+sim:/controlller/Done \
+sim:/controlller/Load \
+sim:/controlller/Store \
+sim:/controlller/Shift \
+sim:/controlller/state \
+sim:/controlller/CNT
+force -freeze sim:/controlller/Clk 1 0, 0 {50 ps} -r 100
+force -freeze sim:/controlller/Start 1 0
+run
+quit -sim
+# End time: 11:42:33 on Mar 17,2017, Elapsed time: 0:01:02
+# Errors: 0, Warnings: 0
+# Compile of RGB2Gray.vhd was successful.
+# Compile of rgb2gray_components.vhd was successful.
+# Compile of ram_pkg.vhd was successful.
+# Compile of helper.vhd was successful.
+# Compile of RGBtoGrayTop.vhd was successful.
+# Compile of Controller.vhd was successful.
+# Compile of RGBtoGray_pkg.vhd was successful.
+# Compile of tb.vhd was successful.
+# Compile of ram_rgb_gray.vhd was successful with warnings.
+# 9 compiles, 0 failed with no errors.
+vsim work.rgbtograytop(behavioral)
+# vsim work.rgbtograytop(behavioral) 
+# Start time: 11:45:10 on Mar 17,2017
+# Loading std.standard
+# ** Error: (vsim-13) Recompile work.rgbtograytop(behavioral) because work.rgbtogray_pkg has changed.
+# Error loading design
+# End time: 11:45:10 on Mar 17,2017, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+vsim work.rgbtograytop(behavioral)
+# vsim work.rgbtograytop(behavioral) 
+# Start time: 11:45:12 on Mar 17,2017
+# Loading std.standard
+# ** Error: (vsim-13) Recompile work.rgbtograytop(behavioral) because work.rgbtogray_pkg has changed.
+# Error loading design
+# End time: 11:45:12 on Mar 17,2017, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+vsim work.rgbtograytop
+# vsim work.rgbtograytop 
+# Start time: 11:45:13 on Mar 17,2017
+# Loading std.standard
+# ** Error: (vsim-13) Recompile work.rgbtograytop(behavioral) because work.rgbtogray_pkg has changed.
+# Error loading design
+# End time: 11:45:13 on Mar 17,2017, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+vsim work.rgbtograytop
+# vsim work.rgbtograytop 
+# Start time: 11:45:14 on Mar 17,2017
+# Loading std.standard
+# ** Error: (vsim-13) Recompile work.rgbtograytop(behavioral) because work.rgbtogray_pkg has changed.
+# Error loading design
+# End time: 11:45:14 on Mar 17,2017, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# Compile of RGB2Gray.vhd was successful.
+# Compile of rgb2gray_components.vhd was successful.
+# Compile of ram_pkg.vhd was successful.
+# Compile of helper.vhd was successful.
+# Compile of RGBtoGrayTop.vhd was successful.
+# Compile of Controller.vhd was successful.
+# Compile of RGBtoGray_pkg.vhd was successful.
+# Compile of tb.vhd was successful.
+# Compile of ram_rgb_gray.vhd was successful with warnings.
+# 9 compiles, 0 failed with no errors.
+vsim work.rgbtograytop
+# vsim work.rgbtograytop 
+# Start time: 11:45:27 on Mar 17,2017
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading ieee.numeric_std(body)
+# Loading work.helper
+# Loading work.ram_pkg
+# Loading work.rgbtogray_pkg
+# Loading work.rgbtograytop(behavioral)
+# Loading work.rgb2gray_components
+# Loading work.rgb2gray(behavioral)
+# Loading work.multred(behavioral)
+# Loading work.addernbit(behavioral)
+# Loading work.fulladder(behavioral)
+# Loading work.multgreen(behavioral)
+# Loading work.multblue(behavioral)
+# Loading work.ram_rgb_gray(rtl)
+# ** Warning: (vsim-3473) Component instance "Ctrl : Controller" is not bound.
+#    Time: 0 ps  Iteration: 0  Instance: /rgbtograytop File: /media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/RGBtoGrayTop.vhd
+add wave -position insertpoint  \
+sim:/rgbtograytop/Clk \
+sim:/rgbtograytop/Start \
+sim:/rgbtograytop/Done \
+sim:/rgbtograytop/red \
+sim:/rgbtograytop/green \
+sim:/rgbtograytop/blue \
+sim:/rgbtograytop/gray \
+sim:/rgbtograytop/address_0 \
+sim:/rgbtograytop/address_1 \
+sim:/rgbtograytop/Load \
+sim:/rgbtograytop/Store \
+sim:/rgbtograytop/Shift
+force -freeze sim:/rgbtograytop/Clk 1 0, 0 {50 ps} -r 100
+force -freeze sim:/rgbtograytop/Start 1 0
+run
+quit -sim
+# End time: 11:49:13 on Mar 17,2017, Elapsed time: 0:03:46
+# Errors: 0, Warnings: 1
+# Compile of RGB2Gray.vhd was successful.
+# Compile of rgb2gray_components.vhd was successful.
+# Compile of ram_pkg.vhd was successful.
+# Compile of helper.vhd was successful.
+# Compile of RGBtoGrayTop.vhd was successful.
+# Compile of Controller.vhd was successful.
+# Compile of RGBtoGray_pkg.vhd was successful.
+# Compile of tb.vhd was successful.
+# Compile of ram_rgb_gray.vhd was successful with warnings.
+# 9 compiles, 0 failed with no errors.
+vsim work.ram_rgb_gray(rtl)
+# vsim work.ram_rgb_gray(rtl) 
+# Start time: 11:51:38 on Mar 17,2017
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.helper
+# Loading work.ram_rgb_gray(rtl)
+add wave -position insertpoint  \
+sim:/ram_rgb_gray/addr_width \
+sim:/ram_rgb_gray/address_0 \
+sim:/ram_rgb_gray/data_01 \
+sim:/ram_rgb_gray/data_02 \
+sim:/ram_rgb_gray/data_03 \
+sim:/ram_rgb_gray/cs_0 \
+sim:/ram_rgb_gray/we_0 \
+sim:/ram_rgb_gray/oe_0 \
+sim:/ram_rgb_gray/address_1 \
+sim:/ram_rgb_gray/data_1 \
+sim:/ram_rgb_gray/cs_1 \
+sim:/ram_rgb_gray/we_1 \
+sim:/ram_rgb_gray/oe_1 \
+sim:/ram_rgb_gray/data_01_out \
+sim:/ram_rgb_gray/data_02_out \
+sim:/ram_rgb_gray/data_03_out \
+sim:/ram_rgb_gray/data_1_out \
+sim:/ram_rgb_gray/mem \
+sim:/ram_rgb_gray/ram_depth
+run
+force -freeze sim:/ram_rgb_gray/address_0 9'd0 0
+force -freeze sim:/ram_rgb_gray/data_01 8'd10 0
+force -freeze sim:/ram_rgb_gray/data_02 8'd12 0
+force -freeze sim:/ram_rgb_gray/data_03 8'd18 0
+force -freeze sim:/ram_rgb_gray/cs_0 1 0
+force -freeze sim:/ram_rgb_gray/we_0 1 0
+run
+quit -sim
+# End time: 11:54:28 on Mar 17,2017, Elapsed time: 0:02:50
+# Errors: 0, Warnings: 0
+vsim work.rgbtograytop
+# vsim work.rgbtograytop 
+# Start time: 13:02:16 on Mar 17,2017
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading ieee.numeric_std(body)
+# Loading work.helper
+# Loading work.ram_pkg
+# Loading work.rgbtogray_pkg
+# Loading work.rgbtograytop(behavioral)
+# Loading work.rgb2gray_components
+# Loading work.rgb2gray(behavioral)
+# Loading work.multred(behavioral)
+# Loading work.addernbit(behavioral)
+# Loading work.fulladder(behavioral)
+# Loading work.multgreen(behavioral)
+# Loading work.multblue(behavioral)
+# Loading work.ram_rgb_gray(rtl)
+# ** Warning: (vsim-3473) Component instance "Ctrl : Controller" is not bound.
+#    Time: 0 ps  Iteration: 0  Instance: /rgbtograytop File: /media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/RGBtoGrayTop.vhd
+add wave -position insertpoint  \
+sim:/rgbtograytop/Clk \
+sim:/rgbtograytop/Start \
+sim:/rgbtograytop/Done \
+sim:/rgbtograytop/red \
+sim:/rgbtograytop/green \
+sim:/rgbtograytop/blue \
+sim:/rgbtograytop/gray \
+sim:/rgbtograytop/address_0 \
+sim:/rgbtograytop/address_1 \
+sim:/rgbtograytop/Load \
+sim:/rgbtograytop/Store \
+sim:/rgbtograytop/Shift
+run
+force -freeze sim:/rgbtograytop/Clk 1 0, 0 {50 ps} -r 100
+run
+force -freeze sim:/rgbtograytop/Start 1 0
+run
+quit -sim
+# End time: 13:02:56 on Mar 17,2017, Elapsed time: 0:00:40
+# Errors: 0, Warnings: 1
+# Compile of RGB2Gray.vhd was successful.
+# Compile of rgb2gray_components.vhd was successful.
+# Compile of ram_pkg.vhd was successful.
+# Compile of helper.vhd was successful.
+# Compile of RGBtoGrayTop.vhd was successful.
+# Compile of Controller.vhd failed with 2 errors.
+# Compile of RGBtoGray_pkg.vhd was successful.
+# Compile of tb.vhd was successful.
+# Compile of ram_rgb_gray.vhd was successful with warnings.
+# 9 compiles, 1 failed with 2 errors.
+# Compile of RGB2Gray.vhd was successful.
+# Compile of rgb2gray_components.vhd was successful.
+# Compile of ram_pkg.vhd was successful.
+# Compile of helper.vhd was successful.
+# Compile of RGBtoGrayTop.vhd was successful.
+# Compile of Controller.vhd failed with 2 errors.
+# Compile of RGBtoGray_pkg.vhd was successful.
+# Compile of tb.vhd was successful.
+# Compile of ram_rgb_gray.vhd was successful with warnings.
+# 9 compiles, 1 failed with 2 errors.
+# Compile of RGB2Gray.vhd was successful.
+# Compile of rgb2gray_components.vhd was successful.
+# Compile of ram_pkg.vhd was successful.
+# Compile of helper.vhd was successful.
+# Compile of RGB2Gray.vhd was successful.
+# Compile of rgb2gray_components.vhd was successful.
+# Compile of ram_pkg.vhd was successful.
+# Compile of helper.vhd was successful.
+# Compile of RGBtoGrayTop.vhd was successful.
+# Compile of Controller.vhd failed with 2 errors.
+# Compile of RGBtoGray_pkg.vhd was successful.
+# Compile of tb.vhd was successful.
+# Compile of ram_rgb_gray.vhd was successful with warnings.
+# 9 compiles, 1 failed with 2 errors.
+# Compile of RGBtoGrayTop.vhd was successful with warnings.
+# Compile of Controller.vhd failed with 2 errors.
+# Compile of RGBtoGray_pkg.vhd was successful.
+# Compile of tb.vhd was successful.
+# Compile of ram_rgb_gray.vhd was successful with warnings.
+# 9 compiles, 1 failed with 2 errors.
+# Compile of RGB2Gray.vhd was successful.
+# Compile of rgb2gray_components.vhd was successful.
+# Compile of ram_pkg.vhd was successful.
+# Compile of helper.vhd was successful.
+# Compile of RGBtoGrayTop.vhd was successful.
+# Compile of Controller.vhd failed with 3 errors.
+# Compile of RGBtoGray_pkg.vhd was successful.
+# Compile of tb.vhd was successful.
+# Compile of ram_rgb_gray.vhd was successful with warnings.
+# 9 compiles, 1 failed with 3 errors.
+# Compile of RGB2Gray.vhd was successful.
+# Compile of rgb2gray_components.vhd was successful.
+# Compile of ram_pkg.vhd was successful.
+# Compile of helper.vhd was successful.
+# Compile of RGBtoGrayTop.vhd was successful.
+# Compile of Controller.vhd was successful.
+# Compile of RGBtoGray_pkg.vhd was successful.
+# Compile of tb.vhd was successful.
+# Compile of ram_rgb_gray.vhd was successful with warnings.
+# 9 compiles, 0 failed with no errors.
+vsim work.rgbtograytop
+# vsim work.rgbtograytop 
+# Start time: 13:06:35 on Mar 17,2017
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading ieee.numeric_std(body)
+# Loading work.helper
+# Loading work.ram_pkg
+# Loading work.rgbtogray_pkg
+# Loading work.rgbtograytop(behavioral)
+# Loading work.rgb2gray_components
+# Loading work.rgb2gray(behavioral)
+# Loading work.multred(behavioral)
+# Loading work.addernbit(behavioral)
+# Loading work.fulladder(behavioral)
+# Loading work.multgreen(behavioral)
+# Loading work.multblue(behavioral)
+# Loading work.ram_rgb_gray(rtl)
+# ** Warning: (vsim-3473) Component instance "Ctrl : Controller" is not bound.
+#    Time: 0 ps  Iteration: 0  Instance: /rgbtograytop File: /media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/RGBtoGrayTop.vhd
+add wave -position insertpoint  \
+sim:/rgbtograytop/Clk \
+sim:/rgbtograytop/Start \
+sim:/rgbtograytop/Done \
+sim:/rgbtograytop/red \
+sim:/rgbtograytop/green \
+sim:/rgbtograytop/blue \
+sim:/rgbtograytop/gray \
+sim:/rgbtograytop/address_0 \
+sim:/rgbtograytop/address_1 \
+sim:/rgbtograytop/Load \
+sim:/rgbtograytop/Store \
+sim:/rgbtograytop/Shift
+# Can't move the Now cursor.
+force -freeze sim:/rgbtograytop/Clk 1 0, 0 {50 ps} -r 100
+force -freeze sim:/rgbtograytop/Start 1 0
+run
+quit -sim
+# End time: 13:07:07 on Mar 17,2017, Elapsed time: 0:00:32
+# Errors: 1, Warnings: 1
+vsim work.controlller
+# vsim work.controlller 
+# Start time: 13:07:10 on Mar 17,2017
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.helper
+# Loading work.ram_pkg
+# Loading work.controlller(behavioral)
+add wave -position insertpoint  \
+sim:/controlller/Clk \
+sim:/controlller/Start \
+sim:/controlller/Done \
+sim:/controlller/Load \
+sim:/controlller/Store \
+sim:/controlller/Shift \
+sim:/controlller/state \
+sim:/controlller/CNT
+run
+force -freeze sim:/controlller/Clk 1 0, 0 {50 ps} -r 100
+run
+force -freeze sim:/controlller/Start 1 0
+run
+quit -sim
+# End time: 13:08:45 on Mar 17,2017, Elapsed time: 0:01:35
+# Errors: 0, Warnings: 0
+# Compile of RGB2Gray.vhd was successful.
+# Compile of rgb2gray_components.vhd was successful.
+# Compile of ram_pkg.vhd was successful.
+# Compile of helper.vhd was successful.
+# Compile of RGBtoGrayTop.vhd was successful.
+# Compile of Controller.vhd was successful.
+# Compile of RGBtoGray_pkg.vhd was successful.
+# Compile of tb.vhd was successful.
+# Compile of ram_rgb_gray.vhd was successful with warnings.
+# 9 compiles, 0 failed with no errors.
+vsim work.controlller
+# vsim work.controlller 
+# Start time: 13:08:49 on Mar 17,2017
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.helper
+# Loading work.ram_pkg
+# Loading work.controlller(behavioral)
+add wave -position insertpoint  \
+sim:/controlller/Clk \
+sim:/controlller/Start \
+sim:/controlller/Done \
+sim:/controlller/Load \
+sim:/controlller/Store \
+sim:/controlller/Shift \
+sim:/controlller/state \
+sim:/controlller/CNT
+force -freeze sim:/controlller/Clk 1 0, 0 {50 ps} -r 100
+force -freeze sim:/controlller/Start 1 0
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+quit -sim
+# End time: 13:11:18 on Mar 17,2017, Elapsed time: 0:02:29
+# Errors: 0, Warnings: 0
+# Compile of RGB2Gray.vhd was successful.
+# Compile of rgb2gray_components.vhd was successful.
+# Compile of ram_pkg.vhd was successful.
+# Compile of helper.vhd was successful.
+# Compile of RGBtoGrayTop.vhd was successful.
+# Compile of Controller.vhd was successful.
+# Compile of RGBtoGray_pkg.vhd was successful.
+# Compile of tb.vhd was successful.
+# Compile of ram_rgb_gray.vhd was successful with warnings.
+# 9 compiles, 0 failed with no errors.
+vsim work.controlller
+# vsim work.controlller 
+# Start time: 13:11:23 on Mar 17,2017
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.helper
+# Loading work.ram_pkg
+# Loading work.controlller(behavioral)
+add wave -position insertpoint  \
+sim:/controlller/Clk \
+sim:/controlller/Start \
+sim:/controlller/Done \
+sim:/controlller/Load \
+sim:/controlller/Store \
+sim:/controlller/Shift \
+sim:/controlller/state \
+sim:/controlller/CNT
+force -freeze sim:/controlller/Clk 1 0, 0 {50 ps} -r 100
+force -freeze sim:/controlller/Start 1 0
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+quit -sim
+# End time: 13:13:55 on Mar 17,2017, Elapsed time: 0:02:32
+# Errors: 0, Warnings: 0
+# Compile of RGB2Gray.vhd was successful.
+# Compile of rgb2gray_components.vhd was successful.
+# Compile of ram_pkg.vhd was successful.
+# Compile of helper.vhd was successful.
+# Compile of RGBtoGrayTop.vhd was successful.
+# Compile of Controller.vhd was successful.
+# Compile of RGBtoGray_pkg.vhd was successful.
+# Compile of tb.vhd was successful.
+# Compile of ram_rgb_gray.vhd was successful with warnings.
+# 9 compiles, 0 failed with no errors.
+vsim work.rgbtograytop
+# vsim work.rgbtograytop 
+# Start time: 13:14:08 on Mar 17,2017
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading ieee.numeric_std(body)
+# Loading work.helper
+# Loading work.ram_pkg
+# Loading work.rgbtogray_pkg
+# Loading work.rgbtograytop(behavioral)
+# Loading work.rgb2gray_components
+# Loading work.rgb2gray(behavioral)
+# Loading work.multred(behavioral)
+# Loading work.addernbit(behavioral)
+# Loading work.fulladder(behavioral)
+# Loading work.multgreen(behavioral)
+# Loading work.multblue(behavioral)
+# Loading work.ram_rgb_gray(rtl)
+# ** Warning: (vsim-3473) Component instance "Ctrl : Controller" is not bound.
+#    Time: 0 ps  Iteration: 0  Instance: /rgbtograytop File: /media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/RGBtoGrayTop.vhd
+add wave -position insertpoint  \
+sim:/rgbtograytop/Clk \
+sim:/rgbtograytop/Start \
+sim:/rgbtograytop/Done \
+sim:/rgbtograytop/red \
+sim:/rgbtograytop/green \
+sim:/rgbtograytop/blue \
+sim:/rgbtograytop/gray \
+sim:/rgbtograytop/address_0 \
+sim:/rgbtograytop/address_1 \
+sim:/rgbtograytop/Load \
+sim:/rgbtograytop/Store \
+sim:/rgbtograytop/Shift
+force -freeze sim:/rgbtograytop/Clk 1 0, 0 {50 ps} -r 100
+# Can't move the Now cursor.
+force -freeze sim:/rgbtograytop/Start 1 0
+run
+run
+run
+run
+run
+run
+quit -sim
+# End time: 13:14:33 on Mar 17,2017, Elapsed time: 0:00:25
+# Errors: 1, Warnings: 1
+# Compile of RGB2Gray.vhd was successful.
+# Compile of rgb2gray_components.vhd was successful.
+# Compile of ram_pkg.vhd was successful.
+# Compile of helper.vhd was successful.
+# Compile of RGBtoGrayTop.vhd failed with 3 errors.
+# Compile of Controller.vhd was successful.
+# Compile of RGBtoGray_pkg.vhd was successful.
+# Compile of tb.vhd was successful.
+# Compile of ram_rgb_gray.vhd was successful with warnings.
+# 9 compiles, 1 failed with 3 errors.
+# Compile of RGB2Gray.vhd was successful.
+# Compile of rgb2gray_components.vhd was successful.
+# Compile of ram_pkg.vhd was successful.
+# Compile of helper.vhd was successful.
+# Compile of RGBtoGrayTop.vhd failed with 3 errors.
+# Compile of Controller.vhd was successful.
+# Compile of RGBtoGray_pkg.vhd was successful.
+# Compile of tb.vhd was successful.
+# Compile of ram_rgb_gray.vhd was successful with warnings.
+# 9 compiles, 1 failed with 3 errors.
+# Compile of RGBtoGrayTop.vhd failed with 3 errors.
+# Compile of RGB2Gray.vhd was successful.
+# Compile of rgb2gray_components.vhd was successful.
+# Compile of ram_pkg.vhd was successful.
+# Compile of helper.vhd was successful.
+# Compile of RGBtoGrayTop.vhd failed with 3 errors.
+# Compile of Controller.vhd was successful.
+# Compile of RGBtoGray_pkg.vhd was successful.
+# Compile of tb.vhd was successful.
+# Compile of ram_rgb_gray.vhd was successful with warnings.
+# 9 compiles, 1 failed with 3 errors.
+# Compile of RGB2Gray.vhd was successful.
+# Compile of rgb2gray_components.vhd was successful.
+# Compile of ram_pkg.vhd was successful.
+# Compile of helper.vhd was successful.
+# Compile of RGBtoGrayTop.vhd was successful.
+# Compile of Controller.vhd was successful.
+# Compile of RGBtoGray_pkg.vhd was successful.
+# Compile of tb.vhd was successful.
+# Compile of ram_rgb_gray.vhd was successful with warnings.
+# 9 compiles, 0 failed with no errors.
+vsim work.rgbtograytop
+# vsim work.rgbtograytop 
+# Start time: 13:40:03 on Mar 17,2017
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading ieee.numeric_std(body)
+# Loading work.helper
+# Loading work.ram_pkg
+# Loading work.rgbtogray_pkg
+# Loading work.rgbtograytop(behavioral)
+# Loading work.rgb2gray_components
+# Loading work.rgb2gray(behavioral)
+# Loading work.multred(behavioral)
+# Loading work.addernbit(behavioral)
+# Loading work.fulladder(behavioral)
+# Loading work.multgreen(behavioral)
+# Loading work.multblue(behavioral)
+# Loading work.ram_rgb_gray(rtl)
+# ** Warning: (vsim-3473) Component instance "Ctrl : Controller" is not bound.
+#    Time: 0 ps  Iteration: 0  Instance: /rgbtograytop File: /media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/RGBtoGrayTop.vhd
+add wave -position insertpoint  \
+sim:/rgbtograytop/Clk \
+sim:/rgbtograytop/Start \
+sim:/rgbtograytop/Done \
+sim:/rgbtograytop/red \
+sim:/rgbtograytop/green \
+sim:/rgbtograytop/blue \
+sim:/rgbtograytop/gray \
+sim:/rgbtograytop/address_0 \
+sim:/rgbtograytop/address_1 \
+sim:/rgbtograytop/Load \
+sim:/rgbtograytop/Store \
+sim:/rgbtograytop/Shift
+force -freeze sim:/rgbtograytop/Clk 1 0, 0 {50 ps} -r 100
+force -freeze sim:/rgbtograytop/Start 1 0
+run
+quit -sim
+# End time: 13:41:40 on Mar 17,2017, Elapsed time: 0:01:37
+# Errors: 0, Warnings: 1
+# Compile of RGB2Gray.vhd was successful.
+# Compile of rgb2gray_components.vhd was successful.
+# Compile of ram_pkg.vhd was successful.
+# Compile of helper.vhd was successful.
+# Compile of RGBtoGrayTop.vhd was successful.
+# Compile of Controller.vhd was successful.
+# Compile of RGBtoGray_pkg.vhd was successful.
+# Compile of tb.vhd was successful.
+# Compile of ram_rgb_gray.vhd was successful with warnings.
+# 9 compiles, 0 failed with no errors.
+vsim work.rgbtograytop(behavioral)
+# vsim work.rgbtograytop(behavioral) 
+# Start time: 13:41:45 on Mar 17,2017
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading ieee.numeric_std(body)
+# Loading work.helper
+# Loading work.ram_pkg
+# Loading work.rgbtogray_pkg
+# Loading work.rgbtograytop(behavioral)
+# Loading work.rgb2gray_components
+# Loading work.rgb2gray(behavioral)
+# Loading work.multred(behavioral)
+# Loading work.addernbit(behavioral)
+# Loading work.fulladder(behavioral)
+# Loading work.multgreen(behavioral)
+# Loading work.multblue(behavioral)
+# Loading work.ram_rgb_gray(rtl)
+# ** Warning: (vsim-3473) Component instance "Ctrl : Controller" is not bound.
+#    Time: 0 ps  Iteration: 0  Instance: /rgbtograytop File: /media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/RGBtoGrayTop.vhd
+add wave -position insertpoint sim:/rgbtograytop/*
+force -freeze sim:/rgbtograytop/Clk 1 0, 0 {50 ps} -r 100
+noforce sim:/rgbtograytop/Start
+force -freeze sim:/rgbtograytop/Start 1 0
+run
+quit -sim
+# End time: 13:51:42 on Mar 17,2017, Elapsed time: 0:09:57
+# Errors: 0, Warnings: 1
+# Compile of test.vhd failed with 4 errors.
+# Compile of test.vhd failed with 1 errors.
+# Compile of test.vhd failed with 2 errors.
+# Compile of test.vhd failed with 2 errors.
+# Compile of test.vhd failed with 2 errors.
+# Compile of RGBtoGrayTop.vhd was successful.
+# Compile of test.vhd failed with 2 errors.
+# 2 compiles, 1 failed with 2 errors.
+# Compile of test.vhd was successful.
+vsim work.test
+# vsim work.test 
+# Start time: 13:53:22 on Mar 17,2017
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.helper
+# Loading work.rgbtogray_pkg
+# Loading work.test(behavioral)
+# ** Warning: (vsim-3473) Component instance "C : Controller" is not bound.
+#    Time: 0 ps  Iteration: 0  Instance: /test File: /media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/test.vhd
+add wave -position insertpoint  \
+sim:/test/Clk \
+sim:/test/Start \
+sim:/test/Done \
+sim:/test/Load \
+sim:/test/Store \
+sim:/test/Shift
+force -freeze sim:/test/Clk 1 0, 0 {50 ps} -r 100
+run
+force -freeze sim:/test/Start 1 0
+run
+run
+run
+run
+run
+quit -sim
+# End time: 13:56:49 on Mar 17,2017, Elapsed time: 0:03:27
+# Errors: 0, Warnings: 1
+# Compile of RGB2Gray.vhd was successful.
+# Compile of rgb2gray_components.vhd was successful.
+# Compile of ram_pkg.vhd was successful.
+# Compile of helper.vhd was successful.
+# Compile of RGBtoGrayTop.vhd was successful.
+# Compile of Controller.vhd was successful.
+# Compile of RGBtoGray_pkg.vhd was successful.
+# Compile of tb.vhd was successful.
+# Compile of ram_rgb_gray.vhd was successful with warnings.
+# Compile of test.vhd was successful.
+# 10 compiles, 0 failed with no errors.
+vsim work.rgbtograytop
+# vsim work.rgbtograytop 
+# Start time: 14:05:51 on Mar 17,2017
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading ieee.numeric_std(body)
+# Loading work.helper
+# Loading work.ram_pkg
+# Loading work.rgbtogray_pkg
+# Loading work.rgbtograytop(behavioral)
+# Loading work.rgb2gray_components
+# Loading work.rgb2gray(behavioral)
+# Loading work.multred(behavioral)
+# Loading work.addernbit(behavioral)
+# Loading work.fulladder(behavioral)
+# Loading work.multgreen(behavioral)
+# Loading work.multblue(behavioral)
+# Loading work.ram_rgb_gray(rtl)
+# Loading work.controller(behavioral)
+add wave -position insertpoint  \
+sim:/rgbtograytop/Clk \
+sim:/rgbtograytop/Start \
+sim:/rgbtograytop/Done \
+sim:/rgbtograytop/red \
+sim:/rgbtograytop/green \
+sim:/rgbtograytop/blue \
+sim:/rgbtograytop/gray \
+sim:/rgbtograytop/address_0 \
+sim:/rgbtograytop/address_1 \
+sim:/rgbtograytop/Load \
+sim:/rgbtograytop/Store \
+sim:/rgbtograytop/Shift
+force -freeze sim:/rgbtograytop/Clk 1 0, 0 {50 ps} -r 100
+force -freeze sim:/rgbtograytop/Start 1 0
+run
+quit -sim
+# End time: 14:10:35 on Mar 17,2017, Elapsed time: 0:04:44
+# Errors: 0, Warnings: 0
+# Compile of RGB2Gray.vhd was successful.
+# Compile of rgb2gray_components.vhd was successful.
+# Compile of ram_pkg.vhd was successful.
+# Compile of helper.vhd was successful.
+# Compile of RGBtoGrayTop.vhd was successful.
+# Compile of Controller.vhd was successful.
+# Compile of RGBtoGray_pkg.vhd was successful.
+# Compile of tb.vhd was successful.
+# Compile of ram_rgb_gray.vhd failed with 5 errors.
+# Compile of test.vhd was successful.
+# 10 compiles, 1 failed with 5 errors.
+# Compile of RGB2Gray.vhd was successful.
+# Compile of rgb2gray_components.vhd was successful.
+# Compile of ram_pkg.vhd was successful.
+# Compile of helper.vhd was successful.
+# Compile of RGBtoGrayTop.vhd was successful.
+# Compile of Controller.vhd was successful.
+# Compile of RGBtoGray_pkg.vhd was successful.
+# Compile of tb.vhd was successful.
+# Compile of ram_rgb_gray.vhd was successful with warnings.
+# Compile of test.vhd was successful.
+# 10 compiles, 0 failed with no errors.
+vsim work.rgbtograytop
+# vsim work.rgbtograytop 
+# Start time: 14:15:04 on Mar 17,2017
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading ieee.numeric_std(body)
+# Loading work.helper
+# Loading work.ram_pkg
+# Loading work.rgbtogray_pkg
+# Loading work.rgbtograytop(behavioral)
+# Loading work.rgb2gray_components
+# Loading work.rgb2gray(behavioral)
+# Loading work.multred(behavioral)
+# Loading work.addernbit(behavioral)
+# Loading work.fulladder(behavioral)
+# Loading work.multgreen(behavioral)
+# Loading work.multblue(behavioral)
+# Loading work.ram_rgb_gray(rtl)
+# Loading work.controller(behavioral)
+add wave -position insertpoint  \
+sim:/rgbtograytop/Clk \
+sim:/rgbtograytop/Start \
+sim:/rgbtograytop/Done \
+sim:/rgbtograytop/red \
+sim:/rgbtograytop/green \
+sim:/rgbtograytop/blue \
+sim:/rgbtograytop/gray \
+sim:/rgbtograytop/address_0 \
+sim:/rgbtograytop/address_1 \
+sim:/rgbtograytop/Load \
+sim:/rgbtograytop/Store \
+sim:/rgbtograytop/Shift
+force -freeze sim:/rgbtograytop/Clk 1 0, 0 {50 ps} -r 100
+force -freeze sim:/rgbtograytop/Start 1 0
+run

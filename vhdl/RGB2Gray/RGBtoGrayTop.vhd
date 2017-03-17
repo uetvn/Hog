@@ -3,7 +3,7 @@
 -- File name      : RGBtoGrayTop.vhd
 -- Created date   : Mon 13 Mar 2017
 -- Author         : Huy Hung Ho
--- Last modified  : Mon 13 Mar 2017
+-- Last modified  : Fri 17 Mar 2017
 -- Desc           :
 --------------------------------------------------------------------------------
 
@@ -37,13 +37,18 @@ Begin
 	Main:	RGB2Gray
 		port map (Clk, red, green, blue, gray);
 
-	ram:	ram_rgb_gray generic map (addr_width)
+	Ram:	ram_rgb_gray generic map (addr_width)
 		port map (address_0, red, green, blue, Load, '0', '1',
 			  address_1, gray, Store, '1', '0');
 
 	Ctrl:	Controller
 		port map (Clk, Start, Done, Load, Store, Shift);
 
-	address_0 <= std_logic_vector(unsigned(address_0) + 3) when Shift = '1';
-	address_1 <= std_logic_vector(unsigned(address_1) + 1) when Shift = '1';
+	Next_pixel: Process(Clk)
+	Begin
+		if rising_edge(Clk) and Shift = '1' then
+			address_0 <= std_logic_vector(unsigned(address_0) +3);
+			address_1 <= std_logic_vector(unsigned(address_1) +1);
+		end if;
+	End process;
 End Behavioral;
