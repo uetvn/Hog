@@ -21,9 +21,9 @@ VRzFNdmm0b[_QoNRhd3j:j0
 !s100 EFbQ`1;goAjlK3^o]gfe?3
 Z6 OV;C;10.5b;63
 32
-Z7 !s110 1489454931
+Z7 !s110 1489725006
 !i10b 1
-Z8 !s108 1489454931.000000
+Z8 !s108 1489725006.000000
 Z9 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/AdderNbit.vhd|
 Z10 !s107 /media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/AdderNbit.vhd|
 !i113 1
@@ -48,11 +48,11 @@ R10
 R11
 R12
 Econtrolller
-Z13 w1489395697
-Z14 DPx4 work 6 helper 0 22 aiXQK2XAX<i5CkkaJm3Eh1
+Z13 w1489725253
+Z14 DPx4 work 6 helper 0 22 P<6V3C1LnKf<FPkXKi;V83
 Z15 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
 Z16 DPx4 ieee 18 std_logic_unsigned 0 22 ;eZjO2D4ZDz<]0>8AL<ne1
-Z17 DPx4 work 7 ram_pkg 0 22 E]80l0;58ai0c[<^_4aY^0
+Z17 DPx4 work 7 ram_pkg 0 22 iX9nDnMZ7d5Wj_IFmeRfY1
 Z18 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
 R1
 R2
@@ -61,15 +61,15 @@ Z19 8/media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/Controller.vhd
 Z20 F/media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/Controller.vhd
 l0
 L16
-VZQ_z?WaIlglYe@:0LS5_83
-!s100 m<m6X:K>Il?Gb4IhG[a]X2
+VQ7M?4kh=0[1_10dohXAFz2
+!s100 lYRV5dWC;OeE^Zn[gJ;2L1
 R6
 32
-R7
+Z21 !s110 1489725265
 !i10b 1
-R8
-Z21 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/Controller.vhd|
-Z22 !s107 /media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/Controller.vhd|
+Z22 !s108 1489725265.000000
+Z23 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/Controller.vhd|
+Z24 !s107 /media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/Controller.vhd|
 !i113 1
 R11
 R12
@@ -81,41 +81,41 @@ R17
 R18
 R1
 R2
-DEx4 work 11 controlller 0 22 ZQ_z?WaIlglYe@:0LS5_83
-l35
-L30
-VW9igX16FlQjkJ5fOzXMS03
-!s100 fC0CP;TLiOP_]z5YgFHUD3
+Z25 DEx4 work 11 controlller 0 22 Q7M?4kh=0[1_10dohXAFz2
+l31
+L27
+Z26 Vj0>UOg^VH=kWEgTFQoS802
+Z27 !s100 2@oWbRTKPkkka:@;4`=Qn1
 R6
 32
-R7
-!i10b 1
-R8
 R21
+!i10b 1
 R22
+R23
+R24
 !i113 1
 R11
 R12
 Edual_ram
-Z23 w1489376678
+Z28 w1489376678
 R15
 R16
 R1
 R2
 R3
-Z24 8/media/h3/Study/Git/Human-detection-by-HOG/vhdl/RAM/dual_ram.vhd
-Z25 F/media/h3/Study/Git/Human-detection-by-HOG/vhdl/RAM/dual_ram.vhd
+Z29 8/media/h3/Study/Git/Human-detection-by-HOG/vhdl/RAM/dual_ram.vhd
+Z30 F/media/h3/Study/Git/Human-detection-by-HOG/vhdl/RAM/dual_ram.vhd
 l0
 L13
 VN65;Xm=43ZfR:j<z7<o_83
 !s100 Wg;NXQK@RUXak;zf^LMBa1
 R6
 32
-R7
+Z31 !s110 1489725007
 !i10b 1
 R8
-Z26 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/media/h3/Study/Git/Human-detection-by-HOG/vhdl/RAM/dual_ram.vhd|
-Z27 !s107 /media/h3/Study/Git/Human-detection-by-HOG/vhdl/RAM/dual_ram.vhd|
+Z32 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/media/h3/Study/Git/Human-detection-by-HOG/vhdl/RAM/dual_ram.vhd|
+Z33 !s107 /media/h3/Study/Git/Human-detection-by-HOG/vhdl/RAM/dual_ram.vhd|
 !i113 1
 R11
 R12
@@ -131,11 +131,11 @@ VXU:^K<EbF6135B6RKhH260
 !s100 Abz^S`^TX7l[W=;nMVa?e3
 R6
 32
-R7
+R31
 !i10b 1
 R8
-R26
-R27
+R32
+R33
 !i113 1
 R11
 R12
@@ -144,19 +144,19 @@ R0
 R1
 R2
 R3
-Z28 8/media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/FullAdder.vhd
-Z29 F/media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/FullAdder.vhd
+Z34 8/media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/FullAdder.vhd
+Z35 F/media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/FullAdder.vhd
 l0
 L12
 VgdOB_llMHEQc`1ff=Z]@i0
 !s100 LTYnT8W41g3SoOBSVlP4z1
 R6
 32
-Z30 !s110 1489454930
+R7
 !i10b 1
-Z31 !s108 1489454930.000000
-Z32 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/FullAdder.vhd|
-Z33 !s107 /media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/FullAdder.vhd|
+R8
+Z36 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/FullAdder.vhd|
+Z37 !s107 /media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/FullAdder.vhd|
 !i113 1
 R11
 R12
@@ -170,11 +170,11 @@ VJ7Ue@ie<CKD5b8Ae_QSeJ0
 !s100 RQO9PaKmn;5O97Fz;?`d03
 R6
 32
-R30
+R7
 !i10b 1
-R31
-R32
-R33
+R8
+R36
+R37
 !i113 1
 R11
 R12
@@ -182,19 +182,19 @@ Phelper
 R18
 R1
 R2
-w1489394683
+w1489722931
 R3
 8/media/h3/Study/Git/Human-detection-by-HOG/vhdl/Helper/helper.vhd
 F/media/h3/Study/Git/Human-detection-by-HOG/vhdl/Helper/helper.vhd
 l0
 L14
-VaiXQK2XAX<i5CkkaJm3Eh1
-!s100 3WXgo_oS?eEI@3WE=nefO3
+VP<6V3C1LnKf<FPkXKi;V83
+!s100 _[nP:N1lZoLkA82P_ZkFG3
 R6
 32
-R7
+R31
 !i10b 1
-R8
+Z38 !s108 1489725007.000000
 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/media/h3/Study/Git/Human-detection-by-HOG/vhdl/Helper/helper.vhd|
 !s107 /media/h3/Study/Git/Human-detection-by-HOG/vhdl/Helper/helper.vhd|
 !i113 1
@@ -205,8 +205,8 @@ R0
 R1
 R2
 R3
-Z34 8/media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/MultBlue.vhd
-Z35 F/media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/MultBlue.vhd
+Z39 8/media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/MultBlue.vhd
+Z40 F/media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/MultBlue.vhd
 l0
 L18
 V?6U;B8bQ58e@h>0AQe4OH1
@@ -215,9 +215,9 @@ R6
 32
 R7
 !i10b 1
-R31
-Z36 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/MultBlue.vhd|
-Z37 !s107 /media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/MultBlue.vhd|
+R8
+Z41 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/MultBlue.vhd|
+Z42 !s107 /media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/MultBlue.vhd|
 !i113 1
 R11
 R12
@@ -233,9 +233,9 @@ R6
 32
 R7
 !i10b 1
-R31
-R36
-R37
+R8
+R41
+R42
 !i113 1
 R11
 R12
@@ -245,8 +245,8 @@ R18
 R1
 R2
 R3
-Z38 8/media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/MultGreen.vhd
-Z39 F/media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/MultGreen.vhd
+Z43 8/media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/MultGreen.vhd
+Z44 F/media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/MultGreen.vhd
 l0
 L19
 V9CWc_M3PWMnbkQifm__>i0
@@ -256,8 +256,8 @@ R6
 R7
 !i10b 1
 R8
-Z40 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/MultGreen.vhd|
-Z41 !s107 /media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/MultGreen.vhd|
+Z45 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/MultGreen.vhd|
+Z46 !s107 /media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/MultGreen.vhd|
 !i113 1
 R11
 R12
@@ -275,8 +275,8 @@ R6
 R7
 !i10b 1
 R8
-R40
-R41
+R45
+R46
 !i113 1
 R11
 R12
@@ -285,8 +285,8 @@ R0
 R1
 R2
 R3
-Z42 8/media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/MultRed.vhd
-Z43 F/media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/MultRed.vhd
+Z47 8/media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/MultRed.vhd
+Z48 F/media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/MultRed.vhd
 l0
 L18
 V5c`:1NGak86IhBLf8F0i`3
@@ -296,8 +296,8 @@ R6
 R7
 !i10b 1
 R8
-Z44 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/MultRed.vhd|
-Z45 !s107 /media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/MultRed.vhd|
+Z49 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/MultRed.vhd|
+Z50 !s107 /media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/MultRed.vhd|
 !i113 1
 R11
 R12
@@ -314,43 +314,92 @@ R6
 R7
 !i10b 1
 R8
-R44
-R45
+R49
+R50
 !i113 1
 R11
 R12
 Pram_pkg
+R18
+R14
 R15
 R16
 R1
 R2
-w1489401297
+w1489723739
 R3
 8/media/h3/Study/Git/Human-detection-by-HOG/vhdl/RAM/ram_pkg.vhd
 F/media/h3/Study/Git/Human-detection-by-HOG/vhdl/RAM/ram_pkg.vhd
 l0
-L13
-VE]80l0;58ai0c[<^_4aY^0
-!s100 K?gY2:Ao?9BCnBT4>m?`^1
+L14
+ViX9nDnMZ7d5Wj_IFmeRfY1
+!s100 ;@V>>2WjBYBP?f8WJ<:493
 R6
 32
-R7
+R31
 !i10b 1
-R8
+R38
 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/media/h3/Study/Git/Human-detection-by-HOG/vhdl/RAM/ram_pkg.vhd|
 !s107 /media/h3/Study/Git/Human-detection-by-HOG/vhdl/RAM/ram_pkg.vhd|
 !i113 1
 R11
 R12
+Eram_rgb_gray
+Z51 w1489724880
+R14
+R15
+R16
+R18
+R1
+R2
+R3
+Z52 8/media/h3/Study/Git/Human-detection-by-HOG/vhdl/RAM/ram_rgb_gray.vhd
+Z53 F/media/h3/Study/Git/Human-detection-by-HOG/vhdl/RAM/ram_rgb_gray.vhd
+l0
+L15
+V3KjBPDX<2[kY1j^]VV?VD2
+!s100 HF3WJQCNJ8E5<:Fom29Se3
+R6
+32
+R31
+!i10b 1
+R38
+Z54 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/media/h3/Study/Git/Human-detection-by-HOG/vhdl/RAM/ram_rgb_gray.vhd|
+Z55 !s107 /media/h3/Study/Git/Human-detection-by-HOG/vhdl/RAM/ram_rgb_gray.vhd|
+!i113 1
+R11
+R12
+Artl
+R14
+R15
+R16
+R18
+R1
+R2
+DEx4 work 12 ram_rgb_gray 0 22 3KjBPDX<2[kY1j^]VV?VD2
+l50
+L35
+V`Ti_HM`IoCc6e7[IF>>2F1
+!s100 HISnG=P]F6iEM`chO6iFh0
+R6
+32
+R31
+!i10b 1
+R38
+R54
+R55
+!i113 1
+R11
+R12
 Ergb2gray
-Z46 w1489379075
+Z56 w1489379075
 R14
 R18
 R1
 R2
 R3
-Z47 8/media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/RGB2Gray.vhd
-Z48 F/media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/RGB2Gray.vhd
+Z57 8/media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/RGB2Gray.vhd
+Z58 F/media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/RGB2Gray.vhd
 l0
 L15
 Vo@CKnH]K;Vg[[;HV1j5<e1
@@ -360,8 +409,8 @@ R6
 R7
 !i10b 1
 R8
-Z49 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/RGB2Gray.vhd|
-Z50 !s107 /media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/RGB2Gray.vhd|
+Z59 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/RGB2Gray.vhd|
+Z60 !s107 /media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/RGB2Gray.vhd|
 !i113 1
 R11
 R12
@@ -381,8 +430,8 @@ R6
 R7
 !i10b 1
 R8
-R49
-R50
+R59
+R60
 !i113 1
 R11
 R12
@@ -415,94 +464,94 @@ R18
 R14
 R1
 R2
-w1489396113
+w1489722352
 R3
 8/media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/RGBtoGray_pkg.vhd
 F/media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/RGBtoGray_pkg.vhd
 l0
 L14
-VE@e>2hS3Nf4W^a1K;gfnd3
-!s100 iPI2[^Sd5OF9?jE;1J<mj1
+V2j5YmYYDeh`m^PTfDh40O3
+!s100 =cm0Yi:EzLbMb[WzM3UVI2
 R6
 32
-R7
+R31
 !i10b 1
-R8
+R38
 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/RGBtoGray_pkg.vhd|
 !s107 /media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/RGBtoGray_pkg.vhd|
 !i113 1
 R11
 R12
 Ergbtograytop
-Z51 w1489396829
+Z61 w1489723925
 R17
-R18
 R14
+R18
 R15
 R16
 R1
 R2
 R3
-Z52 8/media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/RGBtoGrayTop.vhd
-Z53 F/media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/RGBtoGrayTop.vhd
+Z62 8/media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/RGBtoGrayTop.vhd
+Z63 F/media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/RGBtoGrayTop.vhd
 l0
-L16
-VzkgOk0iEUmGBGU3cebZ3=3
-!s100 ?4GY6nCaB4VLH[JT;iJlK0
+L17
+V6GLKAzP^cme2SSfQA`^5;3
+!s100 l>R;mH;KSPe@8Q2^eHHMm1
 R6
 32
-R7
+R31
 !i10b 1
-R8
-Z54 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/RGBtoGrayTop.vhd|
-Z55 !s107 /media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/RGBtoGrayTop.vhd|
+R38
+Z64 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/RGBtoGrayTop.vhd|
+Z65 !s107 /media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/RGBtoGrayTop.vhd|
 !i113 1
 R11
 R12
 Abehavioral
-DPx4 work 13 rgbtogray_pkg 0 22 E@e>2hS3Nf4W^a1K;gfnd3
+DPx4 work 13 rgbtogray_pkg 0 22 2j5YmYYDeh`m^PTfDh40O3
 R17
-R18
 R14
+R18
 R15
 R16
 R1
 R2
-DEx4 work 12 rgbtograytop 0 22 zkgOk0iEUmGBGU3cebZ3=3
-l37
-L24
-Vl;<fYhB[UWB8dff02VIhG0
-!s100 RUAAJ`V_2YIbC``ZKIMAK2
+DEx4 work 12 rgbtograytop 0 22 6GLKAzP^cme2SSfQA`^5;3
+l36
+L25
+VBZBo?RHH;E^1o_gb?9Pze2
+!s100 O^7HA9G0H^F46PJh7d`3@1
 R6
 32
-R7
+R31
 !i10b 1
-R8
-R54
-R55
+R38
+R64
+R65
 !i113 1
 R11
 R12
 Esingle_ram
-Z56 w1489389339
+Z66 w1489389339
 R15
 R16
 R1
 R2
 R3
-Z57 8/media/h3/Study/Git/Human-detection-by-HOG/vhdl/RAM/single_ram.vhd
-Z58 F/media/h3/Study/Git/Human-detection-by-HOG/vhdl/RAM/single_ram.vhd
+Z67 8/media/h3/Study/Git/Human-detection-by-HOG/vhdl/RAM/single_ram.vhd
+Z68 F/media/h3/Study/Git/Human-detection-by-HOG/vhdl/RAM/single_ram.vhd
 l0
 L13
 VFY=@MD8=G=B[oAzQhOLU>2
 !s100 [?QME^icDkCGHcChjb[T=0
 R6
 32
-R7
+R31
 !i10b 1
-R8
-Z59 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/media/h3/Study/Git/Human-detection-by-HOG/vhdl/RAM/single_ram.vhd|
-Z60 !s107 /media/h3/Study/Git/Human-detection-by-HOG/vhdl/RAM/single_ram.vhd|
+R38
+Z69 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/media/h3/Study/Git/Human-detection-by-HOG/vhdl/RAM/single_ram.vhd|
+Z70 !s107 /media/h3/Study/Git/Human-detection-by-HOG/vhdl/RAM/single_ram.vhd|
 !i113 1
 R11
 R12
@@ -518,79 +567,74 @@ VCEJ^ZiTSlFU6F]fDk6P2e0
 !s100 TFBI0;46Zm=4la^MoTa971
 R6
 32
-R7
+R31
 !i10b 1
-R8
-R59
-R60
+R38
+R69
+R70
 !i113 1
 R11
 R12
 Etb
-Z61 w1489456480
-R14
+Z71 w1489724999
 R18
 R1
 R2
 R3
-Z62 8/media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/tb.vhd
-Z63 F/media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/tb.vhd
+Z72 8/media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/tb.vhd
+Z73 F/media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/tb.vhd
 l0
-L15
-VTkJDUClWB0g[hV>35SEaO0
-!s100 QH@;jo^bJ6V::0R@hjO?F3
+L14
+VYM:hSTa^NS5]j[oHOJ8@g3
+!s100 JeIAVJIEbaDnQOR^PCz:b0
 R6
 32
-Z64 !s110 1489456488
+R31
 !i10b 1
-Z65 !s108 1489456488.000000
-Z66 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/tb.vhd|
-Z67 !s107 /media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/tb.vhd|
+R38
+Z74 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/tb.vhd|
+Z75 !s107 /media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/tb.vhd|
 !i113 1
 R11
 R12
 Abehavioral
-R15
-R16
-R17
-R14
 R18
 R1
 R2
-Z68 DEx4 work 2 tb 0 22 TkJDUClWB0g[hV>35SEaO0
-l37
-L18
-V<c4oLQC^NB4WEXYRMj]zG3
-!s100 A^5SHo`z?ki_e`d62mE_00
+DEx4 work 2 tb 0 22 YM:hSTa^NS5]j[oHOJ8@g3
+l28
+L17
+Vo2^>;7CVZ;ABX4K4LMe;V0
+!s100 Z;<dkG2G[ZeH@2LkiGL6T3
 R6
 32
-R64
+R31
 !i10b 1
-R65
-R66
-R67
+R38
+R74
+R75
 !i113 1
 R11
 R12
 Etb_pixel
-Z69 w1489397785
+Z76 w1489397785
 R18
 R1
 R2
 R3
-Z70 8/media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/tb_pixel.vhd
-Z71 F/media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/tb_pixel.vhd
+Z77 8/media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/tb_pixel.vhd
+Z78 F/media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/tb_pixel.vhd
 l0
 L14
 VlCaO]j5EIEAT]NzjMmk@I3
 !s100 >WQQWTlY`@da]@kC:m5Dj1
 R6
 32
-Z72 !s110 1489454932
+R31
 !i10b 1
-R8
-Z73 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/tb_pixel.vhd|
-Z74 !s107 /media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/tb_pixel.vhd|
+R38
+Z79 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/tb_pixel.vhd|
+Z80 !s107 /media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/tb_pixel.vhd|
 !i113 1
 R11
 R12
@@ -605,11 +649,11 @@ VH7V2cZXmcmgNCFP]zBnjb1
 !s100 G6L]I3^nPk[2OScUIIbDA2
 R6
 32
-R72
+R31
 !i10b 1
-R8
-R73
-R74
+R38
+R79
+R80
 !i113 1
 R11
 R12

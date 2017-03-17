@@ -12,19 +12,14 @@ Use IEEE.std_logic_1164.all;
 Use IEEE.numeric_std.all;
 
 Package helper is
-	Constant	Length_cell_extend:	integer := 100;
+	Constant	cell_extend_width:	integer := 100;
+	Constant	data_width:		integer := 8;
+	Constant	addr_width:		integer := 9;
 
-	-- Variable for RGB to Gray block
-	Constant	pixel_width:		integer := 8;
-	Constant	addr_width_single_ram:	integer := 10;	-- Maybe more
-	Constant	addr_width_dual_ram:	integer := 10;
-
-	Subtype		addr_load is std_logic_vector(addr_width_single_ram-1 downto 0);
-	Subtype		addr_store is std_logic_vector(addr_width_dual_ram-1 downto 0);
-	Subtype		byte is std_logic_vector(pixel_width-1 downto 0);
-
-	Constant const_shift_in:	addr_load := std_logic_vector(to_unsigned(3,
-	addr_width_single_ram));
-	Constant const_shift_out:	addr_store := std_logic_vector(to_unsigned(1,
-	addr_width_dual_ram));
+	Subtype		byte is std_logic_vector(data_width-1 downto 0);
+	Subtype		addr_type is std_logic_vector(addr_width-1 downto 0);
+	--Constant const_shift_in:	addr_load :=
+	--std_logic_vector(to_unsigned(3, addr_width_single_ram));
+	--Constant const_shift_out:	addr_store :=
+	--std_logic_vector(to_unsigned(1, addr_width_dual_ram));
 End package;

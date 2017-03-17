@@ -27,12 +27,10 @@ Package RGBtoGray_pkg is
 			Clk:    IN std_logic;
 			Start:  IN std_logic;
 			Done:   OUT std_logic;
-			address_in:     INOUT addr_load;
-			address_out:    INOUT addr_store;
 			Load:   OUT std_logic;
 			Store:  OUT std_logic;
-			Shift:  OUT std_logic;
-			HOG:    OUT std_logic
+			Shift:  OUT std_logic
+			--HOG:    OUT std_logic
 		);
 	End component;
 End package;

@@ -10,6 +10,7 @@
 Library IEEE;
 Use IEEE.std_logic_1164.all;
 Use IEEE.std_logic_unsigned.all;
+Use IEEE.numeric_std.all;
 Use work.helper.all;
 Use work.ram_pkg.all;
 
@@ -29,26 +30,20 @@ Architecture Behavioral of RGBtoGrayTop is
 	Signal	green:	byte;
 	Signal	blue:	byte;
 	Signal	gray:	byte;
-	Signal	address_in:	addr_load;
-	Signal	address_out:	addr_store;
-	Signal	address_HOG:	addr_store;
-
-	Signal Load, Store, Shift, HOG:	std_logic;
+	Signal	address_0:	addr_type := (others => '0');
+	Signal	address_1:	addr_type := "100101100";
+	Signal	Load, Store, Shift:	std_logic;
 Begin
 	Main:	RGB2Gray
 		port map (Clk, red, green, blue, gray);
 
-	GetIn:	single_ram generic map (8, 10)
-		port map (address_in, red, green, blue, Load, '0', '1');
+	ram:	ram_rgb_gray generic map (addr_width)
+		port map (address_0, red, green, blue, Load, '0', '1',
+			  address_1, gray, Store, '1', '0');
 
-	GetOut:	dual_ram generic map (8, 10)
-		port map (address_out, gray, Store, '1', '0',
-			  	address_HOG, gray, HOG, '0', '1');
+	Ctrl:	Controller
+		port map (Clk, Start, Done, Load, Store, Shift);
 
-	Control: Controller
-		port map (Clk, Start, Done, address_in, address_out,
-				Load, Store, Shift, HOG);
-
-	address_in <= address_in + const_shift_in when Shift = '1';
-	address_out <= address_out + const_shift_out when Shift = '1';
+	address_0 <= std_logic_vector(unsigned(address_0) + 3) when Shift = '1';
+	address_1 <= std_logic_vector(unsigned(address_1) + 1) when Shift = '1';
 End Behavioral;

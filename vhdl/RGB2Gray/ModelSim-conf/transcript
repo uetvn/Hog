@@ -1,4 +1,72 @@
 # Loading project RGB2Gray
+# Compile of RGBtoGrayTop.vhd failed with 15 errors.
+# Compile of helper.vhd was successful.
+# Compile of Controller.vhd failed with 1 errors.
+# Compile of Controller.vhd failed with 8 errors.
+# Compile of Controller.vhd failed with 8 errors.
+# Compile of Controller.vhd was successful.
+# Compile of ram_rgb_gray.vhd failed with 4 errors.
+# Compile of ram_rgb_gray.vhd failed with 1 errors.
+# Compile of ram_rgb_gray.vhd failed with 9 errors.
+# Compile of ram_rgb_gray.vhd failed with 15 errors.
+# Compile of ram_rgb_gray.vhd failed with 15 errors.
+# Compile of ram_rgb_gray.vhd failed with 13 errors.
+# Compile of ram_rgb_gray.vhd was successful with warnings.
+# Compile of ram_rgb_gray.vhd was successful with warnings.
+# Compile of RGBtoGrayTop.vhd failed with 18 errors.
+# Compile of RGBtoGrayTop.vhd failed with 18 errors.
+# Compile of RGBtoGray_pkg.vhd failed with 3 errors.
+# Compile of RGBtoGray_pkg.vhd failed with 1 errors.
+# Compile of RGBtoGray_pkg.vhd was successful.
+# Compile of RGBtoGrayTop.vhd failed with 13 errors.
+# Compile of RGBtoGrayTop.vhd failed with 11 errors.
+# Compile of RGBtoGrayTop.vhd failed with 11 errors.
+# Compile of RGBtoGrayTop.vhd failed with 11 errors.
+# Compile of RGBtoGrayTop.vhd failed with 3 errors.
+# Compile of FullAdder.vhd was successful.
+# Compile of RGBtoGrayTop.vhd failed with 3 errors.
+# Compile of ram_pkg.vhd failed with 3 errors.
+# Compile of ram_pkg.vhd was successful.
+# Compile of RGBtoGrayTop.vhd failed with 8 errors.
+# Compile of ram_pkg.vhd was successful.
+# Compile of ram_pkg.vhd was successful.
+# Compile of RGBtoGrayTop.vhd failed with 8 errors.
+# Compile of RGBtoGray_pkg.vhd was successful.
+# Compile of RGBtoGrayTop.vhd failed with 3 errors.
+# Compile of ram_rgb_gray.vhd failed with 3 errors.
+# Compile of ram_pkg.vhd was successful.
+# Compile of helper.vhd was successful.
+# Compile of ram_rgb_gray.vhd was successful with warnings.
+# Compile of RGBtoGrayTop.vhd failed with 4 errors.
+# Compile of ram_pkg.vhd was successful.
+# Compile of RGBtoGrayTop.vhd failed with 8 errors.
+# Compile of RGBtoGray_pkg.vhd was successful.
+# Compile of RGBtoGrayTop.vhd failed with 3 errors.
+# Compile of RGBtoGrayTop.vhd failed with 3 errors.
+# Compile of RGBtoGrayTop.vhd failed with 3 errors.
+# Compile of RGBtoGrayTop.vhd failed with 3 errors.
+# Compile of RGBtoGrayTop.vhd failed with 3 errors.
+# Compile of RGBtoGrayTop.vhd failed with 3 errors.
+# Compile of RGBtoGrayTop.vhd failed with 3 errors.
+jcls
+# invalid command name "jcls"
+cls
+# invalid command name "cls"
+c
+# ambiguous command name "c": calcDefaultSignalModeValue canvas capacity_image case cat catch cd cdbg cdbg_mode cdbg_wait_for_starting cdump cgroup_image chan change change_dir change_oem_title_bar check check_svver_available check_viewer checkbutton checkicon_image checkpoint checkpointDone checkpointError ciid class class_image cleanupGui clipboard clock clock_image close closedFolder clp cmdSplit cmpl_add_fbox_item cmpl_arrange_fbox cmpl_create_fbox cmpl_do_compile cmpl_do_edit cmpl_doubleclick cmpl_empty_fbox cmpl_extendselect_fbox cmpl_go_up cmpl_select_fbox cmpl_select_filter cmpl_select_textitem cmpl_show_error cmpl_show_error_nc cmpl_show_last_error cmpl_unselectall_fbox cmpl_update_dir cmpl_update_fbox code column2tok comp_opt_exclusive compare compareOptionsRule compareSetDefaults compile compileDialog_ws compile_cover_dialog compile_dialog_box compile_ecom_dialog compile_edit compile_option_addfile compile_option_extension compile_option_extension_ok compile_option_incdir compile_option_libdir compile_option_macro compile_option_macro_ok compile_option_ok compile_options_dialog compile_systemc_dialog compile_vhdl_dialog compile_vlog_dialog compileorderlist concat config config_every_button config_image configbody configure connect_to_kernel console cont context contextOf continue contract controlbarValidateRunLengthFromInput convertVlogExtId count_image cover_save_create_ucdb coverage createArgsForFrames createFrames createSourceInfo create_rpc_server
+clear
+# [3;J[H[2J
+clearn
+# invalid command name "clearn"
+clean
+# Compile of RGBtoGrayTop.vhd failed with 3 errors.
+# Compile of ram_pkg.vhd was successful.
+# Compile of FullAdder.vhd was successful.
+# Compile of RGBtoGrayTop.vhd failed with 7 errors.
+# Compile of RGBtoGray_pkg.vhd was successful.
+# Compile of RGBtoGrayTop.vhd failed with 2 errors.
+# Compile of RGBtoGrayTop.vhd failed with 2 errors.
+# Compile of RGBtoGrayTop.vhd was successful.
 # Compile of FullAdder.vhd was successful.
 # Compile of MultBlue.vhd was successful.
 # Compile of MultGreen.vhd was successful.
@@ -13,33 +81,21 @@
 # Compile of RGBtoGrayTop.vhd was successful.
 # Compile of Controller.vhd was successful.
 # Compile of RGBtoGray_pkg.vhd was successful.
-# Compile of tb.vhd failed with 20 errors.
+# Compile of tb.vhd failed with 9 errors.
 # Compile of tb_pixel.vhd was successful.
-# 16 compiles, 1 failed with 20 errors.
-# Compile of tb.vhd failed with 19 errors.
-# Compile of tb.vhd failed with 13 errors.
-# Compile of tb.vhd failed with 13 errors.
-# Compile of tb.vhd failed with 13 errors.
-# Compile of tb.vhd failed with 12 errors.
-# Compile of tb.vhd failed with 12 errors.
-# Compile of tb.vhd was successful.
-# Compile of tb.vhd failed with 2 errors.
-# Compile of tb.vhd failed with 2 errors.
-# Compile of tb.vhd failed with 2 errors.
-# Compile of tb.vhd was successful.
-# Compile of tb.vhd was successful.
-vsim work.tb
-# vsim work.tb 
-# Start time: 08:45:40 on Mar 14,2017
+# Compile of ram_rgb_gray.vhd was successful with warnings.
+# 17 compiles, 1 failed with 9 errors.
+vsim work.rgbtograytop
+# vsim work.rgbtograytop 
+# Start time: 11:14:01 on Mar 17,2017
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
-# Loading ieee.numeric_std(body)
-# Loading work.helper
 # Loading ieee.std_logic_arith(body)
 # Loading ieee.std_logic_unsigned(body)
+# Loading ieee.numeric_std(body)
+# Loading work.helper
 # Loading work.ram_pkg
-# Loading work.tb(behavioral)
 # Loading work.rgbtogray_pkg
 # Loading work.rgbtograytop(behavioral)
 # Loading work.rgb2gray_components
@@ -49,92 +105,43 @@ vsim work.tb
 # Loading work.fulladder(behavioral)
 # Loading work.multgreen(behavioral)
 # Loading work.multblue(behavioral)
-# Loading work.single_ram(rtl)
-# Loading work.dual_ram(rtl)
-# ** Warning: (vsim-3473) Component instance "Control : Controller" is not bound.
-#    Time: 0 ps  Iteration: 0  Instance: /tb/uut File: /media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/RGBtoGrayTop.vhd
-# ** Warning: (vsim-8684) No drivers exist on out port /tb/uut/Done, and its initial value is not used.
-# Therefore, simulation behavior may occur that is not in compliance with
-# the VHDL standard as the initial values come from the base signal /tb/Done.
-add wave -position insertpoint  \
-sim:/tb/Clk \
-sim:/tb/Start \
-sim:/tb/Done \
-sim:/tb/period \
-sim:/tb/data1 \
-sim:/tb/data2 \
-sim:/tb/data3 \
-sim:/tb/data1_next \
-sim:/tb/data2_next \
-sim:/tb/data3_next \
-sim:/tb/Gray \
-sim:/tb/address_in \
-sim:/tb/address_out
-run
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /tb/ram_in
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 0 ps  Iteration: 0  Instance: /tb/ram_in
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /tb/ram_in
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /tb/ram_in
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /tb/ram_in
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 0 ps  Iteration: 0  Instance: /tb/ram_in
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /tb/ram_in
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /tb/ram_in
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /tb/ram_in
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 0 ps  Iteration: 0  Instance: /tb/ram_in
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 1  Instance: /tb/ram_in
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 0 ps  Iteration: 1  Instance: /tb/ram_in
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 1  Instance: /tb/ram_in
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 1  Instance: /tb/ram_in
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 1  Instance: /tb/ram_in
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 0 ps  Iteration: 1  Instance: /tb/ram_in
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 1  Instance: /tb/ram_in
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 1  Instance: /tb/ram_in
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 1  Instance: /tb/ram_in
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 0 ps  Iteration: 1  Instance: /tb/ram_in
-run
-run
-run
-run
-run
-run
-run
-run
-quit -sim
-# End time: 08:54:44 on Mar 14,2017, Elapsed time: 0:09:04
-# Errors: 0, Warnings: 22
-# Compile of tb.vhd was successful.
-vsim work.tb
-# vsim work.tb 
-# Start time: 08:54:52 on Mar 14,2017
+# Loading work.ram_rgb_gray(rtl)
+# ** Fatal: (vsim-3742) In array aggregate at index 0, element array length 8 (511 downto 504) does not match length 512 (511 downto 0) of element subtype.
+#    Time: 0 ps  Iteration: 0  Instance: /rgbtograytop/ram File: /media/h3/Study/Git/Human-detection-by-HOG/vhdl/RAM/ram_rgb_gray.vhd Line: 46
+# FATAL ERROR while loading design
+# Error loading design
+# End time: 11:14:02 on Mar 17,2017, Elapsed time: 0:00:01
+# Errors: 1, Warnings: 0
+# Compile of FullAdder.vhd was successful.
+# Compile of MultBlue.vhd was successful.
+# Compile of MultGreen.vhd was successful.
+# Compile of MultRed.vhd was successful.
+# Compile of RGB2Gray.vhd was successful.
+# Compile of rgb2gray_components.vhd was successful.
+# Compile of AdderNbit.vhd was successful.
+# Compile of dual_ram.vhd was successful.
+# Compile of single_ram.vhd was successful.
+# Compile of ram_pkg.vhd was successful.
+# Compile of helper.vhd was successful.
+# Compile of RGBtoGrayTop.vhd was successful.
+# Compile of Controller.vhd was successful.
+# Compile of RGBtoGray_pkg.vhd was successful.
+# Compile of tb.vhd failed with 9 errors.
+# Compile of tb_pixel.vhd was successful.
+# Compile of ram_rgb_gray.vhd was successful with warnings.
+# 17 compiles, 1 failed with 9 errors.
+# Compile of ram_rgb_gray.vhd was successful with warnings.
+vsim work.rgbtograytop
+# vsim work.rgbtograytop 
+# Start time: 11:16:01 on Mar 17,2017
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
-# Loading ieee.numeric_std(body)
-# Loading work.helper
 # Loading ieee.std_logic_arith(body)
 # Loading ieee.std_logic_unsigned(body)
+# Loading ieee.numeric_std(body)
+# Loading work.helper
 # Loading work.ram_pkg
-# Loading work.tb(behavioral)
 # Loading work.rgbtogray_pkg
 # Loading work.rgbtograytop(behavioral)
 # Loading work.rgb2gray_components
@@ -144,32 +151,334 @@ vsim work.tb
 # Loading work.fulladder(behavioral)
 # Loading work.multgreen(behavioral)
 # Loading work.multblue(behavioral)
-# Loading work.single_ram(rtl)
-# Loading work.dual_ram(rtl)
-# ** Warning: (vsim-3473) Component instance "Control : Controller" is not bound.
+# Loading work.ram_rgb_gray(rtl)
+# ** Fatal: (vsim-3742) In array aggregate at index 0, element array length 8 (511 downto 504) does not match length 512 (511 downto 0) of element subtype.
+#    Time: 0 ps  Iteration: 0  Instance: /rgbtograytop/ram File: /media/h3/Study/Git/Human-detection-by-HOG/vhdl/RAM/ram_rgb_gray.vhd Line: 46
+# FATAL ERROR while loading design
+# Error loading design
+# End time: 11:16:01 on Mar 17,2017, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# Compile of FullAdder.vhd was successful.
+# Compile of MultBlue.vhd was successful.
+# Compile of MultGreen.vhd was successful.
+# Compile of MultRed.vhd was successful.
+# Compile of RGB2Gray.vhd was successful.
+# Compile of rgb2gray_components.vhd was successful.
+# Compile of AdderNbit.vhd was successful.
+# Compile of dual_ram.vhd was successful.
+# Compile of single_ram.vhd was successful.
+# Compile of ram_pkg.vhd was successful.
+# Compile of helper.vhd was successful.
+# Compile of RGBtoGrayTop.vhd was successful.
+# Compile of Controller.vhd was successful.
+# Compile of RGBtoGray_pkg.vhd was successful.
+# Compile of tb.vhd failed with 9 errors.
+# Compile of tb_pixel.vhd was successful.
+# Compile of ram_rgb_gray.vhd was successful.
+# 17 compiles, 1 failed with 9 errors.
+vsim work.rgbtograytop
+# vsim work.rgbtograytop 
+# Start time: 11:16:51 on Mar 17,2017
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading ieee.numeric_std(body)
+# Loading work.helper
+# Loading work.ram_pkg
+# Loading work.rgbtogray_pkg
+# Loading work.rgbtograytop(behavioral)
+# Loading work.rgb2gray_components
+# Loading work.rgb2gray(behavioral)
+# Loading work.multred(behavioral)
+# Loading work.addernbit(behavioral)
+# Loading work.fulladder(behavioral)
+# Loading work.multgreen(behavioral)
+# Loading work.multblue(behavioral)
+# Loading work.ram_rgb_gray(rtl)
+# ** Warning: (vsim-3473) Component instance "Ctrl : Controller" is not bound.
+#    Time: 0 ps  Iteration: 0  Instance: /rgbtograytop File: /media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/RGBtoGrayTop.vhd
+quit -sim
+# End time: 11:16:56 on Mar 17,2017, Elapsed time: 0:00:05
+# Errors: 0, Warnings: 1
+# Compile of FullAdder.vhd was successful.
+# Compile of MultBlue.vhd was successful.
+# Compile of MultGreen.vhd was successful.
+# Compile of MultRed.vhd was successful.
+# Compile of RGB2Gray.vhd was successful.
+# Compile of rgb2gray_components.vhd was successful.
+# Compile of AdderNbit.vhd was successful.
+# Compile of dual_ram.vhd was successful.
+# Compile of single_ram.vhd was successful.
+# Compile of ram_pkg.vhd was successful.
+# Compile of helper.vhd was successful.
+# Compile of RGBtoGrayTop.vhd was successful.
+# Compile of Controller.vhd was successful.
+# Compile of RGBtoGray_pkg.vhd was successful.
+# Compile of tb.vhd failed with 9 errors.
+# Compile of tb_pixel.vhd was successful.
+# Compile of ram_rgb_gray.vhd failed with 17 errors.
+# 17 compiles, 2 failed with 26 errors.
+# Compile of ram_rgb_gray.vhd was successful.
+# Load canceled
+# Compile of FullAdder.vhd was successful.
+# Compile of MultBlue.vhd was successful.
+# Compile of MultGreen.vhd was successful.
+# Compile of MultRed.vhd was successful.
+# Compile of RGB2Gray.vhd was successful.
+# Compile of rgb2gray_components.vhd was successful.
+# Compile of AdderNbit.vhd was successful.
+# Compile of dual_ram.vhd was successful.
+# Compile of single_ram.vhd was successful.
+# Compile of ram_pkg.vhd was successful.
+# Compile of helper.vhd was successful.
+# Compile of RGBtoGrayTop.vhd was successful.
+# Compile of Controller.vhd was successful.
+# Compile of RGBtoGray_pkg.vhd was successful.
+# Compile of tb.vhd failed with 9 errors.
+# Compile of tb_pixel.vhd was successful.
+# Compile of ram_rgb_gray.vhd was successful.
+# 17 compiles, 1 failed with 9 errors.
+# Compile of FullAdder.vhd was successful.
+# Compile of MultBlue.vhd was successful.
+# Compile of MultGreen.vhd was successful.
+# Compile of MultRed.vhd was successful.
+# Compile of RGB2Gray.vhd was successful.
+# Compile of rgb2gray_components.vhd was successful.
+# Compile of AdderNbit.vhd was successful.
+# Compile of dual_ram.vhd was successful.
+# Compile of single_ram.vhd was successful.
+# Compile of ram_pkg.vhd was successful.
+# Compile of helper.vhd was successful.
+# Compile of RGBtoGrayTop.vhd was successful.
+# Compile of Controller.vhd was successful.
+# Compile of RGBtoGray_pkg.vhd was successful.
+# Compile of tb.vhd failed with 9 errors.
+# Compile of tb_pixel.vhd was successful.
+# Compile of ram_rgb_gray.vhd was successful with warnings.
+# 17 compiles, 1 failed with 9 errors.
+# Compile of FullAdder.vhd was successful.
+# Compile of MultBlue.vhd was successful.
+# Compile of MultGreen.vhd was successful.
+# Compile of MultRed.vhd was successful.
+# Compile of RGB2Gray.vhd was successful.
+# Compile of rgb2gray_components.vhd was successful.
+# Compile of AdderNbit.vhd was successful.
+# Compile of dual_ram.vhd was successful.
+# Compile of single_ram.vhd was successful.
+# Compile of ram_pkg.vhd was successful.
+# Compile of helper.vhd was successful.
+# Compile of RGBtoGrayTop.vhd was successful.
+# Compile of Controller.vhd was successful.
+# Compile of RGBtoGray_pkg.vhd was successful.
+# Compile of tb.vhd failed with 9 errors.
+# Compile of tb_pixel.vhd was successful.
+# Compile of ram_rgb_gray.vhd failed with 2 errors.
+# 17 compiles, 2 failed with 11 errors.
+# Compile of FullAdder.vhd was successful.
+# Compile of MultBlue.vhd was successful.
+# Compile of MultGreen.vhd was successful.
+# Compile of MultRed.vhd was successful.
+# Compile of RGB2Gray.vhd was successful.
+# Compile of rgb2gray_components.vhd was successful.
+# Compile of AdderNbit.vhd was successful.
+# Compile of dual_ram.vhd was successful.
+# Compile of single_ram.vhd was successful.
+# Compile of ram_pkg.vhd was successful.
+# Compile of helper.vhd was successful.
+# Compile of RGBtoGrayTop.vhd was successful.
+# Compile of Controller.vhd was successful.
+# Compile of RGBtoGray_pkg.vhd was successful.
+# Compile of tb.vhd failed with 9 errors.
+# Compile of tb_pixel.vhd was successful.
+# Compile of ram_rgb_gray.vhd was successful with warnings.
+# 17 compiles, 1 failed with 9 errors.
+vsim work.rgbtograytop
+# vsim work.rgbtograytop 
+# Start time: 11:28:23 on Mar 17,2017
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading ieee.numeric_std(body)
+# Loading work.helper
+# Loading work.ram_pkg
+# Loading work.rgbtogray_pkg
+# Loading work.rgbtograytop(behavioral)
+# Loading work.rgb2gray_components
+# Loading work.rgb2gray(behavioral)
+# Loading work.multred(behavioral)
+# Loading work.addernbit(behavioral)
+# Loading work.fulladder(behavioral)
+# Loading work.multgreen(behavioral)
+# Loading work.multblue(behavioral)
+# Loading work.ram_rgb_gray(rtl)
+# ** Warning: (vsim-3473) Component instance "Ctrl : Controller" is not bound.
+#    Time: 0 ps  Iteration: 0  Instance: /rgbtograytop File: /media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/RGBtoGrayTop.vhd
+add wave -position insertpoint  \
+sim:/rgbtograytop/Clk \
+sim:/rgbtograytop/Start \
+sim:/rgbtograytop/Done \
+sim:/rgbtograytop/red \
+sim:/rgbtograytop/green \
+sim:/rgbtograytop/blue \
+sim:/rgbtograytop/gray \
+sim:/rgbtograytop/address_0 \
+sim:/rgbtograytop/address_1 \
+sim:/rgbtograytop/Load \
+sim:/rgbtograytop/Store \
+sim:/rgbtograytop/Shift
+run
+quit -sim
+# End time: 11:30:04 on Mar 17,2017, Elapsed time: 0:01:41
+# Errors: 0, Warnings: 1
+# Compile of FullAdder.vhd was successful.
+# Compile of MultBlue.vhd was successful.
+# Compile of MultGreen.vhd was successful.
+# Compile of MultRed.vhd was successful.
+# Compile of RGB2Gray.vhd was successful.
+# Compile of rgb2gray_components.vhd was successful.
+# Compile of AdderNbit.vhd was successful.
+# Compile of dual_ram.vhd was successful.
+# Compile of single_ram.vhd was successful.
+# Compile of ram_pkg.vhd was successful.
+# Compile of helper.vhd was successful.
+# Compile of RGBtoGrayTop.vhd was successful.
+# Compile of Controller.vhd was successful.
+# Compile of RGBtoGray_pkg.vhd was successful.
+# Compile of tb.vhd was successful.
+# Compile of tb_pixel.vhd was successful.
+# Compile of ram_rgb_gray.vhd was successful with warnings.
+# 17 compiles, 0 failed with no errors.
+vsim work.tb
+# vsim work.tb 
+# Start time: 11:30:10 on Mar 17,2017
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.tb(behavioral)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.helper
+# Loading work.ram_pkg
+# Loading work.rgbtogray_pkg
+# Loading work.rgbtograytop(behavioral)
+# Loading work.rgb2gray_components
+# Loading work.rgb2gray(behavioral)
+# Loading work.multred(behavioral)
+# Loading work.addernbit(behavioral)
+# Loading work.fulladder(behavioral)
+# Loading work.multgreen(behavioral)
+# Loading work.multblue(behavioral)
+# Loading work.ram_rgb_gray(rtl)
+# ** Warning: (vsim-3473) Component instance "Ctrl : Controller" is not bound.
 #    Time: 0 ps  Iteration: 0  Instance: /tb/uut File: /media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/RGBtoGrayTop.vhd
 # ** Warning: (vsim-8684) No drivers exist on out port /tb/uut/Done, and its initial value is not used.
 # Therefore, simulation behavior may occur that is not in compliance with
 # the VHDL standard as the initial values come from the base signal /tb/Done.
-add wave -position insertpoint  \
-sim:/tb/Gray
-add wave -position insertpoint  \
-sim:/tb/Clk \
-sim:/tb/Start \
-sim:/tb/Done \
-sim:/tb/period \
-sim:/tb/data1 \
-sim:/tb/data2 \
-sim:/tb/data3 \
-sim:/tb/data1_next \
-sim:/tb/data2_next \
-sim:/tb/data3_next \
-sim:/tb/Gray \
-sim:/tb/address_in \
-sim:/tb/in_next \
-sim:/tb/address_out \
-sim:/tb/out_next
-run
-quit -sim
-# End time: 08:55:27 on Mar 14,2017, Elapsed time: 0:00:35
+vsim work.tb
+# End time: 11:30:16 on Mar 17,2017, Elapsed time: 0:00:06
 # Errors: 0, Warnings: 2
+# vsim work.tb 
+# Start time: 11:30:16 on Mar 17,2017
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.tb(behavioral)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.helper
+# Loading work.ram_pkg
+# Loading work.rgbtogray_pkg
+# Loading work.rgbtograytop(behavioral)
+# Loading work.rgb2gray_components
+# Loading work.rgb2gray(behavioral)
+# Loading work.multred(behavioral)
+# Loading work.addernbit(behavioral)
+# Loading work.fulladder(behavioral)
+# Loading work.multgreen(behavioral)
+# Loading work.multblue(behavioral)
+# Loading work.ram_rgb_gray(rtl)
+# ** Warning: (vsim-3473) Component instance "Ctrl : Controller" is not bound.
+#    Time: 0 ps  Iteration: 0  Instance: /tb/uut File: /media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/RGBtoGrayTop.vhd
+# ** Warning: (vsim-8684) No drivers exist on out port /tb/uut/Done, and its initial value is not used.
+# Therefore, simulation behavior may occur that is not in compliance with
+# the VHDL standard as the initial values come from the base signal /tb/Done.
+add wave -position insertpoint  \
+sim:/tb/Clk \
+sim:/tb/Start \
+sim:/tb/Done \
+sim:/tb/period
+run
+quit -sim
+# End time: 11:30:30 on Mar 17,2017, Elapsed time: 0:00:14
+# Errors: 0, Warnings: 2
+vsim work.rgbtograytop
+# vsim work.rgbtograytop 
+# Start time: 11:30:33 on Mar 17,2017
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading ieee.numeric_std(body)
+# Loading work.helper
+# Loading work.ram_pkg
+# Loading work.rgbtogray_pkg
+# Loading work.rgbtograytop(behavioral)
+# Loading work.rgb2gray_components
+# Loading work.rgb2gray(behavioral)
+# Loading work.multred(behavioral)
+# Loading work.addernbit(behavioral)
+# Loading work.fulladder(behavioral)
+# Loading work.multgreen(behavioral)
+# Loading work.multblue(behavioral)
+# Loading work.ram_rgb_gray(rtl)
+# ** Warning: (vsim-3473) Component instance "Ctrl : Controller" is not bound.
+#    Time: 0 ps  Iteration: 0  Instance: /rgbtograytop File: /media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/RGBtoGrayTop.vhd
+add wave -position insertpoint  \
+sim:/rgbtograytop/Clk \
+sim:/rgbtograytop/Start \
+sim:/rgbtograytop/Done \
+sim:/rgbtograytop/red \
+sim:/rgbtograytop/green \
+sim:/rgbtograytop/blue \
+sim:/rgbtograytop/gray \
+sim:/rgbtograytop/address_0 \
+sim:/rgbtograytop/address_1 \
+sim:/rgbtograytop/Load \
+sim:/rgbtograytop/Store \
+sim:/rgbtograytop/Shift
+force -freeze sim:/rgbtograytop/Clk 1 0, 0 {50 ps} -r 100
+run
+force -freeze sim:/rgbtograytop/Start 1 0
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+quit -sim
+# End time: 11:34:21 on Mar 17,2017, Elapsed time: 0:03:48
+# Errors: 0, Warnings: 1
+# Compile of Controller.vhd was successful.

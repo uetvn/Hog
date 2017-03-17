@@ -18,25 +18,21 @@ Entity Controlller is
 		Clk:	IN std_logic;
 		Start:	IN std_logic;
 		Done:	OUT std_logic;
-		address_in:	INOUT addr_load;
-		address_out:	INOUT addr_store;
 		Load:	OUT std_logic;
 		Store:	OUT std_logic;
-		Shift:	OUT std_logic;
-		HOG:	OUT std_logic
+		Shift:	OUT std_logic
 	);
 End Controlller;
 
 Architecture Behavioral of Controlller is
-	Type	states is (HaltS, InitS, LoadS, StoreS, ShiftS, HOGS);
+	Type	states is (HaltS, InitS, LoadS, StoreS, ShiftS);
 	Signal	state:	states := HaltS;
-	Signal	CNT1:	unsigned(addr_width_single_ram-1 downto 0);
-	Signal	CNT2:	unsigned(addr_width_dual_ram-1 downto 0);
+	Signal	CNT:	unsigned(addr_width-1 downto 0);
 Begin
 	Load	<= '1' when state = LoadS	else '0';
 	Store	<= '1' when state = StoreS	else '0';
 	Shift	<= '1' when state = ShiftS	else '0';
-	HOG	<= '1' when state = HOGS	else '0';
+	--HOG	<= '1' when state = HOGS	else '0';
 
 	Process(Clk)
 	Begin
@@ -47,9 +43,9 @@ Begin
 						   end if;
 				When InitS	=> state <= LoadS;
 				when LoadS	=> state <= StoreS;
-				when StoreS	=> state <= HOGS;
-				when HOGS	=> state <= ShiftS;
-				when ShiftS	=> if (CNT2 = Length_cell_extend) then
+				when StoreS	=> state <= ShiftS;
+				--when HOGS	=> state <= ShiftS;
+				when ShiftS	=> if (CNT = Cell_extend_width) then
 							state <= HaltS;
 						   else
 							state <= LoadS;
@@ -62,9 +58,9 @@ Begin
 	Begin
 		if rising_edge(Clk) then
 			if state = InitS then
-				CNT2 <= to_unsigned(0, addr_width_dual_ram);
+				CNT <= to_unsigned(0, addr_width);
 			elsif state = ShiftS then
-				CNT2 <= CNT2 + 1;
+				CNT <= CNT + 1;
 			end if;
 		end if;
 	End process;
