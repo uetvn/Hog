@@ -19,9 +19,10 @@ code build on gcc 5.4.0.
 * File/Folder Structure:
 
 ## Requirements
-* **gcc**
+* [**gcc**](https://gcc.gnu.org/)
 * **make**
 * **cmake**
+
 
 ## Installation
 * Compile and Run:
