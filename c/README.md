@@ -25,16 +25,16 @@ code build on gcc 5.4.0.
 
 ## Installation
 * Compile and Run:
-	1. Go to "install" directory
-	2. Run "cmake path/to/CMakeList.txt"
-	3. Run "make"
-	4. Run "./hog -i <file>.png"
+	* Go to "install" directory
+	* Run "cmake path/to/CMakeList.txt"
+	* Run "make"
+	* Run "./hog -i <file>.png"
 
 * Example comple and run in linux:
-	sislab$ cd install/
-	sislab$ cmake ../
-	sislab$ make
-	sislab$ ./hog -i src.png
+	* sislab$ cd install/
+	* sislab$ cmake ../
+	* sislab$ make
+	* sislab$ ./hog -i src.png
 
 ## Tips
 
