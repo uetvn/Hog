@@ -3,41 +3,58 @@
 -- File name      : dual_ram.vhd
 -- Created date   : Mon 13 Mar 2017
 -- Author         : Huy Hung Ho
--- Last modified  : Mon 13 Mar 2017
--- Desc           :
+-- Last modified  : Mon 20 Mar 2017
+-- Desc           : RAM for store rgb data, gray data, HOG matrix and dectected
 --------------------------------------------------------------------------------
-library ieee;
-use ieee.std_logic_1164.all;
-use ieee.std_logic_unsigned.all;
+library IEEE;
+Use IEEE.std_logic_1164.all;
+Use IEEE.numeric_std.all;
+Use IEEE.std_logic_unsigned.all;
+Use work.helper.all;
 
-Entity dual_ram is
+Entity Dual_Ram is
 	Generic (
-		DATA_WIDTH :integer := 8;
-		ADDR_WIDTH :integer := 8
+		addr_width:	integer := 8
 	);
 	Port (
-		address_0 :in    std_logic_vector (ADDR_WIDTH-1 downto 0); -- address_0 Input
-		data_0    :inout std_logic_vector (DATA_WIDTH-1 downto 0); -- data_0 bi-directional
-		cs_0      :in    std_logic;                                -- Chip Select
-		we_0      :in    std_logic;                                -- Write Enable/Read Enable
-		oe_0      :in    std_logic;                                -- Output Enable
-		address_1 :in    std_logic_vector (ADDR_WIDTH-1 downto 0); -- address_1 Input
-		data_1    :inout std_logic_vector (DATA_WIDTH-1 downto 0); -- data_1 bi-directional
-		cs_1      :in    std_logic;                                -- Chip Select
-		we_1      :in    std_logic;                                -- Write Enable/Read Enable
-		oe_1      :in    std_logic                                 -- Output Enable
+		address_0 :in    addr_type;
+		data_0    :inout byte;
+		cs_0      :in    std_logic;
+		we_0      :in    std_logic;
+		oe_0      :in    std_logic;
+		address_1 :in    addr_type;
+		data_1    :inout byte;
+		cs_1      :in    std_logic;
+		we_1      :in    std_logic;
+		oe_1      :in    std_logic
 	);
 End entity;
 
-Architecture rtl of dual_ram is
+Architecture rtl of Dual_Ram is
 	----------------Internal variables----------------
-	Constant RAM_DEPTH :integer := 2**ADDR_WIDTH;
+	Constant ram_depth	:integer := 2**addr_width;
 
-	Signal data_0_out :std_logic_vector (DATA_WIDTH-1 downto 0);
-	Signal data_1_out :std_logic_vector (DATA_WIDTH-1 downto 0);
+	Signal	data_0_out:	byte;
+	Signal	data_1_out:	byte;
 
-	Type RAM is array (integer range <>)of std_logic_vector (DATA_WIDTH-1 downto 0);
-	Signal mem : RAM (0 to RAM_DEPTH-1);
+	Type	RAM	is array (integer range <>) of byte;
+	Signal	mem	: RAM (0 to ram_depth-1)
+		:= (	0	=> X"FF",
+			1	=> X"00",
+			2	=> X"11",
+			3	=> X"F5",
+			4	=> X"FE",
+			5	=> X"45",
+			6	=> X"06",
+			7	=> X"07",
+			8	=> X"08",
+			9	=> X"09",
+			10	=> X"0A",
+			11	=> X"0B",
+			12	=> X"0C",
+			13	=> X"0D",
+			14	=> X"0E",
+			others => (others => '0'));
 Begin
 	----------------Code Starts Here------------------
 	-- Memory Write Block -- Write Operation : When we_0 = 1, cs_0 = 1

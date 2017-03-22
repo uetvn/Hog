@@ -1,4 +1,20 @@
-/media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/RGBtoGray_pkg.vhd {1 {vcom -work work -2002 -explicit -stats=none /media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/RGBtoGray_pkg.vhd
+/media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/tb.vhd {1 {vcom -work work -2002 -explicit -stats=none /media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/tb.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity tb
+-- Compiling architecture Behavioral of tb
+
+} {} {}} /home/h3/Git/Human-detection-by-HOG/vhdl/RGB2Gray/rgb2gray_components.vhd {1 {vcom -work work -2002 -explicit -stats=none /media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/rgb2gray_components.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling package rgb2gray_components
+
+} {} {}} /media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/RGBtoGray_pkg.vhd {1 {vcom -work work -2002 -explicit -stats=none /media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/RGBtoGray_pkg.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
 -- Loading package STANDARD
 -- Loading package TEXTIO
@@ -6,6 +22,24 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  
 -- Loading package NUMERIC_STD
 -- Loading package helper
 -- Compiling package RGBtoGray_pkg
+
+} {} {}} /media/h3/Study/Git/Human-detection-by-HOG/vhdl/RAM/RegN.vhd {1 {vcom -work work -2002 -explicit -stats=none /media/h3/Study/Git/Human-detection-by-HOG/vhdl/RAM/RegN.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package helper
+-- Compiling entity RegN
+-- Compiling architecture Behavioral of RegN
+
+} {} {}} /media/h3/Study/Git/Human-detection-by-HOG/vhdl/Helper/helper.vhd {1 {vcom -work work -2002 -explicit -stats=none /media/h3/Study/Git/Human-detection-by-HOG/vhdl/Helper/helper.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling package helper
 
 } {} {}} /media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/RGBtoGrayTop.vhd {1 {vcom -work work -2002 -explicit -stats=none /media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/RGBtoGrayTop.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
@@ -21,32 +55,6 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  
 -- Compiling architecture Behavioral of RGBtoGrayTop
 -- Loading package RGBtoGray_pkg
 
-} {} {}} /home/h3/Git/Human-detection-by-HOG/vhdl/RGB2Gray/rgb2gray_components.vhd {1 {vcom -work work -2002 -explicit -stats=none /media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/rgb2gray_components.vhd
-Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Compiling package rgb2gray_components
-
-} {} {}} /media/h3/Study/Git/Human-detection-by-HOG/vhdl/Helper/helper.vhd {1 {vcom -work work -2002 -explicit -stats=none /media/h3/Study/Git/Human-detection-by-HOG/vhdl/Helper/helper.vhd
-Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Loading package NUMERIC_STD
--- Compiling package helper
-
-} {} {}} /home/h3/Git/Human-detection-by-HOG/vhdl/RGB2Gray/RGB2Gray.vhd {1 {vcom -work work -2002 -explicit -stats=none /media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/RGB2Gray.vhd
-Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Loading package NUMERIC_STD
--- Loading package helper
--- Compiling entity RGB2Gray
--- Compiling architecture Behavioral of RGB2Gray
--- Loading package rgb2gray_components
-
 } {} {}} /media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/Controller.vhd {1 {vcom -work work -2002 -explicit -stats=none /media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/Controller.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
 -- Loading package STANDARD
@@ -60,25 +68,29 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  
 -- Compiling entity Controller
 -- Compiling architecture Behavioral of Controller
 
-} {} {}} /media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/tb.vhd {1 {vcom -work work -2002 -explicit -stats=none /media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/tb.vhd
+} {} {}} /media/h3/Study/Git/Human-detection-by-HOG/vhdl/RAM/dual_ram.vhd {2 {vcom -work work -2002 -explicit -stats=none /media/h3/Study/Git/Human-detection-by-HOG/vhdl/RAM/dual_ram.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
 -- Loading package STANDARD
 -- Loading package TEXTIO
 -- Loading package std_logic_1164
 -- Loading package NUMERIC_STD
--- Compiling entity tb
--- Compiling architecture Behavioral of tb
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Loading package helper
+-- Compiling entity Dual_Ram
+-- Compiling architecture rtl of Dual_Ram
+** Warning: /media/h3/Study/Git/Human-detection-by-HOG/vhdl/RAM/dual_ram.vhd(57): (vcom-1074) Non-locally static OTHERS choice is allowed only if it is the only choice of the only association.
 
-} {} {}} /media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/test.vhd {1 {vcom -work work -2002 -explicit -stats=none /media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/test.vhd
+} {} {}} /home/h3/Git/Human-detection-by-HOG/vhdl/RGB2Gray/RGB2Gray.vhd {1 {vcom -work work -2002 -explicit -stats=none /media/h3/Study/Git/Human-detection-by-HOG/vhdl/RGB2Gray/RGB2Gray.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
 -- Loading package STANDARD
 -- Loading package TEXTIO
 -- Loading package std_logic_1164
--- Compiling entity test
--- Compiling architecture Behavioral of test
 -- Loading package NUMERIC_STD
 -- Loading package helper
--- Loading package RGBtoGray_pkg
+-- Compiling entity RGB2Gray
+-- Compiling architecture Behavioral of RGB2Gray
+-- Loading package rgb2gray_components
 
 } {} {}} /media/h3/Study/Git/Human-detection-by-HOG/vhdl/RAM/ram_pkg.vhd {1 {vcom -work work -2002 -explicit -stats=none /media/h3/Study/Git/Human-detection-by-HOG/vhdl/RAM/ram_pkg.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016

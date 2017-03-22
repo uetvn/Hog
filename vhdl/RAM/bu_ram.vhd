@@ -4,7 +4,7 @@
 -- Created date   : Mon 13 Mar 2017
 -- Author         : Huy Hung Ho
 -- Last modified  : Fri 17 Mar 2017
--- Desc           : RAM for store grb data, gray data, HOG matrix and dectected
+-- Desc           : RAM for store rgb data, gray data, HOG matrix and dectected
 --------------------------------------------------------------------------------
 library IEEE;
 Use IEEE.std_logic_1164.all;

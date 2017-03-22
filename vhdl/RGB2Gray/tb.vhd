@@ -43,6 +43,6 @@ Begin
 	Begin
 		wait for period * 5;
 		Start <= '1';
-		wait;
+		wait until Done = '1';
 	end process;
 End Behavioral;

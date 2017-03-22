@@ -12,23 +12,21 @@ Use IEEE.std_logic_unsigned.all;
 Use work.helper.all;
 
 Package ram_pkg is
-	Component ram_rgb_gray is
+	Component Dual_Ram is
 		Generic (
 			addr_width:	integer := 8
 		);
 		Port (
-			address_0	:in    addr_type;
-			data_01		:inout byte;
-			data_02		:inout byte;
-			data_03		:inout byte;
-			cs_0		:in    std_logic;
-			we_0		:in    std_logic;
-			oe_0		:in    std_logic;
-			address_1	:in    addr_type;
-			data_1		:inout byte;
-			cs_1		:in    std_logic;
-			we_1		:in    std_logic;
-			oe_1		:in    std_logic
+			address_0 :in    addr_type;
+			data_0    :inout byte;
+			cs_0      :in    std_logic;
+			we_0      :in    std_logic;
+			oe_0      :in    std_logic;
+			address_1 :in    addr_type;
+			data_1    :inout byte;
+			cs_1      :in    std_logic;
+			we_1      :in    std_logic;
+			oe_1      :in    std_logic
 		);
 	End component;
 End package;

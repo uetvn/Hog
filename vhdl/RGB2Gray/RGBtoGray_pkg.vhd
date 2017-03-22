@@ -23,13 +23,14 @@ Package RGBtoGray_pkg is
 
 	Component Controller is
 		Port (
-			Clk:    IN std_logic;
-			Start:  IN std_logic;
-			Done:   OUT std_logic;
-			Load:   OUT std_logic;
-			Store:  OUT std_logic;
-			Shift:  OUT std_logic
-			--HOG:    OUT std_logic
+			Clk:	IN std_logic;
+			Start:	IN std_logic;
+			Done:	OUT std_logic;
+			LoadR:	OUT std_logic;
+			LoadG:	OUT std_logic;
+			LoadB:	OUT std_logic;
+			StoreY: OUT std_logic;
+			Move:	OUT std_logic
 		);
 	End component;
 End package;

@@ -11,7 +11,7 @@
 # Human detection by Histogram of Oriented Gradients
 
 ## Introduction
-_In this project I using HOG (Histogram of Oriented Gradients) algorithm to
+In this project I using HOG (Histogram of Oriented Gradients) algorithm to
 get feature desciptor and use SVM algorithm to detect human in a image. This
 code build on gcc 5.4.0.
 

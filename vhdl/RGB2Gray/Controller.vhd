@@ -18,39 +18,40 @@ Entity Controller is
 		Clk:	IN std_logic;
 		Start:	IN std_logic;
 		Done:	OUT std_logic;
-		Load:	OUT std_logic;
-		Store:	OUT std_logic;
-		Shift:	OUT std_logic
+		LoadR:	OUT std_logic;
+		LoadG:	OUT std_logic;
+		LoadB:	OUT std_logic;
+		StoreY: OUT std_logic;
+		Move:	OUT std_logic
 	);
 End Controller;
 
 Architecture Behavioral of Controller is
-	Type	states is (HaltS, InitS, LoadS, StoreS, ShiftS);
+	Type	states is (HaltS, LoadRS, LoadGS, LoadBS, StoreS);
 	Signal	state:	states := HaltS;
 	Signal	CNT:	unsigned(addr_width-1 downto 0);
 Begin
 	Done	<= '1' when state = HaltS	else '0';
-	Load	<= '1' when state = LoadS	else '0';
-	Store	<= '1' when state = StoreS	else '0';
-	Shift	<= '1' when state = ShiftS	else '0';
-	--HOG	<= '1' when state = HOGS	else '0';
+	LoadR	<= '1' when state = LoadRS	else '0';
+	LoadG	<= '1' when state = LoadGS	else '0';
+	LoadB	<= '1' when state = LoadBS	else '0';
+	StoreY	<= '1' when state = StoreS	else '0';
 
 	Process(Clk)
 	Begin
 		if rising_edge(Clk) then
 			Case state is
 				when HaltS	=> if Start = '1' then
-							state <= InitS;
+							state <= LoadRS;
 						   end if;
-				When InitS	=> state <= LoadS;
-				when LoadS	=> state <= StoreS;
-				when StoreS	=> state <= ShiftS;
-				--when HOGS	=> state <= ShiftS;
-				when ShiftS	=> if (CNT = Cell_extend_width)
+				when LoadRS	=> state <= LoadGS;
+				when LoadGS	=> state <= LoadBS;
+				when LoadBS	=> state <= StoreS;
+				when StoreS	=> if (CNT = Cell_extend_width)
 						then
 							state <= HaltS;
 						else
-							state <= LoadS;
+							state <= LoadRS;
 						end if;
 			end case;
 		end if;
@@ -59,9 +60,9 @@ Begin
 	Process(clk)
 	Begin
 		if rising_edge(Clk) then
-			if state = InitS then
+			if state = HaltS then
 				CNT <= to_unsigned(0, addr_width);
-			elsif state = ShiftS then
+			elsif state = StoreS then
 				CNT <= CNT + 1;
 			end if;
 		end if;
