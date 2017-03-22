@@ -16,7 +16,7 @@ get feature desciptor and use SVM algorithm to detect human in a image. This
 code build on gcc 5.4.0.
 
 ## Features
-
+* File/Folder Structure:
 
 ## Requirements
 * **gcc**
