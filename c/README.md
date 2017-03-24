@@ -28,31 +28,29 @@ code build on gcc 5.4.0.
 ## Scan extend image windows of 130x66 from 128x64
 
 ## Calculate HOG feature of image window
-	* Get block cell of 16x16
-	* Divide block into cells 8x8
-	* Calculate gradient magnitude and anle of each pixells in cell
-	* Calculate HOG in each cell of block
-	* Normalize each block
-	* Integreate all of HOG into matrix HOG of window image
+* Get block cell of 16x16
+* Divide block into cells 8x8
+* Calculate gradient magnitude and anle of each pixells in cell
+* Calculate HOG in each cell of block
+* Normalize each block
+* Integreate all of HOG into matrix HOG of window image
 
 ## Detect object by SVM
-	* Convolution between HOG matrix and SVM trained matrix
-	* Result convolution calculate determine whenther the object in window
-	  image
-	* Integrate all of true object
+* Convolution between HOG matrix and SVM trained matrix
+* Result convolution calculate determine whenther the object in window image
+* Integrate all of true object
 
 ## Draw the bounding box(es) around true object
 
 
 # Features
-## File/Folder structure:
+* File/Folder structure:
+	* png/lodepng.c:		librabry read/write PNG imge
 	* lsi_2017.c:			main code
 	* png/helper.c:			auxiliary fuctions
-	* png/human_detection.c: 	*TODO*
-	* png/Cal_HOG_block.c:		*TODO*
-	* png/lodepng.c:		*TODO*
-	* png/rwpng.c:			Read/Write PNG image
-
+	* png/human_detection.c:	convert RGB2Y, ccan, get block cell
+	* png/Cal_HOG_block.c:		calculate HOG of each block
+	* png/SVMclassification.c:	detect object and store
 
 # Requirements
 * [**gcc**](https://gcc.gnu.org/)

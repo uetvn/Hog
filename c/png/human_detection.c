@@ -14,7 +14,7 @@
 #include "helper.h"
 #include "human_detection.h"
 #include "Cal_HOG_block.h"
-
+#include "SVMclassification.h"
 
 /*
  * Main process fuction of human detection
@@ -61,35 +61,7 @@ void Human_detection(struct raw_img *img, uint8 *nDetects, struct Object *save_d
 	return;
 }
 
-
-/*
- * Compare between HOG feature and SVM feature to detect
- * - nDetects		is number of position
- * - save_detects	is the info of position
- * - pointer		is extend window pointer
- */
-void SVM_Classification(float *HOG_Feature, uint8 *nDetects, struct Object *save_detects, uint32 pointer)
-{
-	float   *trainSVM       = readFileFloats("trainSVM_matrix.txt", SVMnumber);
-	float	score		= BIAS;
-
-	uint32	i;
-	for (i = 0; i < SVMnumber; i++) {
-		score += HOG_Feature[i] * trainSVM[i];
-	}
-	if (score > 0.0) {
-		save_detects[*nDetects].nWindows = pointer;
-		save_detects[*nDetects].resizeSize = 1;
-		save_detects[*nDetects].score = score;
-		(*nDetects)++;
-	}
-
-	free(trainSVM);
-
-	return;
-}
-
-/*
+ /*
  * Calculate HOG feature of extend window image
  *
  */
