@@ -1,5 +1,5 @@
 <!---
-/*******************************************************************************
+t:/*******************************************************************************
 // Project name   : LSI Design Contet
 // File name      : REAME.md
 // Created date   : Wed 22 Mar 2017
@@ -25,7 +25,7 @@ code build on gcc 5.4.0.
 ## Read/Write each PNG image use [lodepng](http://lodev.org/lodepng/) library
 
 ## Convert RGB to Gray image
-* Y = 0.298912*R + 0.58611*G + 0.114478*B
+* Y = 0.298912 * R + 0.58611 * G + 0.114478 * B
 
 ## Scan extend image windows of 130x66 from 128x64
 * This process takes a 130x66 pixel gray scale image (128x64 with a pixel each
