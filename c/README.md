@@ -19,7 +19,7 @@ code build on gcc 5.4.0.
 
 # Algorithm
 ## Resize image use imagemagick of shell
-	* Scale: 1; 1/1.25; 1/1.25^2; 1/1.25^3; 1/1.25^4
+* Scale: 1; 1/1.25; 1/1.25^2; 1/1.25^3; 1/1.25^4
 
 ## Read/Write PNG image use [lodepng](http://lodev.org/lodepng/) library
 
