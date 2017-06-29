@@ -1,29 +1,32 @@
 <!---
 /*******************************************************************************
-// Project name   :
+// Project name   : LSI Contest 2017
 // File name      : README.md
-// Created date   : Thu 16 Mar 2017
+// Created date   : Mon 20 Mar 2017
 // Author         : Huy Hung Ho
-// Last modified  : Thu 16 Mar 2017
+// Last modified  : Mon 20 Mar 2017
 // Desc           :
 *******************************************************************************/
 -->
 Introduction
 ============
-- RAM is purpose to store a data block
-	+ RGB block (10x10)
-	+ Gray block (10x10)
+Read RGB data from RAM, convert to Gray data and store in RAM
+
 Features
 ========
+- Algorithm: RAM_rgb2gray.pptx
 
-Requirements
-============
+- Code C: test_RGB2Gray.c
 
+- Code VHDL:
+	+ Main src: RGBtoGrayTop.vhd
+	+ Using dual-port RAM in RAM directory
+	+ Using own library in Helpzer directory
+	+ RGb2gray pixel block: RGB2Gray.vhd
+	+ Control path: Controller.vhd
 
-Installation
-============
-
-Tips
-====
-
-
+Installation:
+=============
+- Compile all of entity
+- Simulation with file RGBtoGrayTop.vhd
+- Set Clk and Start = '1'

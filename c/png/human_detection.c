@@ -18,13 +18,16 @@
 
 /*
  * Main process fuction of human detection
- * - img		is RGB data of image
+ * - img		    is RGB data of image
  * - nDetects		is number of position
  * - save_detects	is the info of position
  */
-void Human_detection(struct raw_img *img, uint8 *nDetects, struct Object *save_detects) {
+void scan_windows(struct raw_img *img, uint8 *nDetects, struct Object *save_detects) {
 	/* Declare variable in main */
 	uint32  img_size        = img->height * img->width;
+	if (img->height <= window_h || img->width <= window_h)
+		return;
+
 	float   *magnit         = malloc(sizeof(float) * length_window);
 	float   *angles         = malloc(sizeof(float) * length_window);
 	float   *HOG_window     = malloc(sizeof(float) * SVMnumber);
@@ -140,7 +143,7 @@ void L2_Norm(float *HOG_block)
 	for(i = 0; i < numBins_block; i++)
 		norm += HOG_block[i] * HOG_block[i];
 	for(i = 0; i < numBins_block; i++)
-		HOG_block[i] /= sqrt(norm) + TINY_INT;
+		HOG_block[i] /= sqrt(norm) + TINY_FLOAT;
 
 	return;
 }

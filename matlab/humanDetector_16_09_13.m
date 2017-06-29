@@ -35,15 +35,15 @@ end
 % using linear SVM classifier (specified by weight 'w' and bias 'b'
 % b = b + 0.3214;
 detects = [];
-for Si = 1 : 0 %nScaleSteps
+for Si = 1 : 1 %nScaleSteps
     % Resize input image at scale = 1/scaleSi
     scaleSi = scales(Si);
     ss = log10(scaleSi);
     imgSi = imresize(img1, 1/scaleSi, 'bilinear');
     [ rowSi, colSi ] = size(imgSi);
     
-    for rr = 1 : 8 : rowSi-133
-        for cc = 1 : 8 : colSi-69
+    for rr = 1 : 8 : 1%rowSi-133
+        for cc = 1 : 8 : 1%colSi-69
             % Compute HOG descriptor for one image window and classify it
             imgTemp = imgSi( rr:rr+133, cc:cc+69 );
             H = getHOGDescriptorTestGaussianWindow(imgTemp, mask);

@@ -15,6 +15,10 @@ CMakeFiles/hog.dir/png/Cal_HOG_block.c.o: ../png/helper.h
 CMakeFiles/hog.dir/png/Cal_HOG_block.c.o: ../png/lodepng.h
 CMakeFiles/hog.dir/png/Cal_HOG_block.c.o: ../png/rwpng.h
 
+CMakeFiles/hog.dir/png/SVMclassification.c.o: .././mytypes.h
+CMakeFiles/hog.dir/png/SVMclassification.c.o: ../png/SVMclassification.c
+CMakeFiles/hog.dir/png/SVMclassification.c.o: ../png/helper.h
+
 CMakeFiles/hog.dir/png/helper.c.o: .././mytypes.h
 CMakeFiles/hog.dir/png/helper.c.o: ../png/helper.c
 CMakeFiles/hog.dir/png/helper.c.o: ../png/helper.h
@@ -23,6 +27,7 @@ CMakeFiles/hog.dir/png/helper.c.o: ../png/rwpng.h
 
 CMakeFiles/hog.dir/png/human_detection.c.o: .././mytypes.h
 CMakeFiles/hog.dir/png/human_detection.c.o: ../png/Cal_HOG_block.h
+CMakeFiles/hog.dir/png/human_detection.c.o: ../png/SVMclassification.h
 CMakeFiles/hog.dir/png/human_detection.c.o: ../png/helper.h
 CMakeFiles/hog.dir/png/human_detection.c.o: ../png/human_detection.c
 CMakeFiles/hog.dir/png/human_detection.c.o: ../png/human_detection.h

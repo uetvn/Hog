@@ -4,12 +4,13 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/home/h3/Git/Human-detection-by-HOG/c/lsi_2017.c" "/home/h3/Git/Human-detection-by-HOG/c/build/CMakeFiles/hog.dir/lsi_2017.c.o"
-  "/home/h3/Git/Human-detection-by-HOG/c/png/Cal_HOG_block.c" "/home/h3/Git/Human-detection-by-HOG/c/build/CMakeFiles/hog.dir/png/Cal_HOG_block.c.o"
-  "/home/h3/Git/Human-detection-by-HOG/c/png/helper.c" "/home/h3/Git/Human-detection-by-HOG/c/build/CMakeFiles/hog.dir/png/helper.c.o"
-  "/home/h3/Git/Human-detection-by-HOG/c/png/human_detection.c" "/home/h3/Git/Human-detection-by-HOG/c/build/CMakeFiles/hog.dir/png/human_detection.c.o"
-  "/home/h3/Git/Human-detection-by-HOG/c/png/lodepng.c" "/home/h3/Git/Human-detection-by-HOG/c/build/CMakeFiles/hog.dir/png/lodepng.c.o"
-  "/home/h3/Git/Human-detection-by-HOG/c/png/rwpng.c" "/home/h3/Git/Human-detection-by-HOG/c/build/CMakeFiles/hog.dir/png/rwpng.c.o"
+  "/media/h3/Study/Git/Human-detection-by-HOG/c/lsi_2017.c" "/media/h3/Study/Git/Human-detection-by-HOG/c/build/CMakeFiles/hog.dir/lsi_2017.c.o"
+  "/media/h3/Study/Git/Human-detection-by-HOG/c/png/Cal_HOG_block.c" "/media/h3/Study/Git/Human-detection-by-HOG/c/build/CMakeFiles/hog.dir/png/Cal_HOG_block.c.o"
+  "/media/h3/Study/Git/Human-detection-by-HOG/c/png/SVMclassification.c" "/media/h3/Study/Git/Human-detection-by-HOG/c/build/CMakeFiles/hog.dir/png/SVMclassification.c.o"
+  "/media/h3/Study/Git/Human-detection-by-HOG/c/png/helper.c" "/media/h3/Study/Git/Human-detection-by-HOG/c/build/CMakeFiles/hog.dir/png/helper.c.o"
+  "/media/h3/Study/Git/Human-detection-by-HOG/c/png/human_detection.c" "/media/h3/Study/Git/Human-detection-by-HOG/c/build/CMakeFiles/hog.dir/png/human_detection.c.o"
+  "/media/h3/Study/Git/Human-detection-by-HOG/c/png/lodepng.c" "/media/h3/Study/Git/Human-detection-by-HOG/c/build/CMakeFiles/hog.dir/png/lodepng.c.o"
+  "/media/h3/Study/Git/Human-detection-by-HOG/c/png/rwpng.c" "/media/h3/Study/Git/Human-detection-by-HOG/c/build/CMakeFiles/hog.dir/png/rwpng.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

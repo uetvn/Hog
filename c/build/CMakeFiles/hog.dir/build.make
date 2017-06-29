@@ -46,10 +46,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/h3/Git/Human-detection-by-HOG/c
+CMAKE_SOURCE_DIR = /media/h3/Study/Git/Human-detection-by-HOG/c
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/h3/Git/Human-detection-by-HOG/c/build
+CMAKE_BINARY_DIR = /media/h3/Study/Git/Human-detection-by-HOG/c/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/hog.dir/depend.make
@@ -62,16 +62,16 @@ include CMakeFiles/hog.dir/flags.make
 
 CMakeFiles/hog.dir/lsi_2017.c.o: CMakeFiles/hog.dir/flags.make
 CMakeFiles/hog.dir/lsi_2017.c.o: ../lsi_2017.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/h3/Git/Human-detection-by-HOG/c/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/hog.dir/lsi_2017.c.o"
-	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/hog.dir/lsi_2017.c.o   -c /home/h3/Git/Human-detection-by-HOG/c/lsi_2017.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/media/h3/Study/Git/Human-detection-by-HOG/c/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/hog.dir/lsi_2017.c.o"
+	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/hog.dir/lsi_2017.c.o   -c /media/h3/Study/Git/Human-detection-by-HOG/c/lsi_2017.c
 
 CMakeFiles/hog.dir/lsi_2017.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/hog.dir/lsi_2017.c.i"
-	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/h3/Git/Human-detection-by-HOG/c/lsi_2017.c > CMakeFiles/hog.dir/lsi_2017.c.i
+	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /media/h3/Study/Git/Human-detection-by-HOG/c/lsi_2017.c > CMakeFiles/hog.dir/lsi_2017.c.i
 
 CMakeFiles/hog.dir/lsi_2017.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/hog.dir/lsi_2017.c.s"
-	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/h3/Git/Human-detection-by-HOG/c/lsi_2017.c -o CMakeFiles/hog.dir/lsi_2017.c.s
+	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /media/h3/Study/Git/Human-detection-by-HOG/c/lsi_2017.c -o CMakeFiles/hog.dir/lsi_2017.c.s
 
 CMakeFiles/hog.dir/lsi_2017.c.o.requires:
 
@@ -86,16 +86,16 @@ CMakeFiles/hog.dir/lsi_2017.c.o.provides.build: CMakeFiles/hog.dir/lsi_2017.c.o
 
 CMakeFiles/hog.dir/png/Cal_HOG_block.c.o: CMakeFiles/hog.dir/flags.make
 CMakeFiles/hog.dir/png/Cal_HOG_block.c.o: ../png/Cal_HOG_block.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/h3/Git/Human-detection-by-HOG/c/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/hog.dir/png/Cal_HOG_block.c.o"
-	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/hog.dir/png/Cal_HOG_block.c.o   -c /home/h3/Git/Human-detection-by-HOG/c/png/Cal_HOG_block.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/media/h3/Study/Git/Human-detection-by-HOG/c/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/hog.dir/png/Cal_HOG_block.c.o"
+	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/hog.dir/png/Cal_HOG_block.c.o   -c /media/h3/Study/Git/Human-detection-by-HOG/c/png/Cal_HOG_block.c
 
 CMakeFiles/hog.dir/png/Cal_HOG_block.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/hog.dir/png/Cal_HOG_block.c.i"
-	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/h3/Git/Human-detection-by-HOG/c/png/Cal_HOG_block.c > CMakeFiles/hog.dir/png/Cal_HOG_block.c.i
+	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /media/h3/Study/Git/Human-detection-by-HOG/c/png/Cal_HOG_block.c > CMakeFiles/hog.dir/png/Cal_HOG_block.c.i
 
 CMakeFiles/hog.dir/png/Cal_HOG_block.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/hog.dir/png/Cal_HOG_block.c.s"
-	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/h3/Git/Human-detection-by-HOG/c/png/Cal_HOG_block.c -o CMakeFiles/hog.dir/png/Cal_HOG_block.c.s
+	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /media/h3/Study/Git/Human-detection-by-HOG/c/png/Cal_HOG_block.c -o CMakeFiles/hog.dir/png/Cal_HOG_block.c.s
 
 CMakeFiles/hog.dir/png/Cal_HOG_block.c.o.requires:
 
@@ -110,16 +110,16 @@ CMakeFiles/hog.dir/png/Cal_HOG_block.c.o.provides.build: CMakeFiles/hog.dir/png/
 
 CMakeFiles/hog.dir/png/helper.c.o: CMakeFiles/hog.dir/flags.make
 CMakeFiles/hog.dir/png/helper.c.o: ../png/helper.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/h3/Git/Human-detection-by-HOG/c/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/hog.dir/png/helper.c.o"
-	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/hog.dir/png/helper.c.o   -c /home/h3/Git/Human-detection-by-HOG/c/png/helper.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/media/h3/Study/Git/Human-detection-by-HOG/c/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/hog.dir/png/helper.c.o"
+	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/hog.dir/png/helper.c.o   -c /media/h3/Study/Git/Human-detection-by-HOG/c/png/helper.c
 
 CMakeFiles/hog.dir/png/helper.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/hog.dir/png/helper.c.i"
-	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/h3/Git/Human-detection-by-HOG/c/png/helper.c > CMakeFiles/hog.dir/png/helper.c.i
+	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /media/h3/Study/Git/Human-detection-by-HOG/c/png/helper.c > CMakeFiles/hog.dir/png/helper.c.i
 
 CMakeFiles/hog.dir/png/helper.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/hog.dir/png/helper.c.s"
-	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/h3/Git/Human-detection-by-HOG/c/png/helper.c -o CMakeFiles/hog.dir/png/helper.c.s
+	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /media/h3/Study/Git/Human-detection-by-HOG/c/png/helper.c -o CMakeFiles/hog.dir/png/helper.c.s
 
 CMakeFiles/hog.dir/png/helper.c.o.requires:
 
@@ -134,16 +134,16 @@ CMakeFiles/hog.dir/png/helper.c.o.provides.build: CMakeFiles/hog.dir/png/helper.
 
 CMakeFiles/hog.dir/png/human_detection.c.o: CMakeFiles/hog.dir/flags.make
 CMakeFiles/hog.dir/png/human_detection.c.o: ../png/human_detection.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/h3/Git/Human-detection-by-HOG/c/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/hog.dir/png/human_detection.c.o"
-	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/hog.dir/png/human_detection.c.o   -c /home/h3/Git/Human-detection-by-HOG/c/png/human_detection.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/media/h3/Study/Git/Human-detection-by-HOG/c/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/hog.dir/png/human_detection.c.o"
+	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/hog.dir/png/human_detection.c.o   -c /media/h3/Study/Git/Human-detection-by-HOG/c/png/human_detection.c
 
 CMakeFiles/hog.dir/png/human_detection.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/hog.dir/png/human_detection.c.i"
-	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/h3/Git/Human-detection-by-HOG/c/png/human_detection.c > CMakeFiles/hog.dir/png/human_detection.c.i
+	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /media/h3/Study/Git/Human-detection-by-HOG/c/png/human_detection.c > CMakeFiles/hog.dir/png/human_detection.c.i
 
 CMakeFiles/hog.dir/png/human_detection.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/hog.dir/png/human_detection.c.s"
-	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/h3/Git/Human-detection-by-HOG/c/png/human_detection.c -o CMakeFiles/hog.dir/png/human_detection.c.s
+	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /media/h3/Study/Git/Human-detection-by-HOG/c/png/human_detection.c -o CMakeFiles/hog.dir/png/human_detection.c.s
 
 CMakeFiles/hog.dir/png/human_detection.c.o.requires:
 
@@ -158,16 +158,16 @@ CMakeFiles/hog.dir/png/human_detection.c.o.provides.build: CMakeFiles/hog.dir/pn
 
 CMakeFiles/hog.dir/png/lodepng.c.o: CMakeFiles/hog.dir/flags.make
 CMakeFiles/hog.dir/png/lodepng.c.o: ../png/lodepng.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/h3/Git/Human-detection-by-HOG/c/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/hog.dir/png/lodepng.c.o"
-	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/hog.dir/png/lodepng.c.o   -c /home/h3/Git/Human-detection-by-HOG/c/png/lodepng.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/media/h3/Study/Git/Human-detection-by-HOG/c/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/hog.dir/png/lodepng.c.o"
+	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/hog.dir/png/lodepng.c.o   -c /media/h3/Study/Git/Human-detection-by-HOG/c/png/lodepng.c
 
 CMakeFiles/hog.dir/png/lodepng.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/hog.dir/png/lodepng.c.i"
-	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/h3/Git/Human-detection-by-HOG/c/png/lodepng.c > CMakeFiles/hog.dir/png/lodepng.c.i
+	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /media/h3/Study/Git/Human-detection-by-HOG/c/png/lodepng.c > CMakeFiles/hog.dir/png/lodepng.c.i
 
 CMakeFiles/hog.dir/png/lodepng.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/hog.dir/png/lodepng.c.s"
-	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/h3/Git/Human-detection-by-HOG/c/png/lodepng.c -o CMakeFiles/hog.dir/png/lodepng.c.s
+	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /media/h3/Study/Git/Human-detection-by-HOG/c/png/lodepng.c -o CMakeFiles/hog.dir/png/lodepng.c.s
 
 CMakeFiles/hog.dir/png/lodepng.c.o.requires:
 
@@ -182,16 +182,16 @@ CMakeFiles/hog.dir/png/lodepng.c.o.provides.build: CMakeFiles/hog.dir/png/lodepn
 
 CMakeFiles/hog.dir/png/rwpng.c.o: CMakeFiles/hog.dir/flags.make
 CMakeFiles/hog.dir/png/rwpng.c.o: ../png/rwpng.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/h3/Git/Human-detection-by-HOG/c/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/hog.dir/png/rwpng.c.o"
-	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/hog.dir/png/rwpng.c.o   -c /home/h3/Git/Human-detection-by-HOG/c/png/rwpng.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/media/h3/Study/Git/Human-detection-by-HOG/c/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/hog.dir/png/rwpng.c.o"
+	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/hog.dir/png/rwpng.c.o   -c /media/h3/Study/Git/Human-detection-by-HOG/c/png/rwpng.c
 
 CMakeFiles/hog.dir/png/rwpng.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/hog.dir/png/rwpng.c.i"
-	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/h3/Git/Human-detection-by-HOG/c/png/rwpng.c > CMakeFiles/hog.dir/png/rwpng.c.i
+	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /media/h3/Study/Git/Human-detection-by-HOG/c/png/rwpng.c > CMakeFiles/hog.dir/png/rwpng.c.i
 
 CMakeFiles/hog.dir/png/rwpng.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/hog.dir/png/rwpng.c.s"
-	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/h3/Git/Human-detection-by-HOG/c/png/rwpng.c -o CMakeFiles/hog.dir/png/rwpng.c.s
+	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /media/h3/Study/Git/Human-detection-by-HOG/c/png/rwpng.c -o CMakeFiles/hog.dir/png/rwpng.c.s
 
 CMakeFiles/hog.dir/png/rwpng.c.o.requires:
 
@@ -204,6 +204,30 @@ CMakeFiles/hog.dir/png/rwpng.c.o.provides: CMakeFiles/hog.dir/png/rwpng.c.o.requ
 CMakeFiles/hog.dir/png/rwpng.c.o.provides.build: CMakeFiles/hog.dir/png/rwpng.c.o
 
 
+CMakeFiles/hog.dir/png/SVMclassification.c.o: CMakeFiles/hog.dir/flags.make
+CMakeFiles/hog.dir/png/SVMclassification.c.o: ../png/SVMclassification.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/media/h3/Study/Git/Human-detection-by-HOG/c/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/hog.dir/png/SVMclassification.c.o"
+	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/hog.dir/png/SVMclassification.c.o   -c /media/h3/Study/Git/Human-detection-by-HOG/c/png/SVMclassification.c
+
+CMakeFiles/hog.dir/png/SVMclassification.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/hog.dir/png/SVMclassification.c.i"
+	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /media/h3/Study/Git/Human-detection-by-HOG/c/png/SVMclassification.c > CMakeFiles/hog.dir/png/SVMclassification.c.i
+
+CMakeFiles/hog.dir/png/SVMclassification.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/hog.dir/png/SVMclassification.c.s"
+	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /media/h3/Study/Git/Human-detection-by-HOG/c/png/SVMclassification.c -o CMakeFiles/hog.dir/png/SVMclassification.c.s
+
+CMakeFiles/hog.dir/png/SVMclassification.c.o.requires:
+
+.PHONY : CMakeFiles/hog.dir/png/SVMclassification.c.o.requires
+
+CMakeFiles/hog.dir/png/SVMclassification.c.o.provides: CMakeFiles/hog.dir/png/SVMclassification.c.o.requires
+	$(MAKE) -f CMakeFiles/hog.dir/build.make CMakeFiles/hog.dir/png/SVMclassification.c.o.provides.build
+.PHONY : CMakeFiles/hog.dir/png/SVMclassification.c.o.provides
+
+CMakeFiles/hog.dir/png/SVMclassification.c.o.provides.build: CMakeFiles/hog.dir/png/SVMclassification.c.o
+
+
 # Object files for target hog
 hog_OBJECTS = \
 "CMakeFiles/hog.dir/lsi_2017.c.o" \
@@ -211,7 +235,8 @@ hog_OBJECTS = \
 "CMakeFiles/hog.dir/png/helper.c.o" \
 "CMakeFiles/hog.dir/png/human_detection.c.o" \
 "CMakeFiles/hog.dir/png/lodepng.c.o" \
-"CMakeFiles/hog.dir/png/rwpng.c.o"
+"CMakeFiles/hog.dir/png/rwpng.c.o" \
+"CMakeFiles/hog.dir/png/SVMclassification.c.o"
 
 # External object files for target hog
 hog_EXTERNAL_OBJECTS =
@@ -222,9 +247,10 @@ hog: CMakeFiles/hog.dir/png/helper.c.o
 hog: CMakeFiles/hog.dir/png/human_detection.c.o
 hog: CMakeFiles/hog.dir/png/lodepng.c.o
 hog: CMakeFiles/hog.dir/png/rwpng.c.o
+hog: CMakeFiles/hog.dir/png/SVMclassification.c.o
 hog: CMakeFiles/hog.dir/build.make
 hog: CMakeFiles/hog.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/h3/Git/Human-detection-by-HOG/c/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking C executable hog"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/media/h3/Study/Git/Human-detection-by-HOG/c/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking C executable hog"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/hog.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -238,6 +264,7 @@ CMakeFiles/hog.dir/requires: CMakeFiles/hog.dir/png/helper.c.o.requires
 CMakeFiles/hog.dir/requires: CMakeFiles/hog.dir/png/human_detection.c.o.requires
 CMakeFiles/hog.dir/requires: CMakeFiles/hog.dir/png/lodepng.c.o.requires
 CMakeFiles/hog.dir/requires: CMakeFiles/hog.dir/png/rwpng.c.o.requires
+CMakeFiles/hog.dir/requires: CMakeFiles/hog.dir/png/SVMclassification.c.o.requires
 
 .PHONY : CMakeFiles/hog.dir/requires
 
@@ -246,6 +273,6 @@ CMakeFiles/hog.dir/clean:
 .PHONY : CMakeFiles/hog.dir/clean
 
 CMakeFiles/hog.dir/depend:
-	cd /home/h3/Git/Human-detection-by-HOG/c/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/h3/Git/Human-detection-by-HOG/c /home/h3/Git/Human-detection-by-HOG/c /home/h3/Git/Human-detection-by-HOG/c/build /home/h3/Git/Human-detection-by-HOG/c/build /home/h3/Git/Human-detection-by-HOG/c/build/CMakeFiles/hog.dir/DependInfo.cmake --color=$(COLOR)
+	cd /media/h3/Study/Git/Human-detection-by-HOG/c/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /media/h3/Study/Git/Human-detection-by-HOG/c /media/h3/Study/Git/Human-detection-by-HOG/c /media/h3/Study/Git/Human-detection-by-HOG/c/build /media/h3/Study/Git/Human-detection-by-HOG/c/build /media/h3/Study/Git/Human-detection-by-HOG/c/build/CMakeFiles/hog.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/hog.dir/depend
 

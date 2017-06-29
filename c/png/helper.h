@@ -3,7 +3,7 @@
 // File name      : helper.h
 // Created date   : Wed 07 Dec 2016
 // Author         : Huy Hung Ho
-// Last modified  : implementation
+// Last modified  : Wed 12 Apr 2017
 // Desc           : Declare the auxiliary functions
 ******************************************************************************/
 
@@ -13,26 +13,29 @@
 #include "mytypes.h"
 #include <stdlib.h>
 
-#define PI				3.1416
+#define PI				    3.1416
 #define PI_DEGREE			180
 #define MAX_DETECTS			100
 #define BIAS				-3.35
-#define TINY_INT			0.00001
+#define TINY_FLOAT			0.00001
 #define window_h			128
 #define window_w			64
 #define numBins				9
-#define numBins_block			36
+#define numBins_block		36
 #define cellSize			8
-#define cellSize_extend			10
+#define cellSize_extend		10
 #define sizeBlock			16
-#define sizeBlock_extend		18
+#define sizeBlock_extend	18
 #define SVMnumber			3780
-#define	extend_w			66
-#define extend_h			130
-#define length_extend			8580	// extend_w*extend_h
-#define length_window			8192	// window_w*window_h
-#define length_cell			64	// cellSize*cellSize
-#define	length_cell_extend		100
+#define	extend_w            66
+#define extend_h            130
+#define length_extend		8580	// extend_w*extend_h
+#define length_window		8192	// window_w*window_h
+#define length_cell         64	    // cellSize*cellSize
+#define	length_cell_extend	100
+
+const float LUT_magnit[];
+const float LUT_angle[];
 
 /*
  * Struct store position

@@ -18,7 +18,7 @@
  * - nDetects           is number of position
  * - save_detects       is the info of position
  */
-void Human_detection(struct raw_img *img,uint8 *nDetects,struct Object *save_detects);
+void scan_windows(struct raw_img *img,uint8 *nDetects,struct Object *save_detects);
 
 /*
  * Calculate HOG feature of extend window image

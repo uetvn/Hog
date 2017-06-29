@@ -51,10 +51,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/h3/Git/Human-detection-by-HOG/c
+CMAKE_SOURCE_DIR = /media/h3/Study/Git/Human-detection-by-HOG/c
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/h3/Git/Human-detection-by-HOG/c/build
+CMAKE_BINARY_DIR = /media/h3/Study/Git/Human-detection-by-HOG/c/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -83,9 +83,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/h3/Git/Human-detection-by-HOG/c/build/CMakeFiles /home/h3/Git/Human-detection-by-HOG/c/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /media/h3/Study/Git/Human-detection-by-HOG/c/build/CMakeFiles /media/h3/Study/Git/Human-detection-by-HOG/c/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/h3/Git/Human-detection-by-HOG/c/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /media/h3/Study/Git/Human-detection-by-HOG/c/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -179,6 +179,33 @@ png/Cal_HOG_block.s: png/Cal_HOG_block.c.s
 png/Cal_HOG_block.c.s:
 	$(MAKE) -f CMakeFiles/hog.dir/build.make CMakeFiles/hog.dir/png/Cal_HOG_block.c.s
 .PHONY : png/Cal_HOG_block.c.s
+
+png/SVMclassification.o: png/SVMclassification.c.o
+
+.PHONY : png/SVMclassification.o
+
+# target to build an object file
+png/SVMclassification.c.o:
+	$(MAKE) -f CMakeFiles/hog.dir/build.make CMakeFiles/hog.dir/png/SVMclassification.c.o
+.PHONY : png/SVMclassification.c.o
+
+png/SVMclassification.i: png/SVMclassification.c.i
+
+.PHONY : png/SVMclassification.i
+
+# target to preprocess a source file
+png/SVMclassification.c.i:
+	$(MAKE) -f CMakeFiles/hog.dir/build.make CMakeFiles/hog.dir/png/SVMclassification.c.i
+.PHONY : png/SVMclassification.c.i
+
+png/SVMclassification.s: png/SVMclassification.c.s
+
+.PHONY : png/SVMclassification.s
+
+# target to generate assembly for a file
+png/SVMclassification.c.s:
+	$(MAKE) -f CMakeFiles/hog.dir/build.make CMakeFiles/hog.dir/png/SVMclassification.c.s
+.PHONY : png/SVMclassification.c.s
 
 png/helper.o: png/helper.c.o
 
@@ -303,6 +330,9 @@ help:
 	@echo "... png/Cal_HOG_block.o"
 	@echo "... png/Cal_HOG_block.i"
 	@echo "... png/Cal_HOG_block.s"
+	@echo "... png/SVMclassification.o"
+	@echo "... png/SVMclassification.i"
+	@echo "... png/SVMclassification.s"
 	@echo "... png/helper.o"
 	@echo "... png/helper.i"
 	@echo "... png/helper.s"

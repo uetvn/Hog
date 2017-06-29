@@ -5,6 +5,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/hog.dir/png/human_detection.c.o"
   "CMakeFiles/hog.dir/png/lodepng.c.o"
   "CMakeFiles/hog.dir/png/rwpng.c.o"
+  "CMakeFiles/hog.dir/png/SVMclassification.c.o"
   "hog.pdb"
   "hog"
 )

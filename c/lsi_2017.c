@@ -43,7 +43,7 @@ int main(int argc, char *argv[])
         uint8           *nDetects        = calloc(sizeof(uint8), 1);
 
 	/* Main processing */
-	Human_detection(&img, nDetects, save_detects);
+	scan_windows(&img, nDetects, save_detects);
 
 	/* Draw around position */
 	if (*nDetects != 0) {

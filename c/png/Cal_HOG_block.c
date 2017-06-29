@@ -20,7 +20,6 @@
 float *Cal_HOG_cell(uint8 *ex_cell)
 {
 	float	*result;
-	//TEST_DriverIntMatrix(ex_cell, 100, 10, "Ex_cell_8x8.txt");
 
 	int	*dx;
 	dx = Cal_dx(ex_cell);
@@ -33,8 +32,12 @@ float *Cal_HOG_cell(uint8 *ex_cell)
 
 	float	*angle;
 	angle = Cal_angle(dx, dy);
-	//TEST_DriverFloatMatrix(angle, 64, 8, "Angle_cell_8x8.txt");
-
+/*
+	TEST_DriverIntMatrix(dx, 64, 8, "dx_cell_8x8.txt");
+	TEST_DriverIntMatrix(dy, 64, 8, "dy_cell_8x8.txt");
+	TEST_DriverFloatMatrix(angle, 64, 8, "angle_cell_8x8.txt");
+    getchar();
+*/
 	result = HOG(magnit, angle);
 
 	free(dx);
@@ -101,59 +104,24 @@ int *Cal_dy(uint8 *ex_cell)
 float *Cal_magnit(int *dx, int *dy)
 {
 	float	*result	= malloc(sizeof(float) * length_cell);
-	uint8 	i;
+	uint8 	i, j;
 	uint8 	p;
 	for (i = 0; i < cellSize; i++)
 	{
 		p = i;
-		result[p] = dx[p] * dx[p] + dy[p] * dy[p];
-		result[p] = sqrt(result[p]);
-
-		p += cellSize;
-		result[p] = dx[p] * dx[p] + dy[p] * dy[p];
-		result[p] = sqrt(result[p]);
-
-		p += cellSize;
-		result[p] = dx[p] * dx[p] + dy[p] * dy[p];
-		result[p] = sqrt(result[p]);
-
-		p += cellSize;
-		result[p] = dx[p] * dx[p] + dy[p] * dy[p];
-		result[p] = sqrt(result[p]);
-
-		p += cellSize;
-		result[p] = dx[p] * dx[p] + dy[p] * dy[p];
-		result[p] = sqrt(result[p]);
-
-		p += cellSize;
-		result[p] = dx[p] * dx[p] + dy[p] * dy[p];
-		result[p] = sqrt(result[p]);
-
-		p += cellSize;
-		result[p] = dx[p] * dx[p] + dy[p] * dy[p];
-		result[p] = sqrt(result[p]);
-
-		p += cellSize;
-		result[p] = dx[p] * dx[p] + dy[p] * dy[p];
-		result[p] = sqrt(result[p]);
-/* Using LUT
-		float	*LUT	= readFileFloat("LUT.txt", 16);
-		uint32 dx2;
-		uint32 dy2;
-
-		p = j*cellSize + i;
-		if (dx[p] < 16)
-			dx2 = LUT[dx[i]];
-		else
-			dx2 = dx[p] * dx[p];
-
-
-		if (dy[p] < 16)
-			dy2 = LUT[dy[i]];
-		else
-			dy2 = dy[p] * dy[p];
-*/
-
+        for (j = 0; j < cellSize; j++) {
+            if (dx[p] == 0)
+                result[p] = dy[p];
+            else if (dy[p] == 0)
+                result[p] = dx[p];
+            else if (dx[p] < 17 && dy[p] < 17)
+                result[p] = LUT_magnit[(dx[p] - 1) * 16 + dy[p] - 1];
+            else {
+                result[p] = dx[p] * dx[p] + dy[p] * dy[p];
+                result[p] = sqrt(result[p]);
+            }
+            p += cellSize;
+        }
 	}
 	return result;
 }
@@ -166,48 +134,28 @@ float *Cal_magnit(int *dx, int *dy)
 float *Cal_angle(int *dx, int *dy)
 {
 	float	*result	= malloc(sizeof(float) * length_cell);
-	uint8 	i;
+	uint8 	i, j;
 	uint8 	p;
 	for (i = 0; i < cellSize; i++)
 	{
 		p = i;
-		result[p] = (float) dy[p] / (dx[p] + TINY_INT);
-		result[p] = PI_DEGREE * atan(result[p]) / PI;
-
-		p += cellSize;
-		result[p] = (float) dy[p] / (dx[p] + TINY_INT);
-		result[p] = PI_DEGREE * atan(result[p]) / PI;
-
-		p += cellSize;
-		result[p] = (float) dy[p] / (dx[p] + TINY_INT);
-		result[p] = PI_DEGREE * atan(result[p]) / PI;
-
-		p += cellSize;
-		result[p] = (float) dy[p] / (dx[p] + TINY_INT);
-		result[p] = PI_DEGREE * atan(result[p]) / PI;
-
-		p += cellSize;
-		result[p] = (float) dy[p] / (dx[p] + TINY_INT);
-		result[p] = PI_DEGREE * atan(result[p]) / PI;
-
-		p += cellSize;
-		result[p] = (float) dy[p] / (dx[p] + TINY_INT);
-		result[p] = PI_DEGREE * atan(result[p]) / PI;
-
-		p += cellSize;
-		result[p] = (float) dy[p] / (dx[p] + TINY_INT);
-		result[p] = PI_DEGREE * atan(result[p]) / PI;
-
-		p += cellSize;
-		result[p] = (float) dy[p] / (dx[p] + TINY_INT);
-		result[p] = PI_DEGREE * atan(result[p]) / PI;
+        for (j = 0; j < cellSize; j++) {
+            if (dy[p] == 0)
+                result[p] = 0;
+            else if (dx[p] == 0)
+                result[p] = PI_DEGREE/2;
+            else if (dx[p] < 17 && dy[p] < 17)
+                result[p] = LUT_angle[(dy[p] - 1) * 16 + dx[p] - 1];
+            else {
+                result[p] = (float) dy[p] / (dx[p] + TINY_FLOAT);
+                result[p] = PI_DEGREE * atan(result[p]) / PI;
+            }
+            if (result[i] < 0)
+                result[i] += PI_DEGREE;
+            p += cellSize;
+        }
 	}
-
-	for (i = 0; i < length_cell; i++)
-		if (result[i] < 0)
-			result[i] += PI_DEGREE;
-
-        return result;
+    return result;
 }
 
 
