@@ -1,9 +1,0 @@
-/media/h3/Study/Git/Human-detection-by-HOG/vhdl/bin/sig_var.vhd {1 {vcom -work work -2002 -explicit -stats=none /media/h3/Study/Git/Human-detection-by-HOG/vhdl/bin/sig_var.vhd
-Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Compiling entity sig_var
--- Compiling architecture behv of sig_var
-
-} {} {}}
