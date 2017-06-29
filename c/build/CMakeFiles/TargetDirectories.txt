@@ -1,3 +1,0 @@
-/media/h3/Study/Git/Human-detection-by-HOG/c/build/CMakeFiles/edit_cache.dir
-/media/h3/Study/Git/Human-detection-by-HOG/c/build/CMakeFiles/rebuild_cache.dir
-/media/h3/Study/Git/Human-detection-by-HOG/c/build/CMakeFiles/hog.dir
