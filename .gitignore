@@ -1,4 +1,6 @@
 *.[oa]
-*~
-*swo
-*swp
+*~*
+*.swo
+*.swp
+*.obj
+*.out

@@ -11,8 +11,8 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
 entity bit_buf is
-	port (
-		clk, clr: in std_logic;
+    port (
+	    clk, clr: in std_logic;
 		bit_in : in std_logic;
 		bit_out: out std_logic
 	);

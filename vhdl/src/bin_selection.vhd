@@ -9,19 +9,19 @@
 
 library ieee;
 use ieee.std_logic_1164.all;
-use ieee.std_logic_arith.all;
+use ieee.numeric_std.all;
 use ieee.std_logic_unsigned.all;
 
 entity bin_sel is
-	generic (pixel_width : integer := 8);
-	port (
-		clk:	IN std_logic;
-		Gx:     IN std_logic_vector (pixel_width - 1 downto 0);
-        Gy:	    IN std_logic_vector (pixel_width - 1 downto 0);
-		bin:	    OUT std_logic_vector (3 downto 0);
-        magnit1:    OUT std_logic_vector (15 downto 0);
-        magnit2:    OUT std_logic_vector (15 downto 0)
-	);
+    generic (pixel_width : integer := 8);
+    port (
+             clk:	IN std_logic;
+             Gx:     IN std_logic_vector (pixel_width - 1 downto 0);
+             Gy:	    IN std_logic_vector (pixel_width - 1 downto 0);
+             bin:	    OUT std_logic_vector (3 downto 0);
+             magnit1:    OUT std_logic_vector (15 downto 0);
+             magnit2:    OUT std_logic_vector (15 downto 0)
+         );
 end entity;
 
 architecture beh_bin_sel of bin_sel is
@@ -63,7 +63,8 @@ begin
             sign_x <= Gx (pixel_width-1);
             sign_y <= Gy (pixel_width-1);
 
-            square_Gxy_shift <= ('0' & square_Gx + '0' & square_Gx) & (16 downto 0 => '0');
+            square_Gxy_shift <= std_logic_vector(unsigned('0' & square_Gx) +
+                                unsigned('0' & square_Gx)) & (16 downto 0 => '0');
 
             if ((abs_Gy = zeros) and (abs_Gx /= zeros) and (sign_x = '0')) then
                 bin_tmp <= "0001";   -- 1
@@ -106,13 +107,13 @@ begin
                 end if;
             end if;
 
-            --case bin_tmp is
-            --    when "0001"          => rate <= Gy_shifted;
-            --    when "0010" | "1001" => rate <= Gy_shifted - bin1_Gx;
-            --    when "0011" | "1000" => rate <= Gy_shifted - bin2_Gx;
-            --    when "0100" | "0111" => rate <= Gy_shifted - bin3_Gx;
-            --    when others          => rate <= Gy_shifted - bin4_Gx;
-            --end case;
+        --case bin_tmp is
+        --    when "0001"          => rate <= Gy_shifted;
+        --    when "0010" | "1001" => rate <= Gy_shifted - bin1_Gx;
+        --    when "0011" | "1000" => rate <= Gy_shifted - bin2_Gx;
+        --    when "0100" | "0111" => rate <= Gy_shifted - bin3_Gx;
+        --    when others          => rate <= Gy_shifted - bin4_Gx;
+        --end case;
         end if;
     end process;
 
