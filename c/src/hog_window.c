@@ -16,11 +16,11 @@ unsigned hog_window(uint32 *object, uint8 *src, uint32 w, uint32 h)
     init_hog_window(&hog);
     object[0] = 0; // first element stores the number of detected
 
-    uint32  head, i;
-    uint32  tail = w * (h - window_h);
+    int32  head, i;
+    int32  tail = w * (h - window_h);
     uint8  *is_detected = malloc(sizeof(uint8));
 
-    for (head = 0; head <= tail; head += 8 * w) {
+    for (head = 0; head <= tail; head += w << 3) {
         hog_prime_window(hog, head, src, w, h);
 
         svm_window(is_detected, hog);
@@ -47,7 +47,7 @@ unsigned hog_prime_window(struct HOG_window *hog_column, uint32 head, uint8 *src
     uint8   i;
     for (i = 0; i < columns; i++) {
         hog_prime_row(hog_column[i].hog_row, head, src, w, h);
-        head    += 8 * w;
+        head    += w << 3;
     }
     return 0;
 }
@@ -57,23 +57,23 @@ unsigned hog_next_window(struct HOG_window *hog_column, uint32 head, uint8 *src,
     uint8   i;
     for (i = 0; i < columns; i++) {
         hog_next_row(hog_column[i].hog_row, head, src, w, h);
-        head    += 8 * w;
+        head    += w << 3;
     }
     return 0;
 }
 
 unsigned hog_prime_row(struct HOG_row *hog_row, uint32 head, uint8 *src, uint32 w, uint32 h)
 {
-    float   *hog_8x8_1    = malloc(sizeof(float) * 9);
-    float   *hog_8x8_2    = malloc(sizeof(float) * 9);
-    float   *hog_8x8_3    = malloc(sizeof(float) * 9);
-    float   *hog_8x8_4    = malloc(sizeof(float) * 9);
+    int32   *hog_8x8_1    = malloc(sizeof(int32) * 9);
+    int32   *hog_8x8_2    = malloc(sizeof(int32) * 9);
+    int32   *hog_8x8_3    = malloc(sizeof(int32) * 9);
+    int32   *hog_8x8_4    = malloc(sizeof(int32) * 9);
 
     /* Precalcultion */
     hog_block_8x8(hog_8x8_1,  head,         src, w, h);
     hog_block_8x8(hog_8x8_2,  head + 8 * w, src, w, h);
 
-    uint32  i;
+    int32  i;
     for (i = 0; i < rows; i++) {
         head    += 8;
         hog_block_8x8(hog_8x8_3,  head, src, w, h);
@@ -112,10 +112,10 @@ unsigned hog_next_row(struct HOG_row *hog_row, uint32 head, uint8 *src, uint32 w
 
 unsigned hog_block_16x16(float *result, uint32 head, uint8 *src, uint32 w, uint32 h)
 {
-    float   *hog_8x8_1  = malloc(sizeof(float) * 9);
-    float   *hog_8x8_2  = malloc(sizeof(float) * 9);
-    float   *hog_8x8_3  = malloc(sizeof(float) * 9);
-    float   *hog_8x8_4  = malloc(sizeof(float) * 9);
+    int32   *hog_8x8_1  = malloc(sizeof(int32) * 9);
+    int32   *hog_8x8_2  = malloc(sizeof(int32) * 9);
+    int32   *hog_8x8_3  = malloc(sizeof(int32) * 9);
+    int32   *hog_8x8_4  = malloc(sizeof(int32) * 9);
 
     hog_block_8x8(hog_8x8_1, head,             src, w, h);
     hog_block_8x8(hog_8x8_2, head + 8 * w,     src, w, h);
@@ -127,35 +127,35 @@ unsigned hog_block_16x16(float *result, uint32 head, uint8 *src, uint32 w, uint3
     return 0;
 }
 
-unsigned norm_block_16x16(float *result, float *block1, float *block2, float *block3, float *block4)
+unsigned norm_block_16x16(float *result, int32 *block1, int32 *block2, int32 *block3, int32 *block4)
 {
-    float   sum = 0;
+    float   sum = 0.0;
     uint8   i;
     for (i = 0; i < 36; i++) {
         if (i < 9)
-            sum += block1[i] * block1[i];
+            sum += (block1[i] * block1[i]);
         else if (i < 18)
-            sum += block2[i - 9] * block2[i - 9];
+            sum += (block2[i - 9] * block2[i - 9]);
         else if (i < 27)
-            sum += block3[i - 18] * block3[i - 18];
+            sum += (block3[i - 18] * block3[i - 18]);
         else
-            sum += block4[i - 27] * block4[i - 27];
+            sum += (block4[i - 27] * block4[i - 27]);
     }
-
+    sum = sqrt(sum);
     for (i = 0; i < 36; i++) {
         if (i < 9)
-            result[i] = block1[i] / (sqrt(sum) + 0.001);
+            result[i] = block1[i] / (sum + 0.001);
         else if (i < 18)
-            result[i] = block2[i - 9] / (sqrt(sum) + 0.001);
+            result[i] = block2[i - 9] / (sum + 0.001);
         else if (i < 27)
-            result[i] = block3[i - 18] / (sqrt(sum) + 0.001);
+            result[i] = block3[i - 18] / (sum + 0.001);
         else
-            result[i] = block4[i - 27] / (sqrt(sum) + 0.001);
+            result[i] = block4[i - 27] / (sum + 0.001);
     }
     return 0;
 }
 
-unsigned hog_block_8x8(float *hog_9bin, uint32 head, uint8 *src, uint32 w, uint32 h)
+unsigned hog_block_8x8(int32 *hist_9bin, uint32 head, uint8 *src, uint32 w, uint32 h)
 {
     /* Calculate derivative with respect to x */
     int8    *dx    = malloc(sizeof(int8) * 64);
@@ -165,16 +165,8 @@ unsigned hog_block_8x8(float *hog_9bin, uint32 head, uint8 *src, uint32 w, uint3
     int8    *dy    = malloc(sizeof(int8) * 64);
     dy_block_8x8(dy, head, src, w, h);
 
-    /* Calculate magnitude */
-    float   *magnit = malloc(sizeof(float) * 64);
-    magnit_block(magnit, dx, dy, 8, 8);
-
-    /* Calculate angle */
-    float   *angle = malloc(sizeof(float) * 64);
-    angle_block(angle, dx, dy, 8, 8);
-
     /* Vote vector gradient to 9 bin hog feature */
-	calculate_hog_9bin(hog_9bin, magnit, angle);
+    calculate_hist_9bin(hist_9bin, dx, dy);
 
 	return 0;
 }
@@ -211,106 +203,99 @@ unsigned dy_block_8x8(int8 *result, uint32 head, uint8 *src, uint32 w, uint32 h)
     return 0;
 }
 
-unsigned magnit_block(float *result, int8 *dx, int8 *dy, uint32 w, uint32 h)
+unsigned calculate_hist_9bin(int32 *hist_9bin, int8 *dx, int8 *dy)
 {
-    uint32  i;
-    for (i = 0; i < w * h; i++)
-        result[i] = magnit_pixel(dx[i], dy[i]);
-}
-
-unsigned angle_block(float *result, int8 *dx, int8 *dy, uint32 w, uint32 h)
-{
-    uint32  i;
-    for (i = 0; i < w * h; i++)
-        result[i] = angle_pixel(dx[i], dy[i]);
-}
-
-unsigned calculate_hog_9bin(float *hog_9bin, float *magnit, float *angle)
-{
-    uint8   numBins     = 9;
-    float   binSize     = PI / numBins;
-
-    float   d10         = PI / 180 * 10;
-    float   d30         = d10 + binSize;
-    float   d50         = d30 + binSize;
-    float   d70         = d50 + binSize;
-    float   d90         = d70 + binSize;
-    float   d110        = d90 + binSize;
-    float   d130        = d110 + binSize;
-    float   d150        = d130 + binSize;
-    float   d170        = d150 + binSize;
-
-
-    uint8   i;
+    uint8 i;
     for (i = 0; i < 9; i++)
-        hog_9bin[i] = 0.0;
+        hist_9bin[i] = 0;
 
-    float   part_left, part_right;
+    int8 *bin_select  = malloc(sizeof(uint8));
+    int32 *magnit1 = malloc(sizeof(int32));
+    int32 *magnit2 = malloc(sizeof(int32));
+    
     for (i = 0; i < 64; i++) {
-        if (angle[i] < 0)
-            angle[i] = angle[i] + PI;
+        hist_pixel(dx[i], dy[i], bin_select, magnit1, magnit2);
+        hist_9bin[*bin_select]     += *magnit1;
+        hist_9bin[*bin_select + 1] += *magnit2;
+    }
+}
 
-        if (angle[i] >= 0 && angle[i] < d10) {
-            part_right  = (angle[i] + d10) / binSize  * magnit[i];
-            part_left   = magnit[i] - part_right;
-            hog_9bin[8] += part_left;
-            hog_9bin[0] += part_right;
+unsigned hist_pixel(int8 dx, int8 dy, int8 *bin_select, int32 *magnit1, int32 *magnit2)
+{
+    int32 m1, m2;
+    int8 bin;
+    int8 d20         = 23;
+    int8 d40         = 53;
+    int8 d60         = 110;
+    int8 d80         = 363;
+
+    int32 bin1_dx;
+    int32 bin2_dx;
+    int32 bin3_dx;
+    int32 bin4_dx;
+
+    bin1_dx = d20 * abs(dx);
+    bin2_dx = d40 * abs(dx);
+    bin3_dx = d60 * abs(dx);
+    bin4_dx = d80 * abs(dx);
+    int32 dy_shifted = dy << 6; 
+
+    if (dy == 0 && dx > 0) {
+        bin = 0;
+        m1 = dx << 10;
+        m2 = 0;
+    }
+    else if (dy == 0 && dx < 0) {
+        bin = 0;
+        m1 = -dx << 10;
+        m2 = 0;
+    }
+    else if (dy != 0 && dx == 0) {
+        bin = 4;
+        m1 = abs(dy) * 1040;
+        m2 = m1;
+    }
+    else if (dy == 0 && dx == 0) {
+        bin = 0;
+        m1 = 0;
+        m2 = 0;
+    }
+    else {
+        int is_same_sign = dx * dy > 0;
+        dx = abs(dx);
+        dy = abs(dy);
+        if (dy_shifted < bin1_dx) {
+                bin = 0;
+                m1 = 1024 * dx - 2813 * dy;
+                m2 = 2994 * dy - 0 * dx;
         }
-        else if (angle[i] >= d10 && angle[i] < d30) {
-            part_right  = (angle[i] - d10) / binSize  * magnit[i];
-            part_left   = magnit[i] - part_right;
-            hog_9bin[0] += part_left;
-            hog_9bin[1] += part_right;
+        else if (dy_shifted >= bin1_dx && dy_shifted < bin2_dx) {
+                bin = 1;
+                m1 = 1924 * dx - 2294 * dy;
+                m2 = 2813 * dy - 1024 * dx;
         }
-        else if (angle[i] >= d30 && angle[i] < d50) {
-            part_right  = (angle[i] - d30) / binSize  * magnit[i];
-            part_left   = magnit[i] - part_right;
-            hog_9bin[1] += part_left;
-            hog_9bin[2] += part_right;
+        else if (dy_shifted >= bin2_dx && dy_shifted < bin3_dx) {
+                bin = 2;
+                m1 = 2593 * dx - 1497 * dy;
+                m2 = 2294 * dy - 1924 * dx;
         }
-        else if (angle[i] >= d50 && angle[i] < d70) {
-            part_right  = (angle[i] - d50) / binSize  * magnit[i];
-            part_left   = magnit[i] - part_right;
-            hog_9bin[2] += part_left;
-            hog_9bin[3] += part_right;
-        }
-        else if (angle[i] >= d70 && angle[i] < d90) {
-            part_right  = (angle[i] - d70) / binSize  * magnit[i];
-            part_left   = magnit[i] - part_right;
-            hog_9bin[3] += part_left;
-            hog_9bin[4] += part_right;
-        }
-        else if (angle[i] >= d90 && angle[i] < d110) {
-            part_right  = (angle[i] - d90) / binSize  * magnit[i];
-            part_left   = magnit[i] - part_right;
-            hog_9bin[4] += part_left;
-            hog_9bin[5] += part_right;
-        }
-        else if (angle[i] >= d110 && angle[i] < d130) {
-            part_right  = (angle[i] - d110) / binSize  * magnit[i];
-            part_left   = magnit[i] - part_right;
-            hog_9bin[5] += part_left;
-            hog_9bin[6] += part_right;
-        }
-        else if (angle[i] >= d130 && angle[i] < d150) {
-            part_right  = (angle[i] - d130) / binSize  * magnit[i];
-            part_left   = magnit[i] - part_right;
-            hog_9bin[6] += part_left;
-            hog_9bin[7] += part_right;
-        }
-        else if (angle[i] >= d150 && angle[i] < d170) {
-            part_right  = (angle[i] - d150) / binSize  * magnit[i];
-            part_left   = magnit[i] - part_right;
-            hog_9bin[7] += part_left;
-            hog_9bin[8] += part_right;
+        else if (dy_shifted >= bin3_dx && dy_shifted < bin4_dx) {
+                bin = 3;
+                m1 = 2948 * dx - 520 * dy;
+                m2 = 1497 * dy - 2593 * dx;
         }
         else {
-            part_right  = (angle[i] - d170) / binSize * magnit[i];
-            part_left   = magnit[i] - part_right;
-            hog_9bin[8] += part_left;
-            hog_9bin[0] += part_right;
+                bin = 4;
+                m1 = 2948 * dx + 520 * dy;
+                m2 = 520 * dy - 2948 * dx;
         }
+        if (is_same_sign == 0)
+            bin = 8 - bin;
     }
+
+    *magnit1 = m1 >> 10;
+    *magnit2 = m2 >> 10;
+    *bin_select = bin;
 }
 
 int8 dx_pixel(uint32 head, uint8 *src, uint32 w)
@@ -319,13 +304,10 @@ int8 dx_pixel(uint32 head, uint8 *src, uint32 w)
         return 0;
 
     int8    value   = src[head + 1] - src[head - 1];
-
-    return value > 0 ? value : 0;
+    return value > 0 ? value : 0; 
 }
 
-int8 dy_pixel(uint32 head, uint8 *src, uint32 w, uint32 h)
-{
-    _assert(head < w * h);
+int8 dy_pixel(uint32 head, uint8 *src, uint32 w, uint32 h) {
 
     if  (head < w  || head >= w * (h - 1))
         return 0;
@@ -335,32 +317,3 @@ int8 dy_pixel(uint32 head, uint8 *src, uint32 w, uint32 h)
     return value > 0 ? value : 0;
 }
 
-float magnit_pixel(int8 dx, int8 dy)
-{
-    float   result;
-    if (dx == 0)
-        result = (float)dy;
-    else if (dy == 0)
-        result = (float)dx;
-    else if (dx <= 16 && dy <= 16)
-        result = LUT_magnit[(dx - 1) * 16 + dy - 1];
-    else
-        result = sqrt(dx * dx + dy * dy);
-
-    return result;
-}
-
-float angle_pixel(int8 dx, int8 dy)
-{
-    float   result;
-    if (dy == 0)
-        result = 0;
-    else if (dx == 0)
-        result = PI/2;
-    else if (dx <= 16 && dy <= 16)
-        result = LUT_angle[(dy - 1) * 16 + dx - 1];
-    else
-        result = atan((float)dy / dx);// / PI * PI_DEGREE;
-
-    return result;
-}

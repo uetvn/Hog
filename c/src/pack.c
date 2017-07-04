@@ -50,7 +50,7 @@ unsigned init_hog_row(struct HOG_row **hog_row)
     *hog_row	= malloc(sizeof(struct HOG_row) * rows);
 	uint8	i;
     for (i = 0; i < rows; i++)
-        (*hog_row)[i].hog_block_16x16 = malloc(sizeof(float) * 36);
+        (*hog_row)[i].hog_block_16x16 = malloc(sizeof(float) * 37);
 }
 
 unsigned init_hog_window(struct HOG_window **hog_column)

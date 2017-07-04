@@ -1,4 +1,4 @@
-# Install script for directory: /home/h3/Git/Human-detection-by-HOG/c_ver3
+# Install script for directory: /home/Working/Cloud/github/hog_project/c
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/h3/Git/Human-detection-by-HOG/c_ver3/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/Working/Cloud/github/hog_project/c/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

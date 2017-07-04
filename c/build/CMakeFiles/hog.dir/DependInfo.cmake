@@ -4,12 +4,12 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/home/h3/Git/Human-detection-by-HOG/c_ver3/lib/lodepng.c" "/home/h3/Git/Human-detection-by-HOG/c_ver3/build/CMakeFiles/hog.dir/lib/lodepng.c.o"
-  "/home/h3/Git/Human-detection-by-HOG/c_ver3/main.c" "/home/h3/Git/Human-detection-by-HOG/c_ver3/build/CMakeFiles/hog.dir/main.c.o"
-  "/home/h3/Git/Human-detection-by-HOG/c_ver3/src/hog_window.c" "/home/h3/Git/Human-detection-by-HOG/c_ver3/build/CMakeFiles/hog.dir/src/hog_window.c.o"
-  "/home/h3/Git/Human-detection-by-HOG/c_ver3/src/pack.c" "/home/h3/Git/Human-detection-by-HOG/c_ver3/build/CMakeFiles/hog.dir/src/pack.c.o"
-  "/home/h3/Git/Human-detection-by-HOG/c_ver3/src/rwpng.c" "/home/h3/Git/Human-detection-by-HOG/c_ver3/build/CMakeFiles/hog.dir/src/rwpng.c.o"
-  "/home/h3/Git/Human-detection-by-HOG/c_ver3/src/svm_window.c" "/home/h3/Git/Human-detection-by-HOG/c_ver3/build/CMakeFiles/hog.dir/src/svm_window.c.o"
+  "/home/Working/Cloud/github/hog_project/c/lib/lodepng.c" "/home/Working/Cloud/github/hog_project/c/build/CMakeFiles/hog.dir/lib/lodepng.c.o"
+  "/home/Working/Cloud/github/hog_project/c/main.c" "/home/Working/Cloud/github/hog_project/c/build/CMakeFiles/hog.dir/main.c.o"
+  "/home/Working/Cloud/github/hog_project/c/src/hog_window.c" "/home/Working/Cloud/github/hog_project/c/build/CMakeFiles/hog.dir/src/hog_window.c.o"
+  "/home/Working/Cloud/github/hog_project/c/src/pack.c" "/home/Working/Cloud/github/hog_project/c/build/CMakeFiles/hog.dir/src/pack.c.o"
+  "/home/Working/Cloud/github/hog_project/c/src/rwpng.c" "/home/Working/Cloud/github/hog_project/c/build/CMakeFiles/hog.dir/src/rwpng.c.o"
+  "/home/Working/Cloud/github/hog_project/c/src/svm_window.c" "/home/Working/Cloud/github/hog_project/c/build/CMakeFiles/hog.dir/src/svm_window.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

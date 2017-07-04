@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 2.8)
 
 set (PROJECT_NAME hog)
 
-SET(CMAKE_C_FLAGS "-g")
+SET(CMAKE_C_FLAGS "-g -pg")
 
 project( ${PROJECT_NAME} )
 

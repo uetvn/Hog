@@ -17,7 +17,7 @@
 
 int main(int argc, char *argv[])
 {
-	unsigned char	*iF;
+	unsigned char	*iF = "test_pos_1.png";
 	unsigned char 	oF[100];
 	struct raw_img 	img;
 

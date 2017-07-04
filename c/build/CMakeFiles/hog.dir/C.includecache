@@ -40,9 +40,9 @@ iostream
 lodepng.h
 ../lib/lodepng.h
 
-/home/h3/Git/Human-detection-by-HOG/c_ver3/lib/lodepng.c
+/home/Working/Cloud/github/hog_project/c/lib/lodepng.c
 lodepng.h
-/home/h3/Git/Human-detection-by-HOG/c_ver3/lib/lodepng.h
+/home/Working/Cloud/github/hog_project/c/lib/lodepng.h
 limits.h
 -
 stdio.h
@@ -50,7 +50,7 @@ stdio.h
 stdlib.h
 -
 
-/home/h3/Git/Human-detection-by-HOG/c_ver3/lib/lodepng.h
+/home/Working/Cloud/github/hog_project/c/lib/lodepng.h
 string.h
 -
 vector
@@ -58,13 +58,13 @@ vector
 string
 -
 lodepng.h
-/home/h3/Git/Human-detection-by-HOG/c_ver3/lib/lodepng.h
+/home/Working/Cloud/github/hog_project/c/lib/lodepng.h
 iostream
 -
 lodepng.h
-/home/h3/Git/Human-detection-by-HOG/c_ver3/lib/lodepng.h
+/home/Working/Cloud/github/hog_project/c/lib/lodepng.h
 
-/home/h3/Git/Human-detection-by-HOG/c_ver3/main.c
+/home/Working/Cloud/github/hog_project/c/main.c
 stdio.h
 -
 stdlib.h
@@ -72,17 +72,17 @@ stdlib.h
 unistd.h
 -
 pack.h
-/home/h3/Git/Human-detection-by-HOG/c_ver3/pack.h
+/home/Working/Cloud/github/hog_project/c/pack.h
 rwpng.h
-/home/h3/Git/Human-detection-by-HOG/c_ver3/rwpng.h
+/home/Working/Cloud/github/hog_project/c/rwpng.h
 
-/home/h3/Git/Human-detection-by-HOG/c_ver3/src/hog_window.c
+/home/Working/Cloud/github/hog_project/c/src/hog_window.c
 math.h
 -
 hog_window.h
-/home/h3/Git/Human-detection-by-HOG/c_ver3/src/hog_window.h
+/home/Working/Cloud/github/hog_project/c/src/hog_window.h
 
-/home/h3/Git/Human-detection-by-HOG/c_ver3/src/pack.c
+/home/Working/Cloud/github/hog_project/c/src/pack.c
 stdio.h
 -
 stdlib.h
@@ -90,7 +90,7 @@ stdlib.h
 pack.h
 -
 
-/home/h3/Git/Human-detection-by-HOG/c_ver3/src/rwpng.c
+/home/Working/Cloud/github/hog_project/c/src/rwpng.c
 stdio.h
 -
 string.h
@@ -98,13 +98,13 @@ string.h
 stdlib.h
 -
 rwpng.h
-/home/h3/Git/Human-detection-by-HOG/c_ver3/src/rwpng.h
+/home/Working/Cloud/github/hog_project/c/src/rwpng.h
 lodepng.h
-/home/h3/Git/Human-detection-by-HOG/c_ver3/src/lodepng.h
+/home/Working/Cloud/github/hog_project/c/src/lodepng.h
 pack.h
-/home/h3/Git/Human-detection-by-HOG/c_ver3/src/pack.h
+/home/Working/Cloud/github/hog_project/c/src/pack.h
 
-/home/h3/Git/Human-detection-by-HOG/c_ver3/src/svm_window.c
+/home/Working/Cloud/github/hog_project/c/src/svm_window.c
 svm_window.h
-/home/h3/Git/Human-detection-by-HOG/c_ver3/src/svm_window.h
+/home/Working/Cloud/github/hog_project/c/src/svm_window.h
 

@@ -52,13 +52,13 @@ unsigned hog_block_16x16(float *result, uint32 head, uint8 *src, uint32 w, uint3
 /*
  * Desciption: normalizating hog feature's neighboring 8x8 pixel blocks to increase rebustness to texture and illumination variation
  */
-unsigned norm_block_16x16(float *result, float *block1, float *block2, float *block3, float *block4);
+unsigned norm_block_16x16(float *result, int32 *block1, int32 *block2, int32 *block3, int32 *block4);
 
 /*
  * head		 : head coordinate of block 8x8
  * Desciption: the image window is divied into non-overlapping 8x8 pixels to calculating smallest hog feature unit
  */
-unsigned hog_block_8x8(float *hog_9bin, uint32 head, uint8 *src, uint32 w, uint32 h);
+unsigned hog_block_8x8(int32 *hist_9bin, uint32 head, uint8 *src, uint32 w, uint32 h);
 
 /*
  * Desciption: calculating dervavite with respect to x of block
@@ -71,19 +71,12 @@ unsigned dx_block_8x8(int8 *result, uint32 head, uint8 *src, uint32 w);
 unsigned dy_block_8x8(int8 *result, uint32 head, uint8 *src, uint32 w, uint32 h);
 
 /*
- * Desciption: calculating gradient vector magnitude of block
- */
-unsigned magnit_block(float *result, int8 *dx, int8 *dy, uint32 w, uint32 h);
-
-/*
- * Desciption: calculating gradient vector angle of block
- */
-unsigned angle_block(float *result, int8 *dx, int8 *dy, uint32 w, uint32 h);
-
-/*
  * Desciption: calculating a histogram of the gradient orientations with 9 bins is generated of each 8x8 pixel block
  */
-unsigned calculate_hog_9bin(float *hog_9bin, float *magnit, float *angle);
+unsigned calculate_hist_9bin(int32 *hist_9bin, int8 *dx, int8 *dy);
+
+
+unsigned hist_pixel(int8 dx, int8 dy, int8 *bin_select, int32 *magnit1, int32 *magnit2);
 
 /*
  * Desciption: calculating dervavite with respect to x of pixel
@@ -95,16 +88,5 @@ int8 dx_pixel(uint32 head, uint8 *src, uint32 w);
  *
  */
 int8 dy_pixel(uint32 head, uint8 *src, uint32 w, uint32 h);
-
-/*
- * Desciption: calculating gradient vector magnitude of pixel
- */
-float magnit_pixel(int8 dx, int8 dy);
-
-/*
- *
- * Desciption: calculating gradient vector angle of pixel
- */
-float angle_pixel(int8 dx, int8 dy);
 
 #endif
