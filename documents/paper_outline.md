@@ -10,9 +10,8 @@
 -->
 Introduction
 ============
-- Paper: Human detection by Histogram of Oriented Gradient 
-Maybe: A Hardware Implementation of optimized HOG-based Human detection
-(Object detection)
+- Paper: HOG generation with only shift and addition operators-based object detection
+
 
 TODO
 ====
@@ -50,7 +49,7 @@ Features
 	contrast, the hardware implementation from a white chip will not be
 	limited to instantaneous processing if enough available resources. With
 	hardware design, the hardware source is controller the parallel calculation
-	will improve power efficiention and respond processing large data in high 
+	will improve power efficiention and respond processing large data in high
 	speed requirement.
 
 	 A conventional method to object detection includes two important processes:
@@ -62,11 +61,12 @@ Features
 
 -   Contribution:
     + Edit algorithm, faster calculation
+	The most domiant part is cell histogram generation.
 	 In this paper, we optimized by reducing a large number of calculations in
 	algorithm. Removing complex calculations like arctan, root... will make
 	hardware excutes simpler and faster. we optimized  by reducing a large
 	number of calculations in algorithm. Removing complex calculations like
-	arctan, root... will make hardware excutes simpler and faster. 
+	arctan, root... will make hardware excutes simpler and faster.
 
 - Overview next sections:
 	 In section 2, this paper overview the state-of-the-art of object detection.
@@ -77,7 +77,7 @@ Features
 
 ## Previous work
 -   The majority of the published implementation of HOG based object detection are CPU, GPU platforms.
-	 The implementation in "Pedestrian detection at 100 frames per second" 
+	 The implementation in "Pedestrian detection at 100 frames per second"
 	achieves higher throughput on a GPU at 100 fps but with a resolution of 640×480 pixels.
 	 "libHOG: Energy-Efficient Histogram of Oriented Gradient Computation: are
 	able to compute multiresolution HOG pyramids at 70fps for 640×480 images on
@@ -86,10 +86,10 @@ Features
 	starburst mpsoc" using embbedd system for implemention with real-time
 	object tracking (fps > 30);
 > > > Waste of area and cost
-	
+
 -   Papers use Cordic, approximate magnitude
 	"A Sub-100 mw Dual-Core HOG Accelerator VLSI for
-	Parallel" real-time 100 mw in HDTV (1920-1080) using codic for cal angle
+	Parallel" real-time 100 mw in HDTV (1920-1080) using CORDIC for cal angle
 	"An Energy-efficient Hardware Implementation of HOG-based
 	Object Detection at 1080HD 60 fps with Multi-scale Support": histogram bins
 	can be calculated without the actual value of the gradient angle
@@ -110,29 +110,16 @@ Features
 	However, SIFT describes invariant regions for translations, rotations,
 	magnifications, etc., into the characteristics and combinations of the
 	features of each region, so it is suitable for alignment purposes. Composite
-	image or object recognition. HOG extracting features from dense "umbrella"
+	image or object recognition, HOG extracting features from dense "umbrella"
 	overlap in each block / image area and examines the similarity between this
 	feature and the characteristics of the object.
 
-    +   Extract feature
-	
-
-    +   Classification
-
--   Introduct HOG algorithm
-
-    +   Author
-
-    +   Revolution in object detetion
-
 -   HOG algorithm
+	+ Histogram generation
+	+ Normalization
+	+ Classification
 
-    +   Steps
-
-    +   Focus histogram calculation
-
--   SVM classification
-
+	The most timing and power consumption is histogram generation domain.
 -   Conclusion: the limitation
 
         -> Timing for calculate -> reduce number of steps
@@ -144,7 +131,7 @@ Features
     +   Gradient: using filter [-1 0 1] & [-1 0 1]^T
     +   Histogram calculation: using shift operator, multiplexer
     +   Block normalization: L2 norm, store cell hog in next block
-    +   SVM classification: 
+    +   SVM classification:
 
 -   Able to store overlap cell part and re-use in next block (in block norm),
     store hog for next windows
@@ -157,7 +144,7 @@ Features
 -   Neccesity, intro method
 -   Pseudo-code
 -   HW architecture
--   
+-
 
 ## Result simulation
 -   Number of cycle
@@ -165,4 +152,4 @@ Features
 -   throughout and compasion
 
 ## Conclusion
--   
+-

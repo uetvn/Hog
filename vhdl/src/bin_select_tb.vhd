@@ -40,20 +40,21 @@ begin
           rate => rate
         );
 
-   -- clock process definitions
-   clk_process :process
-   begin
-		clk <= '0';
-		wait for clk_period/2;
-		clk <= '1';
-		wait for clk_period/2;
-   end process;
-
+    clk <= not clk after clk_period/2;
 
     -- stimulus process
     stim_proc: process
     begin
         wait for clk_period;
+        Gx <= X"01";
+        Gy <= X"11";
+        wait for clk_period;
+        if bin /= 5 then
+            assert false;
+        end if;
+        Gx <= X"01";
+        Gy <= X"AB";
+
         wait;
     end process;
 

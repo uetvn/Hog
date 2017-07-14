@@ -45,8 +45,8 @@ for Si = 1 : 1 %nScaleSteps
     for rr = 1 : 8 : 1%rowSi-133
         for cc = 1 : 8 : 1%colSi-69
             % Compute HOG descriptor for one image window and classify it
-            imgTemp = imgSi( rr:rr+133, cc:cc+69 );
-            H = getHOGDescriptorTestGaussianWindow(imgTemp, mask);
+            img = imgSi( rr:rr+133, cc:cc+69 );
+            %H = getHOGDescriptorTestGaussianWindow(imgTemp, mask);
             score = H' * w + b;
             if  score > 0
                 detects = [detects; rr cc ss Si score];

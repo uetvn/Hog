@@ -1,79 +1,18 @@
-# vsim work.cal_lut 
-# Start time: 13:49:19 on Jul 03,2017
+# vsim work.pix_bin_comp 
+# Start time: 13:07:53 on Jul 12,2017
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
-# Loading ieee.math_real(body)
 # Loading ieee.numeric_std(body)
-# Loading work.cal_lut(behavioral)
-# Loading work.lut_16x16(behavioral)
-add wave -position insertpoint  \
-sim:/cal_lut/pixel_width \
-sim:/cal_lut/clk \
-sim:/cal_lut/dx \
-sim:/cal_lut/dy \
-sim:/cal_lut/magnit \
-sim:/cal_lut/angle \
-sim:/cal_lut/enable \
-sim:/cal_lut/lut_magnit \
-sim:/cal_lut/lut_angle \
-sim:/cal_lut/s_magnit \
-sim:/cal_lut/s_angle
-force -freeze sim:/cal_lut/clk 1 0, 0 {50 ps} -r 100
-force -freeze sim:/cal_lut/dx 3 0
-force -freeze sim:/cal_lut/dy 5 0
-run 400 ps
-force -freeze sim:/cal_lut/dy 1 0
-force -freeze sim:/cal_lut/dx 2 0
+# Loading work.pix_bin_comp(behav)
+add wave *
 run
-run
-run
-restart
-# Loading work.cal_lut(behavioral)
-force -freeze sim:/cal_lut/clk 1 0, 0 {50 ps} -r 100
-force -freeze sim:/cal_lut/dx 2 0
-force -freeze sim:/cal_lut/dy 1 0
-run
-run
-run
-run
-restart
-# Loading work.cal_lut(behavioral)
-# Loading work.lut_16x16(behavioral)
-force -freeze sim:/cal_lut/clk 1 0, 0 {50 ps} -r 100
-force -freeze sim:/cal_lut/dx 2 0
-force -freeze sim:/cal_lut/dy 1 0
-run 500 ps
-add wave -position insertpoint  \
-sim:/cal_lut/pixel_width \
-sim:/cal_lut/clk \
-sim:/cal_lut/dx \
-sim:/cal_lut/dy \
-sim:/cal_lut/magnit \
-sim:/cal_lut/angle \
-sim:/cal_lut/enable \
-sim:/cal_lut/enable1 \
-sim:/cal_lut/lut_magnit \
-sim:/cal_lut/lut_angle \
-sim:/cal_lut/s_magnit \
-sim:/cal_lut/s_angle
-restart
-force -freeze sim:/cal_lut/clk 1 0, 0 {50 ps} -r 100
-force -freeze sim:/cal_lut/dx 2 0
-force -freeze sim:/cal_lut/dy 1 0
-run
-run 400 ps
-restart
-# Loading work.lut_16x16(behavioral)
-force -freeze sim:/cal_lut/clk 1 0, 0 {50 ps} -r 100
-force -freeze sim:/cal_lut/dx 2 0
-force -freeze sim:/cal_lut/dy -2 0
-run 400 ps
-# ** Error: (vsim-86) Argument value -2 is not in bounds of subtype NATURAL.
-#    Time: 100 ps  Iteration: 0  Instance: /cal_lut
-# ** Error: (vsim-86) Argument value -2 is not in bounds of subtype NATURAL.
-#    Time: 200 ps  Iteration: 0  Instance: /cal_lut
-# ** Error: (vsim-86) Argument value -2 is not in bounds of subtype NATURAL.
-#    Time: 300 ps  Iteration: 0  Instance: /cal_lut
-# ** Error: (vsim-86) Argument value -2 is not in bounds of subtype NATURAL.
-#    Time: 400 ps  Iteration: 0  Instance: /cal_lut
+# ** Fatal: (vsim-3420) Array lengths do not match. Left is 8 (7 downto 0). Right is 9 (8 downto 0).
+#    Time: 0 ps  Iteration: 0  Process: /pix_bin_comp/line__92 File: ../sinhnn/pix_bin_comp.vhd
+# Fatal error in Architecture behav at ../sinhnn/pix_bin_comp.vhd line 92
+# 
+# HDL call sequence:
+# Stopped at ../sinhnn/pix_bin_comp.vhd 92 Architecture behav
+# 
+# End time: 13:08:28 on Jul 12,2017, Elapsed time: 0:00:35
+# Errors: 2, Warnings: 0

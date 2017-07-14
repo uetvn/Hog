@@ -9,6 +9,10 @@
 
 #include <math.h>
 #include "hog_window.h"
+const int32 d10 = 11;
+const int32 d30 = 37;
+const int32 d50 = 76;
+const int32 d70 = 176;
 
 unsigned hog_window(uint32 *object, uint8 *src, uint32 w, uint32 h)
 {
@@ -133,24 +137,24 @@ unsigned norm_block_16x16(float *result, int32 *block1, int32 *block2, int32 *bl
     uint8   i;
     for (i = 0; i < 36; i++) {
         if (i < 9)
-            sum += (block1[i] * block1[i]);
+            sum += ((block1[i] * block1[i])  >> 20);
         else if (i < 18)
-            sum += (block2[i - 9] * block2[i - 9]);
+            sum += ((block2[i - 9] * block2[i - 9]) >> 20);
         else if (i < 27)
-            sum += (block3[i - 18] * block3[i - 18]);
+            sum += ((block3[i - 18] * block3[i - 18]) >> 20);
         else
-            sum += (block4[i - 27] * block4[i - 27]);
+            sum += ((block4[i - 27] * block4[i - 27]) >> 20);
     }
     sum = sqrt(sum);
     for (i = 0; i < 36; i++) {
         if (i < 9)
-            result[i] = block1[i] / (sum + 0.001);
+            result[i] = block1[i] / (1024 * sum + 1);
         else if (i < 18)
-            result[i] = block2[i - 9] / (sum + 0.001);
+            result[i] = block2[i - 9] / (1024 * sum + 1);
         else if (i < 27)
-            result[i] = block3[i - 18] / (sum + 0.001);
+            result[i] = block3[i - 18] / (1024 * sum + 1);
         else
-            result[i] = block4[i - 27] / (sum + 0.001);
+            result[i] = block4[i - 27] / (1024 * sum + 1);
     }
     return 0;
 }
@@ -173,32 +177,58 @@ unsigned hog_block_8x8(int32 *hist_9bin, uint32 head, uint8 *src, uint32 w, uint
 
 unsigned dx_block_8x8(int8 *result, uint32 head, uint8 *src, uint32 w)
 {
-    uint8   i;
-    for (i = 0; i < 8; i++) {
-        result[i]       = dx_pixel(head + i, src, w);
-        result[i + 8]   = dx_pixel(head + w + i, src, w);
-        result[i + 16]  = dx_pixel(head + 2 * w + i, src, w);
-        result[i + 24]  = dx_pixel(head + 3 * w + i, src, w);
-        result[i + 32]  = dx_pixel(head + 4 * w + i, src, w);
-        result[i + 40]  = dx_pixel(head + 5 * w + i, src, w);
-        result[i + 48]  = dx_pixel(head + 6 * w + i, src, w);
-        result[i + 56]  = dx_pixel(head + 7 * w + i, src, w);
+    uint8 top = 0;
+    uint8 tail = 8;
+    uint8 i;
+    if  (head % w == 0) {
+        top = 1;
+        for (i = 0; i < 64; i += 8)
+            result[i] = 0;
+    }
+    else if (head % w + 1 == w) {
+        tail = 7;
+        for (i = 7; i < 64; i += 8)
+            result[i] = 0;
+    }
+    else {
+        for (i = top; i < tail; i++) {
+            result[i]       = dx_pixel(head + i, src, w);
+            result[i + 8]   = dx_pixel(head + w + i, src, w);
+            result[i + 16]  = dx_pixel(head + 2 * w + i, src, w);
+            result[i + 24]  = dx_pixel(head + 3 * w + i, src, w);
+            result[i + 32]  = dx_pixel(head + 4 * w + i, src, w);
+            result[i + 40]  = dx_pixel(head + 5 * w + i, src, w);
+            result[i + 48]  = dx_pixel(head + 6 * w + i, src, w);
+            result[i + 56]  = dx_pixel(head + 7 * w + i, src, w);
+        }
     }
     return 0;
 }
 
 unsigned dy_block_8x8(int8 *result, uint32 head, uint8 *src, uint32 w, uint32 h)
 {
-    uint8   i;
+    uint8 i;
+    if  (head < w) {
+        for (i = 0; i < 8; i++)
+            result[i] = 0;
+    }
+    else if (head >= w * (h - 1)) {
+        for (i = 56; i < 64; i++)
+            result[i] = 0;
+    }
+    else {
+        for (i = 0; i < 8; i++) {
+           result[i]       = dy_pixel(head + i, src, w, h);
+           result[i + 56]  = dy_pixel(head + 7 * w + i, src, w, h);
+        }
+    }
     for (i = 0; i < 8; i++) {
-        result[i]       = dy_pixel(head + i, src, w, h);
-        result[i + 8]   = dy_pixel(head + w + i, src, w, h);
-        result[i + 16]  = dy_pixel(head + 2 * w + i, src, w, h);
-        result[i + 24]  = dy_pixel(head + 3 * w + i, src, w, h);
-        result[i + 32]  = dy_pixel(head + 4 * w + i, src, w, h);
-        result[i + 40]  = dy_pixel(head + 5 * w + i, src, w, h);
-        result[i + 48]  = dy_pixel(head + 6 * w + i, src, w, h);
-        result[i + 56]  = dy_pixel(head + 7 * w + i, src, w, h);
+            result[i + 8]   = dy_pixel(head + w + i, src, w, h);
+            result[i + 16]  = dy_pixel(head + 2 * w + i, src, w, h);
+            result[i + 24]  = dy_pixel(head + 3 * w + i, src, w, h);
+            result[i + 32]  = dy_pixel(head + 4 * w + i, src, w, h);
+            result[i + 40]  = dy_pixel(head + 5 * w + i, src, w, h);
+            result[i + 48]  = dy_pixel(head + 6 * w + i, src, w, h);
     }
     return 0;
 }
@@ -215,105 +245,99 @@ unsigned calculate_hist_9bin(int32 *hist_9bin, int8 *dx, int8 *dy)
     
     for (i = 0; i < 64; i++) {
         hist_pixel(dx[i], dy[i], bin_select, magnit1, magnit2);
-        hist_9bin[*bin_select]     += *magnit1;
-        hist_9bin[*bin_select + 1] += *magnit2;
+        hist_9bin[*bin_select % 9]       += *magnit1;
+        hist_9bin[(*bin_select + 1) % 9] += *magnit2;
     }
 }
 
 unsigned hist_pixel(int8 dx, int8 dy, int8 *bin_select, int32 *magnit1, int32 *magnit2)
 {
+ 
     int32 m1, m2;
-    int8 bin;
-    int8 d20         = 23;
-    int8 d40         = 53;
-    int8 d60         = 110;
-    int8 d80         = 363;
+    int8  bin;
+    int8  is_same_sign = (dx * dy >= 0);
+
+    dx = abs(dx);
+    dy = abs(dy);
+    int32 dy_shifted = dy << 6; 
 
     int32 bin1_dx;
     int32 bin2_dx;
     int32 bin3_dx;
     int32 bin4_dx;
 
-    bin1_dx = d20 * abs(dx);
-    bin2_dx = d40 * abs(dx);
-    bin3_dx = d60 * abs(dx);
-    bin4_dx = d80 * abs(dx);
-    int32 dy_shifted = dy << 6; 
+    bin1_dx = d10 * abs(dx);
+    bin2_dx = d30 * abs(dx);
+    bin3_dx = d50 * abs(dx);
+    bin4_dx = d70 * abs(dx);
 
-    if (dy == 0 && dx > 0) {
-        bin = 0;
-        m1 = dx << 10;
-        m2 = 0;
-    }
-    else if (dy == 0 && dx < 0) {
-        bin = 0;
-        m1 = -dx << 10;
-        m2 = 0;
-    }
-    else if (dy != 0 && dx == 0) {
-        bin = 4;
-        m1 = abs(dy) * 1040;
-        m2 = m1;
-    }
-    else if (dy == 0 && dx == 0) {
-        bin = 0;
-        m1 = 0;
-        m2 = 0;
+    if (dy != 0) {
+            if (dx != 0) {
+                if (dy_shifted < bin1_dx) {
+                    bin = 0;
+                    m1 = 520 * dx - 2948 * dy;
+                    m2 = 2948 * dy + 520 * dx;
+                }
+                else if (dy_shifted < bin2_dx) {
+                    bin = 1;
+                    m1 = 1497 * dx - 2593 * dy;
+                    m2 = 2948 * dy - 520 * dx;
+                }
+                else if (dy_shifted < bin3_dx) {
+                    bin = 2;
+                    m1 = 2294 * dx - 1924 * dy;
+                    m2 = 2593 * dy - 1497 * dx;
+                }
+                else if (dy_shifted < bin4_dx) {
+                    bin = 3;
+                    m1 = 2813 * dx - 1024 * dy;
+                    m2 = 1924 * dy - 2294 * dx;
+                }
+                else {
+                    bin = 4;
+                    m1 = 2994 * dx;
+                    m2 = 1024 * dy - 2813 * dx;
+                }
+                if (is_same_sign == 1) {
+                    bin = 8 - bin;
+                    int32 tmp = m1;
+                    m1 = m2;
+                    m2 = tmp;
+                }
+            }
+            else  {
+                bin = 4;
+                m1 = dy << 10;
+                m2 = 0;
+            }
     }
     else {
-        int is_same_sign = dx * dy > 0;
-        dx = abs(dx);
-        dy = abs(dy);
-        if (dy_shifted < bin1_dx) {
-                bin = 0;
-                m1 = 1024 * dx - 2813 * dy;
-                m2 = 2994 * dy - 0 * dx;
-        }
-        else if (dy_shifted >= bin1_dx && dy_shifted < bin2_dx) {
-                bin = 1;
-                m1 = 1924 * dx - 2294 * dy;
-                m2 = 2813 * dy - 1024 * dx;
-        }
-        else if (dy_shifted >= bin2_dx && dy_shifted < bin3_dx) {
-                bin = 2;
-                m1 = 2593 * dx - 1497 * dy;
-                m2 = 2294 * dy - 1924 * dx;
-        }
-        else if (dy_shifted >= bin3_dx && dy_shifted < bin4_dx) {
-                bin = 3;
-                m1 = 2948 * dx - 520 * dy;
-                m2 = 1497 * dy - 2593 * dx;
+        if (dx != 0) {
+            bin = 8;
+            m1 = dx * 1040;
+            m2 = m1;
         }
         else {
-                bin = 4;
-                m1 = 2948 * dx + 520 * dy;
-                m2 = 520 * dy - 2948 * dx;
+            bin = 0;
+            m1 = 0;
+            m2 = 0;
         }
-        if (is_same_sign == 0)
-            bin = 8 - bin;
     }
 
-    *magnit1 = m1 >> 10;
-    *magnit2 = m2 >> 10;
-    *bin_select = bin;
+    *bin_select = bin; 
+    *magnit1    = m1;
+    *magnit2    = m2;
 }
 
 int8 dx_pixel(uint32 head, uint8 *src, uint32 w)
 {
-    if  (head % w == 0 || head % w + 1 == w)
-        return 0;
-
     int8    value   = src[head + 1] - src[head - 1];
     return value > 0 ? value : 0; 
 }
 
-int8 dy_pixel(uint32 head, uint8 *src, uint32 w, uint32 h) {
-
-    if  (head < w  || head >= w * (h - 1))
-        return 0;
-
-    int8    value   = src[head + w] - src[head - w];
-
+int8 dy_pixel(uint32 head, uint8 *src, uint32 w, uint32 h)
+{
+    int8   value   = src[head + w] - src[head - w];
     return value > 0 ? value : 0;
 }
 
