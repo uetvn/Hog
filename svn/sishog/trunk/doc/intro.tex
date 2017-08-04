@@ -1,0 +1,46 @@
+%
+% Project name   :
+% File name      : intro.tex
+% Created date   : Mon 17 Jul 2017 10:42:25 AM +07
+% Author         : Ngoc-Sinh Nguyen
+% Last modified  : Mon 17 Jul 2017 10:42:25 AM +07
+% Desc           :
+%
+
+\section{Introduction}
+\label{sec:introduction}
+However,  the complexity level of HOG is the most difficult problem when
+implementing it into embedded systems and  battery systems.
+
+
+The HOG algorithm can be separated into 3 phases: cell histogram generation,
+block normalization, and the SVM classification.
+The first phase plays as the most complexity one, and consumes the most energy.
+Because, extracting feature of each pixel requires series of high complex
+operation: $\arctan$, square root, float multiply.
+Moreover, in the age of cloud computing, the two last phases can be done in the
+server  for IoT devices.
+It means that the local devices only need to do cell histogram generation part,
+then transferring all voted bins to the servers.
+It allows extending the life of battery systems,
+
+In this work, we study about the cell histogram generation and would like optimize this
+phase to be able to run in low resource embedded systems.
+Our methodology  is transforming all complex operations $\arctan$, square root
+and float multiply  into series of shift and addition operator.
+As our experiments, voting to the two standard bins of pixels requires about 30 addition operations
+and 40 shift operations.
+About the accuracy of computing, the percentage errors are only about 1\% of
+$d_x$ $d_y$.
+\fixme{hw results}
+
+
+The rests of the paper are organized as follows.
+Section \ref{sec:conventional_non_normalize_feature_extraction_in_hog}
+introduces the cell histogram generation and some previous optimization works.
+Section \ref{sec:proposed_non_normalize_feature_extraction} shows the detail of
+propose methodology.
+Section \ref{sec:experimental_results} presents details of hardware
+implementation of propose methodology and simulation results.
+Finally, section \ref{sec:conclusion} gives summary and our expectation
+future.

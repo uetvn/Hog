@@ -1,0 +1,34 @@
+--------------------------------------------------------------------------------
+-- Project name   :
+-- File name      : config_pix_bin_comp_pkg.vhd
+-- Created date   : Thu 13 Jul 2017 11:48:55 AM +07
+-- Author         : Ngoc-Sinh Nguyen
+-- Last modified  : Thu 13 Jul 2017 11:48:55 AM +07
+-- Desc           :
+--------------------------------------------------------------------------------
+
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_unsigned.all;
+
+
+package angle_config is
+
+
+constant MAGNI_BIN_WIDTH : integer := 32;
+constant ANGLE_WIDTH : integer := 4;
+constant PIX_WIDTH : integer := 8;
+
+constant SIN10_MULT_1024  : unsigned (15 downto 0) := X"00AC"; --178
+constant SIN30_MULT_1024  : unsigned (15 downto 0) := X"0200"; --512
+constant SIN50_MULT_1024  : unsigned (15 downto 0) := X"0310"; --784
+constant SIN70_MULT_1024  : unsigned (15 downto 0) := X"03C2"; --962
+constant SIN90_MULT_1024  : unsigned (15 downto 0) := X"0400";
+
+constant COS10_MULT_1024  : unsigned (15 downto 0) := X"03F0"; --1008
+constant COS30_MULT_1024  : unsigned (15 downto 0) := X"0377"; --887
+constant COS50_MULT_1024  : unsigned (15 downto 0) := X"0292"; --658
+constant COS70_MULT_1024  : unsigned (15 downto 0) := X"015E"; --350
+constant COS90_MULT_1024  : unsigned (15 downto 0) := X"0000";
+
+end;

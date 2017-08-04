@@ -1,0 +1,95 @@
+# vsim work.tb_bin_selection 
+# Start time: 14:34:42 on Jul 13,2017
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.tb_bin_selection(tb)
+# Loading work.bin_selection(behavior)
+add wave -position insertpoint  \
+sim:/tb_bin_selection/PIX_WIDTH \
+sim:/tb_bin_selection/MAGNIT_WIDTH \
+sim:/tb_bin_selection/ANGLE_WIDTH \
+sim:/tb_bin_selection/x_plus1 \
+sim:/tb_bin_selection/x_minus1 \
+sim:/tb_bin_selection/y_plus1 \
+sim:/tb_bin_selection/y_minus1 \
+sim:/tb_bin_selection/magnit_1 \
+sim:/tb_bin_selection/magnit_2 \
+sim:/tb_bin_selection/angle_1 \
+sim:/tb_bin_selection/angle_2 \
+sim:/tb_bin_selection/clk \
+sim:/tb_bin_selection/clr \
+sim:/tb_bin_selection/clk_period
+restart; run -all
+# ** Note: case 8
+#    Time: 0 ps  Iteration: 0  Instance: /tb_bin_selection/dut
+# ** Warning: NUMERIC_STD."/=": metavalue detected, returning TRUE
+#    Time: 0 ps  Iteration: 1  Instance: /tb_bin_selection/dut
+# ** Warning: NUMERIC_STD."/=": metavalue detected, returning TRUE
+#    Time: 0 ps  Iteration: 1  Instance: /tb_bin_selection/dut
+# ** Note: case 5
+#    Time: 0 ps  Iteration: 1  Instance: /tb_bin_selection/dut
+# ** Note: case 8
+#    Time: 0 ps  Iteration: 2  Instance: /tb_bin_selection/dut
+# ** Warning: NUMERIC_STD."/=": metavalue detected, returning TRUE
+#    Time: 0 ps  Iteration: 3  Instance: /tb_bin_selection/dut
+# ** Warning: NUMERIC_STD."/=": metavalue detected, returning TRUE
+#    Time: 0 ps  Iteration: 3  Instance: /tb_bin_selection/dut
+# ** Note: case 5
+#    Time: 0 ps  Iteration: 3  Instance: /tb_bin_selection/dut
+# ** Note: case 6
+#    Time: 0 ps  Iteration: 4  Instance: /tb_bin_selection/dut
+# ** Note: case 6
+#    Time: 0 ps  Iteration: 5  Instance: /tb_bin_selection/dut
+# ** Note: case 6
+#    Time: 0 ps  Iteration: 6  Instance: /tb_bin_selection/dut
+# ** Note: case 5
+#    Time: 200 ps  Iteration: 4  Instance: /tb_bin_selection/dut
+# ** Note: case 4
+#    Time: 200 ps  Iteration: 6  Instance: /tb_bin_selection/dut
+# ** Note: case 4
+#    Time: 400 ps  Iteration: 4  Instance: /tb_bin_selection/dut
+# ** Note: case 5
+#    Time: 400 ps  Iteration: 6  Instance: /tb_bin_selection/dut
+# ** Note: case 5
+#    Time: 600 ps  Iteration: 4  Instance: /tb_bin_selection/dut
+# ** Note: case 1
+#    Time: 600 ps  Iteration: 6  Instance: /tb_bin_selection/dut
+restart -f; run -all
+# ** Note: case 8
+#    Time: 0 ps  Iteration: 0  Instance: /tb_bin_selection/dut
+# ** Warning: NUMERIC_STD."/=": metavalue detected, returning TRUE
+#    Time: 0 ps  Iteration: 1  Instance: /tb_bin_selection/dut
+# ** Warning: NUMERIC_STD."/=": metavalue detected, returning TRUE
+#    Time: 0 ps  Iteration: 1  Instance: /tb_bin_selection/dut
+# ** Note: case 5
+#    Time: 0 ps  Iteration: 1  Instance: /tb_bin_selection/dut
+# ** Note: case 8
+#    Time: 0 ps  Iteration: 2  Instance: /tb_bin_selection/dut
+# ** Warning: NUMERIC_STD."/=": metavalue detected, returning TRUE
+#    Time: 0 ps  Iteration: 3  Instance: /tb_bin_selection/dut
+# ** Warning: NUMERIC_STD."/=": metavalue detected, returning TRUE
+#    Time: 0 ps  Iteration: 3  Instance: /tb_bin_selection/dut
+# ** Note: case 5
+#    Time: 0 ps  Iteration: 3  Instance: /tb_bin_selection/dut
+# ** Note: case 6
+#    Time: 0 ps  Iteration: 4  Instance: /tb_bin_selection/dut
+# ** Note: case 6
+#    Time: 0 ps  Iteration: 5  Instance: /tb_bin_selection/dut
+# ** Note: case 6
+#    Time: 0 ps  Iteration: 6  Instance: /tb_bin_selection/dut
+# ** Note: case 5
+#    Time: 200 ps  Iteration: 4  Instance: /tb_bin_selection/dut
+# ** Note: case 4
+#    Time: 200 ps  Iteration: 6  Instance: /tb_bin_selection/dut
+# ** Note: case 4
+#    Time: 400 ps  Iteration: 4  Instance: /tb_bin_selection/dut
+# ** Note: case 5
+#    Time: 400 ps  Iteration: 6  Instance: /tb_bin_selection/dut
+# ** Note: case 5
+#    Time: 600 ps  Iteration: 4  Instance: /tb_bin_selection/dut
+# ** Note: case 1
+#    Time: 600 ps  Iteration: 6  Instance: /tb_bin_selection/dut
+# End time: 16:20:29 on Jul 13,2017, Elapsed time: 1:45:47
+# Errors: 0, Warnings: 8

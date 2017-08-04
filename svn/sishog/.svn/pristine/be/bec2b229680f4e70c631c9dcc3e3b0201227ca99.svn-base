@@ -1,0 +1,191 @@
+/*
+ * Project name   :
+ * File name      : cell_bin_comp.cpp
+ * Created date   : Thu 13 Jul 2017 08:28:34 AM +07
+ * Author         : Ngoc-Sinh Nguyen
+ * Last modified  : Thu 13 Jul 2017 08:28:34 AM +07
+ * Desc           :
+ */
+
+#include <iostream>
+#include <stdio.h>
+#include <cstdlib>
+#include <climits>
+#include <math.h>
+#include "config.h"
+#include "pix_bin_comp.h"
+#include <iomanip>
+
+#include <bitset>
+
+using namespace std;
+
+
+#define PI 3.14159265
+
+#define msin(x) fabs(sin(x * (PI/180.0)))
+#define mcos(x) fabs(cos(x * (PI/180.0)))
+
+int  solve_system_of_2_equation(float a1, float b1, float c1,
+        float a2, float b2, float c2,
+        float &root1, float &root2)
+{
+    float D  = a1 * b2 - a2 * b1;
+    float Dx, Dy;
+
+    if (c1 * b2 > c2 * b1) {
+        Dx = c1 * b2 - c2 * b1;
+    } else Dx = 0;
+
+    if (a1 * c2 > a2 * c1) {
+        Dy = a1 * c2 - a2 * c1;
+    } else Dy = 0;
+
+
+    if (D) {
+        root1  = Dx/D;
+        root2  = Dy/D;
+    }else{
+        printf("Error: \n");
+    }
+    return 0;
+}
+
+void angle_dec_to_vhdl(int angle_1, int* angle_1_vhdl){
+    if (angle_1 == DEGREE_10) {
+        *angle_1_vhdl = 1;
+    }else if (angle_1 == DEGREE_30){
+        *angle_1_vhdl = 2;
+    }else if (angle_1 == DEGREE_50){
+        *angle_1_vhdl = 3;
+    }else if (angle_1 == DEGREE_70){
+        *angle_1_vhdl = 4;
+    }else if (angle_1 == DEGREE_90){
+        *angle_1_vhdl = 5;
+    }else if(angle_1 == DEGREE_110){
+        *angle_1_vhdl = 6;
+    }else if (angle_1 == DEGREE_130){
+        *angle_1_vhdl = 7;
+    }else if (angle_1 == DEGREE_150){
+        *angle_1_vhdl = 8;
+    }else {
+        *angle_1_vhdl = 9;
+    }
+    return;
+}
+
+void print_info(uint8 x_plus_1, uint8 x_minus_1, uint8 y_plus_1, uint8 y_minus_1,
+        uint8 angle_1, uint8 angle_2,
+        float mag_1, float mag_2)
+{
+#if VHDL_FORMAT == 1
+    int angle_1_vhdl = 0;
+    int angle_2_vhdl = 0;
+    angle_dec_to_vhdl(angle_1, &angle_1_vhdl);
+    angle_dec_to_vhdl(angle_2, &angle_2_vhdl);
+
+    cout << bitset<8>(x_plus_1) << " "
+         << bitset<8>(x_minus_1) << " "
+         << bitset<8>(y_plus_1) << " "
+         << bitset<8>(y_minus_1) << " "
+         << bitset<4>(angle_1_vhdl) << " "
+         << bitset<4>(angle_2_vhdl) << " "
+         << bitset<17>(round(mag_1 * 256)) << " "
+         << bitset<17>(round(mag_2 * 256)) << endl;
+
+#else
+    printf("%i %i %i %i %i %i %0.3f %0.3f\n",
+            x_plus_1, x_minus_1,
+            y_plus_1, y_minus_1,
+            angle_1, angle_2,
+            mag_1, mag_2);
+#endif
+    return;
+}
+
+/* --------------------------------------------------------------------------*/
+/**
+ * \brief  Calculate angle and magnitute of pixel x
+ *
+ * \param x_plus_1
+ * \param x_minus_1
+ * \param y_plus_1
+ * \param y_minus_1
+ * \param angle_1
+ * \param angle_2
+ * \param mag_1
+ * \param
+ *
+ * \returns
+ */
+/* --------------------------------------------------------------------------*/
+int pix_bin_comp(uint8 x_plus_1, uint8 x_minus_1, uint8 y_plus_1, uint8 y_minus_1,
+        uint8 *angle_1, uint8 *angle_2,
+        float *mag_1, float *mag_2
+        )
+{
+    uint8 abs_dx = abs(x_plus_1 - x_minus_1);
+    uint8 abs_dy = abs(y_plus_1 - y_minus_1);
+    /* Angle calculation */
+    int result;
+    if (abs_dy){
+        if (abs_dx){
+            if (abs_dy * 91 > abs_dx * 250 ){
+                *angle_1 = DEGREE_70;
+                *angle_2 = DEGREE_90;
+            }
+            else if ( abs_dy * 193> abs_dx * 230){
+                *angle_1 = DEGREE_50;
+                *angle_2 = DEGREE_70;
+            }
+            else if ( abs_dy * 97 > abs_dx * 56){ // 194 / 112
+                *angle_1 = DEGREE_30;
+                *angle_2 = DEGREE_50;
+            }
+            else if ( abs_dy * 244 > abs_dx * 43){
+                *angle_1 = DEGREE_10;
+                *angle_2 = DEGREE_30;
+            }
+            else{
+                *angle_1 = DEGREE_170;
+                *angle_2 = DEGREE_10;
+            }
+        }
+        else { // dy#0, dx==0
+            *angle_1 = DEGREE_90;
+            *angle_2 = DEGREE_90;
+            *mag_1 = abs_dy;
+            *mag_2 = 0;
+        }
+    }
+    else{
+        *angle_1 = DEGREE_170;
+        *angle_2 = DEGREE_10;
+    }
+    /* Magitute calculation*/
+    if (*angle_1 != DEGREE_90) {
+        if (*angle_1 != DEGREE_170) {
+            result = solve_system_of_2_equation(
+                            mcos(*angle_1), mcos(*angle_2), abs_dx,
+                            msin(*angle_1), msin(*angle_2), abs_dy,
+                            *mag_1, *mag_2
+                            );
+        }else{
+            result = solve_system_of_2_equation(
+                            mcos(*angle_1), mcos(*angle_2), abs_dx,
+                            (0 - msin(*angle_1)), msin(*angle_2), abs_dy,
+                            *mag_1, *mag_2
+                            );
+        }
+    }
+    if ( (x_plus_1 > x_minus_1) ^ (y_plus_1 > y_minus_1)) {
+        *angle_1 = 180 - *angle_1;
+        *angle_2 = 180 - *angle_2;
+
+    }
+    print_info(x_plus_1, x_minus_1, y_plus_1, y_minus_1,
+            *angle_1,  *angle_2,
+            *mag_1,  *mag_2
+            );
+
+}

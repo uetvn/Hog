@@ -1,0 +1,108 @@
+%
+% Project name   :
+% File name      : Conventional_non-normalize_feature_extraction_in_HOG.tex
+% Created date   : Mon 17 Jul 2017 10:38:45 AM +07
+% Author         : Ngoc-Sinh Nguyen
+% Last modified  : Mon 17 Jul 2017 10:38:45 AM +07
+% Desc           :
+%
+
+\section{Conventional non-normalize feature extraction in HOG}
+\label{sec:conventional_non_normalize_feature_extraction_in_hog}
+Histogram of Oriented Gradient (HOG), pioneered by DALAL and
+TRIGGS\cite{dalal2005hog},
+become one of the most popular methods for feature extraction.
+In the conventional HOG, the cell histogram generation part is the most dominant
+power consumption, up to 58\% HOG power in
+Figure~\ref{fig:power_consumption_in_FPGA} \cite{takagi2013sdh}.
+Authors in\cite{mizuno2012ash} analyzed the cell histogram generation part account for 91\%
+workload in detection window-based approach.
+
+\begin{figure}[t]
+	\def\sscale{1.0\linewidth}
+	\includegraphics[width=\sscale]{"imgs/power consumption in FPGA"}
+	\caption{Power consumption in FPGA~\cite{takagi2013sdh}}
+	\label{fig:power_consumption_in_FPGA}
+\end{figure}
+\begin{align}
+	 d_{x} &= I(x, y + 1) - I (x, y - 1) \label{eq:dx} \\
+	 d_{y} &= I(x + 1, y) - I (x - 1, y) \label{eq:dy} \\
+	 M(x,y)     &= \sqrt{ d_x^2 + d_y^2 } \label{eq:M(x,y)} \\
+	 \theta       &= \arctan\Big( {\frac{d_y}{d_x}} \Big) \label{eq:phi} \\
+	 M_{j}      &= M(x,y) \frac{\theta - c_j}{w}  \label{eq:M_{j}} \\
+	 M_{j + 1}  &= M(x,y) \frac{c_{j+1} - \theta}{w} \label{eq:M_{j+1}}
+\end{align}
+Where:\\
+\begin{itemize}
+	\item $M(x,y)$ is the magnitude of the gradient of pixel $I(x,y)$
+	\item $\theta$ is the angle of the gradient of pixel $I(x,y)$
+	\item $c_j$, $c_{j+1}$ are two voted standard bins.
+	\item $M_j$, $M_{j+1}$ is is the magnitude of two voted standard bins.
+	\item $w$ is the distance between two continuous bins, $w = 20$
+\end{itemize}
+
+
+The high complexity and power consumption of the cell histogram generation come
+from the complex operations set: $\arctan $, square root, float
+multiply, and float division.
+As shown, the Equation~\ref{eq:M(x,y)} - ~\ref{eq:phi} use $\arctan$ and
+square root for computing the real gradient(angle and magnitude) of
+pixel $I(x,y)$.
+Additionally, voting the gradient of pixel $I(x,y)$ into the two continuous standard angle
+(bin) requires series of float multiplies and float divisions as
+Equation~\ref{eq:M_{j}} and ~\ref{eq:M_{j+1}}
+
+In order to reduce the complexity of cell histogram generation, some
+publications try to avoid the nonlinear inverse tangent operation in the Equation ~\ref{eq:phi}.
+Several approximation methods are proposed such as piece-wise
+~\cite{karakaya2009iha}, ‘look up tables’ (LUT)
+~\cite{gu2013ffm}~\cite{iandola2015leh}, and using ‘CORDIC’
+~\cite{peker2012heh}\cite{takagi2013sdh}\cite{mizuno2012ash} .
+They save up the power consumption and reduce the complexity of via
+pre-computing $\arctan$ values.
+However, pre-computing $\arctan$ values requires large memory area, and only
+solves the $\arctan$ problem.
+The other operations: square root
+in computing magnitude of pixel $I(x,y)$, and float division and float
+multiply in voting magnitude are still bottleneck at both performance and power consumption sides.
+
+
+A more effective approach in  ~\cite{negi2011dpo} \cite{suleiman2014eho}  has
+been proposed, which try to detect the two voted
+angles directly instead of computing the angle of pixel $I(x,y)$ firstly.
+This methodology uses the  fixed-point arithmetic with a 10-bit fractional part
+for angle calculation.
+This arithmetic system is equivalent to integer arithmetic in which all the
+values are left-shifted by 10-bits as  the  Equation~ \ref{eq:tan_mult_1024}.
+However, multiplying 1024 is not cover all cases of comparison between
+$\frac{d_y}{d_x}$ and $\tan\theta$.
+Because, both the $\frac{d_y}{d_x}$ and $\tan\theta$ are able to be an infinite
+fraction.
+Let take an example of popular bins [10..30..170](which are not same as the
+case in \cite{negi2011dpo} \cite{suleiman2014eho}), $\frac{56}{97} = 0.57732$
+expects to contribute its gradient to two bins: 10 and 30 degree, but the
+$\frac{97}{168} = 0.577381$ should be two bins at angle 30 and 50 degree.
+In another hand, multiplying 1024 is still larger than the range of $d_x$
+[-255:255].
+The same as the LUT solution, calculating magnitude to two voted bins in this
+methodology is still complex.
+
+\begin{align}
+	\tan\theta_1 & < \frac{d_y}{d_x} < \tan\theta_2 \\
+	1024\tan\theta_1\times d_x & < 1024d_y < 1024\tan\theta_2\times d_x \label{eq:tan_mult_1024}
+\end{align}
+
+In the paper \cite{pei-yinchen2014ehia} \cite{hsiao2016hdh}   ,  calculating magnitude of the two voted
+angles is simpler by computing an approximate model of the magnitude of the pixel
+$I(x,y)$ as Equation \ref{eq:appM} , and used fixed weight for voting  magnitude
+as Equation \ref{eq:appB1} - \ref{eq:appB2}.
+However, following those approximate calculations can be causes of the wrong bin.
+Additionally, computing the magnitude of pixel $I(x,y)$ is may not necessary.
+\begin{align}
+	M(x,y) &= \sqrt{d^2_x + d^2_y} \nonumber \\
+				 &\approx max((0.875a + 0.5b), a) \label{eq:appM} \\
+	B_1 &= M(x,y) >> 1 \label{eq:appB1}\\
+	B_2 &= M(x_y) >> 1 \label{eq:appB2}
+\end{align}
+where $a = max(d_x, d_y)$ and $b = min(d_x, d_y)$
+

@@ -1,1 +1,0 @@
-/usr/bin/cc  -g -pg   CMakeFiles/hog.dir/lib/lodepng.c.o CMakeFiles/hog.dir/main.c.o CMakeFiles/hog.dir/src/hog_window.c.o CMakeFiles/hog.dir/src/pack.c.o CMakeFiles/hog.dir/src/rwpng.c.o CMakeFiles/hog.dir/src/svm_window.c.o  -o hog -rdynamic -lm 

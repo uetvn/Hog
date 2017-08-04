@@ -1,0 +1,58 @@
+%
+% Project name   :
+% File name      : intro.tex
+% Created date   : Mon 17 Jul 2017 10:42:25 AM +07
+% Author         : Ngoc-Sinh Nguyen
+% Last modified  : Mon 17 Jul 2017 10:42:25 AM +07
+% Desc           :
+%
+
+\section{Introduction}
+\label{sec:introduction}
+The histogram of oriented gradients (HOG) \cite{dalal2005hog} is a feature descriptor used in
+computer vision and image processing for objection detection.
+It gets the quantity of strong characteristic from the shape change of the object by
+dividing a local domain into plural blocks and making the incline of each the
+histogram.
+Practically, HOG feature achieves very high accuracy level,  it is up to
+96.6\% of the detection rate with 20.7\% of the false positive rate
+\cite{negi2011dpo}.
+Hence, it is the key role of wide  range application domains including robotic,
+security surveillance, etc.
+However,  the complexity level of HOG is the most difficult problem when
+implementing it into embedded systems and  battery systems.
+
+
+The HOG algorithm can be separated into 3 phases: cell histogram generation,
+block normalization, and the SVM classification.
+The first phase plays as the most complex one and consumes the most energy.
+Because, extracting the feature of each pixel requires series of highly complex
+operation: inverse tangent, square root, float multiply.
+Moreover, in the age of cloud computing, the two last phases can be done in the
+server  for IoT devices.
+It means that the local devices only need to do cell histogram generation part,
+then transferring all voted bins to their servers.
+It allows extending the life of battery systems,
+
+In this work, we study about the cell histogram generation and would like to optimize this
+phase to be able to run in low resource embedded systems.
+Our methodology  is transforming all of the complex operations inverse tangent, square root
+and float multiply  into series of shift and addition operations.
+As our experiments, voting gradient of a pixel into the two standard bins  requires about 30 addition operations
+and 40 shift operations.
+About the accuracy of computing, the percentage errors are only about 1\% of
+$d_x$ $d_y$.
+Hardware module of proposed methodology consumes about 3.57 KGates with 45nm
+NanGate standard cell library.
+The maximum frequency of the hardware is 400MHz, and its throughput is up to 0.4 pixel/ns.
+
+
+The rests of the paper are organized as follows.
+Section \ref{sec:conventional_non_normalize_feature_extraction_in_hog}
+introduces the cell histogram generation and some previous optimization works.
+Section \ref{sec:proposed_non_normalize_feature_extraction} shows the detail of
+proposed methodology.
+Section \ref{sec:experimental_results} presents details of the hardware
+implementation of proposed methodology and simulation results.
+Finally, section \ref{sec:conclusion} gives a summary and our expected
+future.

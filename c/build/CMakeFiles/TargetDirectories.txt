@@ -1,3 +1,0 @@
-/home/Working/Cloud/github/hog_project/c/build/CMakeFiles/edit_cache.dir
-/home/Working/Cloud/github/hog_project/c/build/CMakeFiles/rebuild_cache.dir
-/home/Working/Cloud/github/hog_project/c/build/CMakeFiles/hog.dir

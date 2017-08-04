@@ -1,0 +1,92 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+. Conclusion	conclu.tex	/^\\section{Conclusion}$/;"	s
+. Conventional non-normalize feature extraction in HOG	Conventional_non-normalize_feature_extraction_in_HOG.tex	/^\\section{Conventional non-normalize feature extraction in HOG}$/;"	s
+. Implementing proposed methodology into hardware and experimental results	Experimental_results.tex	/^\\section{Implementing proposed methodology into hardware and experimental results}$/;"	s
+. Introduction	intro.tex	/^\\section{Introduction}$/;"	s
+. Proposed cell histogram generation	Proposed_non-normalize_feature_extraction.tex	/^\\section{Proposed cell histogram generation}$/;"	s
+.. Experimental results	Experimental_results.tex	/^\\subsection{Experimental results}$/;"	s
+.. Hardware implementation	Experimental_results.tex	/^\\subsection{Hardware implementation}$/;"	s
+BIBLIOGRAPHY	index.tex	/^\\bibliography{index} % index.bib$/;"	s
+benenson2012pd1	index.bib	/^@inproceedings{benenson2012pd1,$/;"	b
+dalal2005hog	index.bib	/^@inproceedings{dalal2005hog,$/;"	b
+eq:M(x,y)	Conventional_non-normalize_feature_extraction_in_HOG.tex	/^	 M(x,y)     &= \\sqrt{ d_x^2 + d_y^2 } \\label{eq:M(x,y)} \\\\$/;"	l
+eq:M(x,y)	Conventional_non-normalize_feature_extraction_in_HOG.tex	/^As shown, the Equation~\\ref{eq:M(x,y)} - ~\\ref{eq:phi} use $\\arctan$ and$/;"	r
+eq:M_{j	Conventional_non-normalize_feature_extraction_in_HOG.tex	/^	 M_{j}      &= M(x,y) \\frac{\\theta - c_j}{w}  \\label{eq:M_{j}} \\\\$/;"	l
+eq:M_{j	Conventional_non-normalize_feature_extraction_in_HOG.tex	/^Equation~\\ref{eq:M_{j}} and ~\\ref{eq:M_{j+1}} $/;"	r
+eq:M_{j+1	Conventional_non-normalize_feature_extraction_in_HOG.tex	/^	 M_{j + 1}  &= M(x,y) \\frac{c_{j+1} - \\theta}{w} \\label{eq:M_{j+1}}$/;"	l
+eq:appB1	Conventional_non-normalize_feature_extraction_in_HOG.tex	/^	B_1 &= M(x,y) >> 1 \\label{eq:appB1}\\\\$/;"	l
+eq:appB1	Conventional_non-normalize_feature_extraction_in_HOG.tex	/^as Equation \\ref{eq:appB1} - \\ref{eq:appB2}. $/;"	r
+eq:appB2	Conventional_non-normalize_feature_extraction_in_HOG.tex	/^	B_2 &= M(x_y) >> 1 \\label{eq:appB2}$/;"	l
+eq:appM	Conventional_non-normalize_feature_extraction_in_HOG.tex	/^				 &\\approx max((0.875a + 0.5b), a) \\label{eq:appM} \\\\$/;"	l
+eq:appM	Conventional_non-normalize_feature_extraction_in_HOG.tex	/^$I(x,y)$ as Equation \\ref{eq:appM} , and used fixed weight for voting  magnitude $/;"	r
+eq:b1	Experimental_results.tex	/^only 1 multiply with $\\frac{1}{\\sin(20)}$ as the Equation \\ref{eq:b1} or$/;"	r
+eq:b1	Proposed_non-normalize_feature_extraction.tex	/^	\\Vert \\overrightarrow{B_{\\theta_i}} \\Vert &= \\frac{sin(\\theta_{i+1})d_x - cos(\\theta_{i+1})d_y }{sin(20)} \\label{eq:b1} \\\\$/;"	l
+eq:b2	Experimental_results.tex	/^\\ref{eq:b2}.$/;"	r
+eq:b2	Proposed_non-normalize_feature_extraction.tex	/^	\\Vert \\overrightarrow{B_{\\theta_{i+1}}} \\Vert &= \\frac{cos(\\theta)d_y - sin(\\theta)d_x}{sin(20)} \\label{eq:b2}$/;"	l
+eq:dx	Conventional_non-normalize_feature_extraction_in_HOG.tex	/^	 d_{x} &= I(x, y + 1) - I (x, y - 1) \\label{eq:dx} \\\\$/;"	l
+eq:dx	Proposed_non-normalize_feature_extraction.tex	/^As the Equation \\ref{eq:dx}, \\ref{eq:dy} in the Section$/;"	r
+eq:dy	Conventional_non-normalize_feature_extraction_in_HOG.tex	/^	 d_{y} &= I(x + 1, y) - I (x - 1, y) \\label{eq:dy} \\\\$/;"	l
+eq:m_to_b_b	Proposed_non-normalize_feature_extraction.tex	/^	\\overrightarrow{M} &= \\overrightarrow{B_{\\theta_i}} + \\overrightarrow{B_{\\theta_{i + 1}}}  \\label{eq:m_to_b_b}	 \\\\$/;"	l
+eq:m_to_b_b	Proposed_non-normalize_feature_extraction.tex	/^equations of the Equation \\ref{eq:m_to_b_b} in the Ox and Oy axis, respectively.$/;"	r
+eq:phi	Conventional_non-normalize_feature_extraction_in_HOG.tex	/^	 \\theta       &= \\arctan\\Big( {\\frac{d_y}{d_x}} \\Big) \\label{eq:phi} \\\\$/;"	l
+eq:phi	Conventional_non-normalize_feature_extraction_in_HOG.tex	/^publications try to avoid the nonlinear arctangent operation in the Equation~\\ref{eq:phi}.$/;"	r
+eq:tan_mult_1024	Conventional_non-normalize_feature_extraction_in_HOG.tex	/^	1024\\tan\\theta_1\\times d_x & < 1024d_y < 1024\\tan\\theta_2\\times d_x \\label{eq:tan_mult_1024}$/;"	l
+eq:tan_mult_1024	Conventional_non-normalize_feature_extraction_in_HOG.tex	/^values are left-shifted by 10-bits as  the  Equation~ \\ref{eq:tan_mult_1024}. $/;"	r
+eq:tan_mult_1024	Proposed_non-normalize_feature_extraction.tex	/^Equation \\ref{eq:tan_mult_1024}. $/;"	r
+eq:x_to_b_b	Experimental_results.tex	/^\\ref{eq:x_to_b_b} \\ref{eq:y_to_b_b}: $d'_x$ and $d'_y$.$/;"	r
+eq:x_to_b_b	Proposed_non-normalize_feature_extraction.tex	/^	+  \\Vert \\overrightarrow{B_{\\theta_{i+1}}} \\Vert \\cos(\\theta_{i+1}) \\label{eq:x_to_b_b}	 \\\\$/;"	l
+eq:x_to_b_b	Proposed_non-normalize_feature_extraction.tex	/^The two Equations \\ref{eq:x_to_b_b} and \\ref{eq:y_to_b_b} are the consequent$/;"	r
+eq:x_to_b_b	Proposed_non-normalize_feature_extraction.tex	/^\\ref{eq:x_to_b_b}-\\ref{eq:y_to_b_b}.$/;"	r
+eq:x_to_b_b	Proposed_non-normalize_feature_extraction.tex	/^of two Equations \\ref{eq:x_to_b_b} - \\ref{eq:y_to_b_b}.$/;"	r
+eq:y_to_b_b	Proposed_non-normalize_feature_extraction.tex	/^	+  \\Vert \\overrightarrow{B_{\\theta_{i+1}}} \\Vert \\sin(\\theta_{i+1}) \\label{eq:y_to_b_b}\\\\$/;"	l
+fig:M_Oxy	Proposed_non-normalize_feature_extraction.tex	/^	\\label{fig:M_Oxy}$/;"	l
+fig:M_Oxy	Proposed_non-normalize_feature_extraction.tex	/^form of two standard bins as Figure \\ref{fig:M_Oxy} and  Equation \\ref{eq:m_to_b_b}. $/;"	r
+fig:dataflow	Proposed_non-normalize_feature_extraction.tex	/^	\\label{fig:dataflow}$/;"	l
+fig:dataflow	Proposed_non-normalize_feature_extraction.tex	/^As shown in the Figure~\\ref{fig:dataflow} and Equations \\ref{eq:b1} \\ref{eq:b2}, all of multiply operations, we have already known one of two numbers.$/;"	r
+fig:dataflow	Proposed_non-normalize_feature_extraction.tex	/^Figure \\ref{fig:dataflow} shows the details of the data flow of the proposed$/;"	r
+fig:dataflow	Proposed_non-normalize_feature_extraction.tex	/^Figure~\\ref{fig:dataflow}, the total number of operations to calculate two voted$/;"	r
+fig:hw_implementation_002	Experimental_results.tex	/^	\\label{fig:hw_implementation_002}$/;"	l
+fig:hw_implementation_002	Experimental_results.tex	/^As shown in Figure~\\ref{fig:hw_implementation_002}, the module includes 4$/;"	r
+fig:hw_implementation_002	Experimental_results.tex	/^Figure \\ref{fig:hw_implementation_002} shows the hardware module of$/;"	r
+fig:power_consumption_in_FPGA	Conventional_non-normalize_feature_extraction_in_HOG.tex	/^	\\label{fig:power_consumption_in_FPGA}$/;"	l
+fig:power_consumption_in_FPGA	Conventional_non-normalize_feature_extraction_in_HOG.tex	/^Figure~\\ref{fig:power_consumption_in_FPGA} \\cite{takagi2013sdh}.$/;"	r
+fig:verification_model	Experimental_results.tex	/^	\\label{fig:verification_model}$/;"	l
+fig:verification_model	Experimental_results.tex	/^Figure \\ref{fig:verification_model} shows a error of calculation model of the$/;"	r
+gu2013ffm	index.bib	/^@article{gu2013ffm,$/;"	b
+hsiao2016hdh	index.bib	/^@inproceedings{hsiao2016hdh,$/;"	b
+iandola2015leh	index.bib	/^@inproceedings{iandola2015leh,$/;"	b
+karakaya2009iha	index.bib	/^@inproceedings{karakaya2009iha,$/;"	b
+kelly2014hog	index.bib	/^@inproceedings{kelly2014hog,$/;"	b
+mizuno2012ash	index.bib	/^@inproceedings{mizuno2012ash,$/;"	b
+negi2011dpo	index.bib	/^@inproceedings{negi2011dpo,$/;"	b
+oh2012lro	index.bib	/^@article{oh2012lro,$/;"	b
+pei-yinchen2014ehia	index.bib	/^@article{pei-yinchen2014ehia,$/;"	b
+peker2012heh	index.bib	/^@inproceedings{peker2012heh,$/;"	b
+sec:conclusion	conclu.tex	/^\\label{sec:conclusion}$/;"	l
+sec:conclusion	intro.tex	/^Finally, section \\ref{sec:conclusion} gives summary and our expected$/;"	r
+sec:conventional_non_normalize_feature_extraction_in_hog	Conventional_non-normalize_feature_extraction_in_HOG.tex	/^\\label{sec:conventional_non_normalize_feature_extraction_in_hog}$/;"	l
+sec:conventional_non_normalize_feature_extraction_in_hog	Proposed_non-normalize_feature_extraction.tex	/^\\ref{sec:conventional_non_normalize_feature_extraction_in_hog}, the $d_x$,$/;"	r
+sec:conventional_non_normalize_feature_extraction_in_hog	intro.tex	/^Section \\ref{sec:conventional_non_normalize_feature_extraction_in_hog}$/;"	r
+sec:experimental_results	Experimental_results.tex	/^\\label{sec:experimental_results}$/;"	l
+sec:experimental_results	intro.tex	/^Section \\ref{sec:experimental_results} presents details of hardware$/;"	r
+sec:introduction	intro.tex	/^\\label{sec:introduction}$/;"	l
+sec:proposed_non_normalize_feature_extraction	Proposed_non-normalize_feature_extraction.tex	/^\\label{sec:proposed_non_normalize_feature_extraction}$/;"	l
+sec:proposed_non_normalize_feature_extraction	intro.tex	/^Section \\ref{sec:proposed_non_normalize_feature_extraction} shows the detail of$/;"	r
+sub:experimental_results	Experimental_results.tex	/^\\label{sub:experimental_results}$/;"	l
+sub:hardware_pipeline_model	Experimental_results.tex	/^\\label{sub:hardware_pipeline_model}$/;"	l
+suleiman2014eho	index.bib	/^@inproceedings{suleiman2014eho,$/;"	b
+tab:mult_2_shift_add	Experimental_results.tex	/^parallel all the multiples in the Table \\ref{tab:mult_2_shift_add}.$/;"	r
+tab:mult_2_shift_add	Proposed_non-normalize_feature_extraction.tex	/^	\\label{tab:mult_2_shift_add}$/;"	l
+tab:mult_2_shift_add	Proposed_non-normalize_feature_extraction.tex	/^From the Table \\ref{tab:mult_2_shift_add} and the data flow in$/;"	r
+tab:mult_2_shift_add	Proposed_non-normalize_feature_extraction.tex	/^Table \\ref{tab:mult_2_shift_add} shows all of multiply cases in cell histogram$/;"	r
+tab:mult_2_shift_add	Proposed_non-normalize_feature_extraction.tex	/^parts in the Table \\ref{tab:mult_2_shift_add}. $/;"	r
+tab:tanphi_and_its_nearest_values	Proposed_non-normalize_feature_extraction.tex	/^	\\label{tab:tanphi_and_its_nearest_values}$/;"	l
+tab:tanphi_and_its_nearest_values	Proposed_non-normalize_feature_extraction.tex	/^\\ref{tab:tanphi_and_its_nearest_values}. $/;"	r
+tab:tanphi_and_its_nearest_values	Proposed_non-normalize_feature_extraction.tex	/^\\ref{tab:tanphi_and_its_nearest_values}.$/;"	r
+tab:tanphi_and_its_nearest_values	Proposed_non-normalize_feature_extraction.tex	/^archive Table \\ref{tab:tanphi_and_its_nearest_values}. $/;"	r
+takagi2013sdh	index.bib	/^@inproceedings{takagi2013sdh,$/;"	b

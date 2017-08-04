@@ -1,0 +1,25 @@
+%
+% Project name   :
+% File name      : conclu.tex
+% Created date   : Mon 17 Jul 2017 10:43:01 AM +07
+% Author         : Ngoc-Sinh Nguyen
+% Last modified  : Mon 17 Jul 2017 10:43:01 AM +07
+% Desc           :
+%
+
+\section{Conclusion}
+\label{sec:conclusion}
+
+In this paper, we have proposed the methodology to do cell histogram generation
+part with only set of  addition and shift operation.
+With this methodology, we spend about 30 additions and 40 shifts to compute
+the two voted bin of a  pixels.
+Another important characteristic of this methodology is that it provides very
+low percentage errors, it is always less than 2\%. 
+And to change the percentage errors, we only need to change the size of fraction
+part via multiplying $\cos$ $\sin$ function with another number.
+
+Our future work includes implementing full HOG algorithm into hardware with our
+optimization in cell histogram generation  and
+the other optimizations in the normalization and SVM phases.
+

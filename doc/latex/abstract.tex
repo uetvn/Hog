@@ -1,0 +1,28 @@
+%
+% Project name   :
+% File name      : abstract.tex
+% Created date   : Mon 17 Jul 2017 10:29:12 AM +07
+% Author         : Ngoc-Sinh Nguyen
+% Last modified  : Sat 29 Jul 2017 03:33:28 PM ICT
+% Desc           :
+%
+\begin{abstract}
+Histogram of Oriented Gradient (HOG) is a popular feature description for the purpose of object detection.
+However, HOG algorithm requires performance system because of the complex
+operations set.
+Especially, the cell histogram generation in HOG (feature extraction) is one
+the most complex part, it requires one inverse tangent, square root, float
+	multiply.
+In this paper, we propose a methodology to improve the cell histogram generation
+part by using only shift and addition operations.
+For each pixel, it spends about 30 addition and 40 shift operations.
+Simulation results show that the percentage errors of calculations are always less than
+2\% with 8-bits length of the fractional part.
+Synthesize the hardware implementation presents that the area cost is 3.5 Kgates with
+45nm NanGate standard cell library.
+The hardware module runs at maximum frequency 400 MHz, and the throughput is
+about 0.4 (pixel/ns) for a single module.
+It is able to support about 48 frames/s with 4K UHD resolution.
+\end{abstract}
+
+
