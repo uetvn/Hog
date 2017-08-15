@@ -28,5 +28,4 @@ recheck your code.
 
 # Convert decimal format to binary format
 
-If in linux env, the ../scripts/*.sh  are usabale. But need to delete the part
-of angle and magniture in ref_testcases/test_cases.txt
+If in linux env, the ../scripts/\*.sh are usabale. But need to delete the part of angle and magniture in ref_testcases/test_cases.txt

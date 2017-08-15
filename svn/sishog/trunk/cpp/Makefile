@@ -26,6 +26,8 @@ pix_bin_comp_SRCS := src/pix_bin_comp.cpp tests/main_pix_bin_comp.cpp
 pix_bin_comp_OBJS := $(addprefix $(OBJ_DIR)/,$(notdir $(pix_bin_comp_SRCS:.cpp=.o)))
 
 pix_bin_comp: $(pix_bin_comp_OBJS)
+	@echo "pix_bin_comp_OBJS: $(pix_bin_comp_OBJS)"
+	@echo "pix_bin_comp_SRCS: $(pix_bin_comp_SRCS)"
 	    $(CC) $(FLAGS) $(INC) $^ -o build/$@ $(LD_LIB)
 
 $(OBJ_DIR)/%.o : %.cpp
