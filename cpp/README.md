@@ -29,9 +29,9 @@ File/Folder structure:
 # Installation
 
 To build this software you just need to:
-	make`
-	make run`
-	or ./hog -i <path/to/image>`
+- `make`
+- `make run`
+- or `./hog -i <path/to/image>`
 
 
 
