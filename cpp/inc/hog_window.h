@@ -59,6 +59,7 @@ unsigned norm_block_16x16(float *result, float *block1, float *block2, float *bl
  * Desciption: the image window is divied into non-overlapping 8x8 pixels to calculating smallest hog feature unit
  */
 unsigned hog_block_8x8(float *hog_9bin, uint32 head, uint8 *src, uint32 w, uint32 h);
+unsigned hog_block_8x8_old(float *hog_9bin, uint32 head, uint8 *src, uint32 w, uint32 h);
 
 /*
  * Desciption: calculating dervavite with respect to x of block
@@ -69,6 +70,7 @@ unsigned dx_block_8x8(int8 *result, uint32 head, uint8 *src, uint32 w);
  * Desciption: calculating dervavite with respect to x of block
  */
 unsigned dy_block_8x8(int8 *result, uint32 head, uint8 *src, uint32 w, uint32 h);
+unsigned dy_block_8x8_old(int8 *result, uint32 head, uint8 *src, uint32 w, uint32 h);
 
 /*
  * Desciption: calculating gradient vector magnitude of block

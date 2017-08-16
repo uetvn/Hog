@@ -9,6 +9,7 @@
 
 #include <math.h>
 #include "hog_window.h"
+#include "pix_bin_comp.h"
 
 unsigned hog_window(uint32 *object, uint8 *src, uint32 w, uint32 h)
 {
@@ -17,10 +18,10 @@ unsigned hog_window(uint32 *object, uint8 *src, uint32 w, uint32 h)
     object[0] = 0; // first element stores the number of detected
 
     uint32  head, i;
-    uint32  tail = w * (h - window_h);
+    uint32  tail = w * (h - window_h) - 1;
     uint8  *is_detected = malloc(sizeof(uint8));
 
-    for (head = 0; head <= tail; head += 8 * w) {
+    for (head = w + 1; head <= tail; head += 8 * w) {
         hog_prime_window(hog, head, src, w, h);
 
         svm_window(is_detected, hog);
@@ -28,7 +29,7 @@ unsigned hog_window(uint32 *object, uint8 *src, uint32 w, uint32 h)
         if (*is_detected)
             saving_object(object, head);
 
-        for (i = head; i <=  head + w - window_w; i += 8) {
+        for (i = head; i <=  head + w - window_w - 1; i += 8) {
             hog_next_window(hog, i, src, w, h);
 
             svm_window(is_detected, hog);
@@ -70,14 +71,26 @@ unsigned hog_prime_row(struct HOG_row *hog_row, uint32 head, uint8 *src, uint32 
     float   *hog_8x8_4    = malloc(sizeof(float) * 9);
 
     /* Precalcultion */
-    hog_block_8x8(hog_8x8_1,  head,         src, w, h);
-    hog_block_8x8(hog_8x8_2,  head + 8 * w, src, w, h);
+    if (choose_new_pix_bin_comp) {
+        hog_block_8x8(hog_8x8_1,  head,         src, w, h);
+        hog_block_8x8(hog_8x8_2,  head + 8 * w, src, w, h);
+    }
+    else {
+        hog_block_8x8_old(hog_8x8_1,  head,         src, w, h);
+        hog_block_8x8_old(hog_8x8_2,  head + 8 * w, src, w, h);
+    }
 
     uint32  i;
     for (i = 0; i < rows; i++) {
         head    += 8;
-        hog_block_8x8(hog_8x8_3,  head, src, w, h);
-        hog_block_8x8(hog_8x8_4,  head + 8 * w, src, w, h);
+        if (choose_new_pix_bin_comp) {
+            hog_block_8x8(hog_8x8_3,  head, src, w, h);
+            hog_block_8x8(hog_8x8_4,  head + 8 * w, src, w, h);
+        }
+        else {
+            hog_block_8x8_old(hog_8x8_3,  head, src, w, h);
+            hog_block_8x8_old(hog_8x8_4,  head + 8 * w, src, w, h);
+        }
 
         norm_block_16x16(hog_row[i].hog_block_16x16, hog_8x8_1, hog_8x8_2, hog_8x8_3, hog_8x8_4);
         i++;
@@ -85,8 +98,14 @@ unsigned hog_prime_row(struct HOG_row *hog_row, uint32 head, uint8 *src, uint32 
             break;
 
         head    += 8;
-        hog_block_8x8(hog_8x8_1,  head, src, w, h);
-        hog_block_8x8(hog_8x8_2,  head + 8 * w, src, w, h);
+        if (choose_new_pix_bin_comp) {
+            hog_block_8x8(hog_8x8_1,  head, src, w, h);
+            hog_block_8x8(hog_8x8_2,  head + 8 * w, src, w, h);
+        }
+        else {
+            hog_block_8x8_old(hog_8x8_1,  head, src, w, h);
+            hog_block_8x8_old(hog_8x8_2,  head + 8 * w, src, w, h);
+        }
 
         norm_block_16x16(hog_row[i].hog_block_16x16, hog_8x8_3, hog_8x8_4, hog_8x8_1, hog_8x8_2);
     }
@@ -112,15 +131,24 @@ unsigned hog_next_row(struct HOG_row *hog_row, uint32 head, uint8 *src, uint32 w
 
 unsigned hog_block_16x16(float *result, uint32 head, uint8 *src, uint32 w, uint32 h)
 {
-    float   *hog_8x8_1  = malloc(sizeof(float) * 9);
-    float   *hog_8x8_2  = malloc(sizeof(float) * 9);
-    float   *hog_8x8_3  = malloc(sizeof(float) * 9);
-    float   *hog_8x8_4  = malloc(sizeof(float) * 9);
+    float   *hog_8x8_1  = calloc(9, sizeof(float));
+    float   *hog_8x8_2  = calloc(9, sizeof(float));
+    float   *hog_8x8_3  = calloc(9, sizeof(float));
+    float   *hog_8x8_4  = calloc(9, sizeof(float));
 
-    hog_block_8x8(hog_8x8_1, head,             src, w, h);
-    hog_block_8x8(hog_8x8_2, head + 8 * w,     src, w, h);
-    hog_block_8x8(hog_8x8_3, head + 8,         src, w, h);
-    hog_block_8x8(hog_8x8_4, head + 8 * w + 8, src, w, h);
+
+    if (choose_new_pix_bin_comp) {
+        hog_block_8x8(hog_8x8_1, head,             src, w, h);
+        hog_block_8x8(hog_8x8_2, head + 8 * w,     src, w, h);
+        hog_block_8x8(hog_8x8_3, head + 8,         src, w, h);
+        hog_block_8x8(hog_8x8_4, head + 8 * w + 8, src, w, h);
+    }
+    else {
+        hog_block_8x8_old(hog_8x8_1, head,             src, w, h);
+        hog_block_8x8_old(hog_8x8_2, head + 8 * w,     src, w, h);
+        hog_block_8x8_old(hog_8x8_3, head + 8,         src, w, h);
+        hog_block_8x8_old(hog_8x8_4, head + 8 * w + 8, src, w, h);
+    }
 
     norm_block_16x16(result, hog_8x8_1, hog_8x8_2, hog_8x8_3, hog_8x8_4);
 
@@ -156,6 +184,43 @@ unsigned norm_block_16x16(float *result, float *block1, float *block2, float *bl
 }
 
 unsigned hog_block_8x8(float *hog_9bin, uint32 head, uint8 *src, uint32 w, uint32 h)
+{
+    uint32   x_plus_1;
+    uint32   x_minus_1;
+    uint32   y_plus_1;
+    uint32   y_minus_1;
+    uint8   *angle_1 = malloc(sizeof(uint8));
+    uint8   *angle_2 = malloc(sizeof(uint8));
+    float   *mag_1 = malloc(sizeof(float));
+    float   *mag_2 = malloc(sizeof(float));
+
+    /* Init */
+    x_plus_1    = head + 1;
+    x_minus_1   = head - 1;
+    y_plus_1    = head + w;
+    y_minus_1   = head - w;
+
+    uint8   i, j;
+    for (i = 0; i < 8; i++) {
+        for (j = 0; j < 8; j++) {
+            pix_bin_comp(src[x_plus_1], src[x_minus_1], src[y_plus_1], src[y_minus_1],
+                    angle_1, angle_2, mag_1, mag_2);
+
+            hog_9bin[*angle_1 / 20] += *mag_1;
+            hog_9bin[*angle_2 / 20] += *mag_2;
+
+            x_plus_1++; x_minus_1++; y_plus_1++; y_minus_1++;
+        }
+        x_plus_1  = x_plus_1  - 8  + w;
+        x_minus_1 = x_minus_1 - 8  + w;
+        y_plus_1  = y_plus_1  - 8  + w;
+        y_minus_1 = y_minus_1 - 8  + w;
+    }
+
+	return 0;
+}
+
+unsigned hog_block_8x8_old(float *hog_9bin, uint32 head, uint8 *src, uint32 w, uint32 h)
 {
     /* Calculate derivative with respect to x */
     int8    *dx    = malloc(sizeof(int8) * 64);

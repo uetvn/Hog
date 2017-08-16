@@ -36,6 +36,8 @@ typedef unsigned char        uint8;
 
 extern const float LUT_magnit[];
 extern const float LUT_angle[];
+int choose_new_pix_bin_comp;
+
 
 struct HOG_row {
         float   *hog_block_16x16;

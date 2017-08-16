@@ -1,0 +1,5 @@
+-I./inc
+-Wall
+-g
+-s
+-lm

@@ -34,9 +34,13 @@ int main(int argc, char *argv[])
 		return 1;
 	}
 
+
 	/* Read file PNG */
 	read_PNG(iF, &img);
 	printf("Loaded PNG: %s \n", iF);
+
+    printf("Choose: \n 0. Old approach \n 1. New pix bin comp\n");
+    scanf("%d", &choose_new_pix_bin_comp);
 
     /* MY TODO */
     uint32  width   = img.width;
