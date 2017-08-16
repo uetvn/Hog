@@ -6,30 +6,30 @@
 ###############################################################################
 .PHONY: all run clean cleanall
 
-CC 		:= gcc
+CXX 	:= g++
 CFLAGS  += -Wall -g -I./inc
 LFLAGS 	+= -s
 TARGET 	:= hog
 
-vpath %.c src
-vpath %.h inc
+vpath %.cpp src
+vpath %.h   inc
 
 SUB_DIR := obj
 CREATE_SUB_DIR := $(shell mkdir -p $(SUB_DIR))
 vpath %.o $(SUB_DIR)
 vpath %.d $(SUB_DIR)
 
-SRCS := $(wildcard src/*.c)
+SRCS := $(wildcard src/*.cpp)
 INCS := $(wildcard inc/*.h)
-OBJS := $(addprefix $(SUB_DIR)/,$(notdir $(SRCS:.c=.o)))
+OBJS := $(addprefix $(SUB_DIR)/,$(notdir $(SRCS:.cpp=.o)))
 DEPS := $(addprefix $(SUB_DIR)/,$(notdir $(SRCS:.c=.d)))
 
 all : $(TARGET)
 $(TARGET) : $(OBJS)
-	@$(CC) $(LFLAGS) $(OBJS) -o $@ -lm
+	@$(CXX) $(LFLAGS) $(OBJS) -o $@ -lm
 
-$(SUB_DIR)/%.o: %.c
-	@$(CC) -c $(CFLAGS) -MMD -MP $< -o $@
+$(SUB_DIR)/%.o: %.cpp
+	@$(CXX) -c $(CFLAGS) -MMD -MP $< -o $@
 
 run:
 	./hog -i TEST.png
