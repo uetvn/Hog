@@ -4,4 +4,4 @@
 *.swp
 *.obj
 *.out
-*bin*
+svn/

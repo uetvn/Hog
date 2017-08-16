@@ -14,8 +14,8 @@
 /* print foramt*/
 #define VHDL_FORMAT  0
 #define ONLY_BASIC_CASE 0
-/* All of them are mult 1024 */
 
+/* All of them are mult 1024 */
 #define SIN10_MULT_1024   178
 #define SIN30_MULT_1024   512
 #define SIN50_MULT_1024   784
