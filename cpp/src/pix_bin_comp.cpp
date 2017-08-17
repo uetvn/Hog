@@ -8,13 +8,10 @@
  */
 
 #include <math.h>
-#include "hog_window.h"
 #include "pix_bin_comp.h"
 
-#define msin(x) fabs(sin(x * (PI/180.0)))
-#define mcos(x) fabs(cos(x * (PI/180.0)))
-int  solve_system_of_2_equation(float a1, float b1, float c1,
-        float a2, float b2, float c2, float *root1, float *root2);
+#define msin(x) fabs(sin(x * (PI / 180.0)))
+#define mcos(x) fabs(cos(x * (PI / 180.0)))
 
 int pix_bin_comp(uint8 x_plus_1, uint8 x_minus_1, uint8 y_plus_1, uint8 y_minus_1,
         uint8 *angle_1, uint8 *angle_2,
@@ -79,12 +76,11 @@ int pix_bin_comp(uint8 x_plus_1, uint8 x_minus_1, uint8 y_plus_1, uint8 y_minus_
         }
     }
     return 0;
-   // if ( (x_plus_1 > x_minus_1) ^ (y_plus_1 > y_minus_1)) {
-   //     *angle_1 = 180 - *angle_1;
-   //     *angle_2 = 180 - *angle_2;
-
-   // }
-    //print_info(x_plus_1, x_minus_1, y_plus_1, y_minus_1, *angle_1,  *angle_2, *mag_1,  *mag_2);
+   if ( (x_plus_1 > x_minus_1) ^ (y_plus_1 > y_minus_1)) {
+       *angle_1 = 180 - *angle_1;
+       *angle_2 = 180 - *angle_2;
+   }
+   //print_info(x_plus_1, x_minus_1, y_plus_1, y_minus_1, *angle_1,  *angle_2, *mag_1,  *mag_2);
 }
 
 
@@ -103,11 +99,15 @@ int  solve_system_of_2_equation(float a1, float b1, float c1,
     } else Dy = 0;
 
     if (D) {
-        *root1  = Dx/D;
-        *root2  = Dy/D;
-    }else{
-        printf("Error: \n");
+        *root1  = Dx / D;
+        *root2  = Dy / D;
     }
+
+    else {
+        printf("Error: \n");
+        return 1;
+    }
+
     return 0;
 }
 

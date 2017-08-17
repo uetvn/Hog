@@ -1,0 +1,8 @@
+-I./inc
+-Wall
+-g
+-std=c++11
+-I/usr/local/include/opencv
+-I/usr/local/include
+-s
+-lm

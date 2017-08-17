@@ -10,11 +10,7 @@
 #ifndef PIX_BIN_COM
 #define PIX_BIN_COM
 
-#include "pack.h"
-
-typedef unsigned char uint8;
-typedef unsigned int uint32;
-
+#include "config.h"
 
 #define DEGREE_0 0
 #define DEGREE_10 10
@@ -42,10 +38,12 @@ typedef unsigned int uint32;
  * \returns
  */
 /* --------------------------------------------------------------------------*/
-
 int pix_bin_comp(uint8 x_plus_1, uint8 x_minus_1,
         uint8 y_plus_1, uint8 y_minus_1,
         uint8 *angle_1, uint8 *angle_2,
         float *mag_1, float *mag_2);
+
+int  solve_system_of_2_equation(float a1, float b1, float c1,
+        float a2, float b2, float c2, float *root1, float *root2);
 
 #endif /* ifndef PIX_BIN_COM */
