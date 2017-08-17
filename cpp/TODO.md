@@ -14,6 +14,14 @@ New approach of HOG using class C++
 - [reference](https://github.com/quangduytran/Human-Detection)
 
 
+
+# TODO
+
+Edit HOGProcessor cohenrent myself HOG
+
+
+
+
 # Features
 
 Do not use OpenCV, but images type of OpenCV
@@ -23,14 +31,5 @@ Do not use OpenCV, but images type of OpenCV
 - [Sobel - Derivative x-y](http://docs.opencv.org/2.4/modules/imgproc/doc/filtering.html?highlight=sobel)
 
 Adding: _scale_, _overlapping detection_
-
-
-# Requirements
-
-
-# Installation
-
-
-# Tips
 
 

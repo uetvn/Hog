@@ -16,8 +16,6 @@ Human detection by Histogram of Oriented Gradients
 File/Folder structure:
 - src/   			: source files
 - inc/   			: include files
-- svm_trained.txt	: trained classification set
-- TEST.png 			: example image
 
 
 # Requirements
