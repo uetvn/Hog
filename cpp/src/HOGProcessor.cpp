@@ -80,7 +80,7 @@ IplImage** HOGProcessor::calculateIntegralHOG(IplImage* in)
 	cvReleaseImage(&imgGray);
 
 	// Tao (nbins) ma tran anh de tich luy cuong do gradient tai moi bin
-	IplImage** bins = (IplImage**)malloc(numOfBins*sizeof(IplImage*));
+	IplImage** bins = (IplImage**)malloc(numOfBins * sizeof(IplImage*));
 	for(int i = 0; i < numOfBins; i++)
 	{
 		bins[i] = cvCreateImage(size, IPL_DEPTH_32F, 1);
@@ -90,7 +90,7 @@ IplImage** HOGProcessor::calculateIntegralHOG(IplImage* in)
 	// Tao (nbins) integral image
 	IplImage** integrals = (IplImage**)malloc(numOfBins * sizeof(IplImage*));
 	for(int i = 0; i < numOfBins; i++)
-		integrals[i] = cvCreateImage(cvSize(in->width+1, in->height +1), IPL_DEPTH_64F,1);
+		integrals[i] = cvCreateImage(cvSize(in->width + 1, in->height + 1), IPL_DEPTH_64F, 1);
 
 
 	// Tinh cuong do va huong cua gradient tai moi pixel tren anh
@@ -103,7 +103,10 @@ IplImage** HOGProcessor::calculateIntegralHOG(IplImage* in)
 	for(y = 0; y < in->height; y++)
 	{
 		for(int i = 0; i < numOfBins; i++){
-			ptrs[i] = (float*)(bins[i]->imageData + y*(bins[i]->widthStep));
+            /* imageData: a pointer to the aligned image data
+             * widthStep: size of aligned image row
+             * aligned: đầu lề */
+			ptrs[i] = (float*)(bins[i]->imageData + y * (bins[i]->widthStep));
 		}
 
 		// Tinh cuong do va huong, dong thoi chia bin
