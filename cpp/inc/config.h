@@ -37,8 +37,8 @@ typedef unsigned char        uint8;
 #define COS70_MULT_1024   350
 #define COS90_MULT_1024   0
 
-/* prameters for hog */
-#define PI              3.1416
+#define PI              3.14
+/* prameters for hog
 #define PI_DEGREE       180
 #define BIAS            -3.35
 #define window_h        128
@@ -48,6 +48,6 @@ typedef unsigned char        uint8;
 #define HOG_number	    3780
 #define block_num_bin   36
 #define cell_num_bin    9
-
+*/
 
 #endif /* ifndef CONFIG_H */

@@ -18,8 +18,6 @@
 
 using namespace cv;
 
-#define PI 3.14
-
 class HOGProcessor {
 private:
     /* default 9 - 8x8 - 2x2 - 1 */
@@ -56,10 +54,9 @@ public:
 
     CvMat* calcHOGWindow(IplImage *img, IplImage** integrals, CvRect window, int normalization);
 
-    CvMat *calcHOGFromImage(char *filename, CvSize window, int normalization);
+    CvMat *calcHOGFromImage(const char *filename, CvSize window, int normalization);
 
-    void writeFeatureVector(CvMat *mat, char *className, std::ofstream &fout);
-
+    void writeFeatureVector(CvMat *mat, std::ofstream &fout);
 };
 
 #endif /* ifndef HOG_PROCESSOR_H */

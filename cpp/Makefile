@@ -38,7 +38,7 @@ $(SUB_DIR)/%.o: %.$(LANG)
 	@$(CXX) -c $(CFLAGS) $(INC) -MMD -MP $< -o $@
 
 
-run:
+run: $(TARGET)
 	@$(CLEAR_SCREEN)
 	./$(TARGET)
 

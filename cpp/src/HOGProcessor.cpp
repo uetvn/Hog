@@ -1,5 +1,7 @@
 //#include "StdAfx.h"
 #include "HOGProcessor.h"
+#include "config.h"
+using namespace std;
 
 
 HOGProcessor::HOGProcessor(void)
@@ -34,6 +36,11 @@ int HOGProcessor::getWindowFeatureVectorSize(CvSize window)
 										(blockHeight - (m_cell.height * m_fStepOverlap))) + 1;
 	int totalBlockOfWindow = num_overlap_block_of_width * num_overlap_block_of_height;
 
+    cout << "m_fStepOverlap = " << m_fStepOverlap << endl;
+    cout << "cell = " << m_cell.width << " " << m_cell.height << endl;
+    cout << "windows = " << window.width << " " << window.height << endl;
+    cout << "block = " << blockWidth << " " << blockHeight << endl;
+    cout << "overlap = " << num_overlap_block_of_width << " " << num_overlap_block_of_height<< endl;
 	return totalBlockOfWindow * blockFeatureSize;
 }
 
@@ -104,7 +111,7 @@ IplImage** HOGProcessor::calculateIntegralHOG(IplImage* in)
 	{
 		for(int i = 0; i < numOfBins; i++){
             /* imageData: a pointer to the aligned image data
-             * widthStep: size of aligned image row
+             * widthStep: size of aligned image row (do dai 1 hang hinh anh)
              * aligned: đầu lề */
 			ptrs[i] = (float*)(bins[i]->imageData + y * (bins[i]->widthStep));
 		}
@@ -112,8 +119,8 @@ IplImage** HOGProcessor::calculateIntegralHOG(IplImage* in)
 		// Tinh cuong do va huong, dong thoi chia bin
 		for( x = 0; x < in->width; x++)
 		{
-			xDevValue = ((float*)(xsobel->imageData + y*(xsobel->widthStep)))[x];
-			yDevValue = ((float*)(ysobel->imageData + y*(ysobel->widthStep)))[x];
+			xDevValue = ((float*)(xsobel->imageData + y*(xsobel->widthStep))) [x];
+			yDevValue = ((float*)(ysobel->imageData + y*(ysobel->widthStep))) [x];
 
 			if(xDevValue == 0) // Luu y de tranh truong hop chia cho 0 khi tinh huong
 			{					// ta cong them 1 dai luong rat nho vao mau
@@ -153,7 +160,7 @@ IplImage** HOGProcessor::calculateIntegralHOG(IplImage* in)
 	cvReleaseImage(&xsobel);
 	cvReleaseImage(&ysobel);
 
-	// Tinh integral image tuong ung voi moi bin images
+	// Insert data bin(H,W) to integrals(H+1,W+1)
 	for(int i = 0; i < numOfBins; i++){
 		cvIntegral(bins[i],integrals[i]);
 	}
@@ -170,10 +177,10 @@ IplImage** HOGProcessor::calculateIntegralHOG(IplImage* in)
 }
 
 
-// Ham tinh dac trung HOG tai moi Cell
+// Tinh norm cell (khong su dung)
 void HOGProcessor::calcHOGForCell(CvRect cell, CvMat* hogCell, IplImage** integrals, int normalization)
 {
-	// Lan luot tinh cuong do tich luy tai moi bin
+	// Vi tri 4 goc cua cell
 	for(int i = 0; i < numOfBins; i++){
 		float a = ((double*)(integrals[i]->imageData + (cell.y)*(integrals[i]->widthStep)))[cell.x];
 
@@ -183,6 +190,7 @@ void HOGProcessor::calcHOGForCell(CvRect cell, CvMat* hogCell, IplImage** integr
 
 		float d = ((double*)(integrals[i]->imageData + (cell.y + cell.height)*(integrals[i]->widthStep)))[cell.x];
 
+        // Check cell co day du, vuong goc hay ko?
 		((float*)hogCell->data.fl)[i] = (a+b)-(c+d);
 	}
 
@@ -192,16 +200,18 @@ void HOGProcessor::calcHOGForCell(CvRect cell, CvMat* hogCell, IplImage** integr
 	}
 }
 
-// Ham tinh dac trung HOG tai moi block
+// Tinh norm cua block
 void HOGProcessor::calcHOGForBlock(CvRect block, CvMat* hogBlock, IplImage** integrals,CvSize cell, int normalization)
 {
 	int cellStartX, cellStartY;
 	CvMat vectorCell;
+    // startcol run from 0-36
 	int startcol = 0;
 	for(cellStartY = block.y; cellStartY <= block.y + block.height - cell.height; cellStartY += cell.height)
 	{
 		for(cellStartX = block.x; cellStartX <=	block.x + block.width - cell.width;	cellStartX += cell.width)
 		{
+            // Get header cua hogBlock tai startcol den (startcol+numOfBins)
 			cvGetCols(hogBlock, &vectorCell, startcol, startcol + numOfBins);
 
 			calcHOGForCell(cvRect(cellStartX, cellStartY, cell.width, cell.height), &vectorCell, integrals, -1);
@@ -213,6 +223,7 @@ void HOGProcessor::calcHOGForBlock(CvRect block, CvMat* hogBlock, IplImage** int
 		cvNormalize(hogBlock, hogBlock, 1, 0, normalization);
 	}
 }
+
 
 // Ham tinh vector dac trung cho cua so HOG
 CvMat* HOGProcessor::calcHOGWindow(IplImage** integrals, CvRect window, int normalization)
@@ -248,6 +259,7 @@ CvMat* HOGProcessor::calcHOGWindow(IplImage** integrals, CvRect window, int norm
 				blockStartX += widthStep)
 			{//overllap
 
+            // blockFeatureSize = 9 x 16 x 16
 			cvGetCols(windowFeatureVector, &vectorBlock, startcol, startcol + blockFeatureSize);
 
 			calcHOGForBlock(
@@ -255,6 +267,7 @@ CvMat* HOGProcessor::calcHOGWindow(IplImage** integrals, CvRect window, int norm
 				, &vectorBlock, integrals, m_cell
 				, normalization);
 
+            // blockFeatureSize = 9 x 16 x 16
 			startcol += blockFeatureSize;
 			}
 	}
@@ -329,7 +342,7 @@ CvMat* HOGProcessor::calcHOGWindow(IplImage *img, IplImage** integrals, CvRect w
 	return windowFeatureVector;
 }
 
-void HOGProcessor::writeFeatureVector(CvMat* mat,char* className, std::ofstream &fout)
+void HOGProcessor::writeFeatureVector(CvMat* mat, std::ofstream &fout)
 {
 	CvSize posSize = cvGetSize(mat);
 	int numberOfSamples = posSize.height;
@@ -340,16 +353,15 @@ void HOGProcessor::writeFeatureVector(CvMat* mat,char* className, std::ofstream 
 
 
 	for(int  i = 0; i < numberOfSamples; i++){
-		//fout<<className;
 		for(int j = 0; j < featureVectorLength; j++)
 		{
 			fout<<" ";
 			float element = CV_MAT_ELEM( *mat, float, i, j);
-			sprintf(buffer,"%d",j);
+			sprintf(buffer,"%4d ",j);
 			fout<<buffer;
-			fout<<":";
+			//fout<<":";
 
-			sprintf(buffer2,"%f",element);
+			sprintf(buffer2,"%f \n",element);
 			fout<<buffer2;
 		}
 
@@ -357,15 +369,15 @@ void HOGProcessor::writeFeatureVector(CvMat* mat,char* className, std::ofstream 
 	}
 }
 
-CvMat* HOGProcessor::calcHOGFromImage(char* filename, CvSize window, int normalization)
+CvMat* HOGProcessor::calcHOGFromImage(const char *filename, CvSize window, int normalization)
 {
 	IplImage* im = cvLoadImage(filename);
 
-	//Convert Image To 64x128
+	//Convert Image To window size
 	IplImage* dst = cvCreateImage(window,im->depth,im->nChannels);
 	cvResize(im,dst);
 
-	// Tinh integral histogram
+	// Tinh integral histogram cua window
 	IplImage** integrals;
 	integrals = calculateIntegralHOG(dst);
 
