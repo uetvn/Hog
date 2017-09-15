@@ -1,0 +1,99 @@
+# vsim checkLeftMostBit 
+# Start time: 14:17:32 on Sep 13,2017
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.checkleftmostbit(behavior)
+add wave -position insertpoint  \
+sim:/checkleftmostbit/BIT_WIDTH \
+sim:/checkleftmostbit/x \
+sim:/checkleftmostbit/y \
+sim:/checkleftmostbit/tmp
+force -freeze sim:/checkleftmostbit/x 30'd200 0
+run
+run
+run
+run
+# WARNING: No extended dataflow license exists
+restart
+# Loading work.checkleftmostbit(behavior)
+# Warning in wave window restart: (vish-4014) No objects found matching '/checkleftmostbit/tmp'. 
+add wave -position insertpoint  \
+sim:/checkleftmostbit/BIT_WIDTH \
+sim:/checkleftmostbit/x \
+sim:/checkleftmostbit/y \
+sim:/checkleftmostbit/tmp1 \
+sim:/checkleftmostbit/tmp2
+force -freeze sim:/checkleftmostbit/x 30'd200 0
+run
+run
+run
+restart
+# Loading work.checkleftmostbit(behavior)
+add wave -position insertpoint  \
+sim:/checkleftmostbit/BIT_WIDTH \
+sim:/checkleftmostbit/x \
+sim:/checkleftmostbit/y \
+sim:/checkleftmostbit/tmp1 \
+sim:/checkleftmostbit/tmp2 \
+sim:/checkleftmostbit/tmp3 \
+sim:/checkleftmostbit/tmp4 \
+sim:/checkleftmostbit/tmp5 \
+sim:/checkleftmostbit/tmp6 \
+sim:/checkleftmostbit/tmp7
+force -freeze sim:/checkleftmostbit/x 30'd1000 0
+run
+restart
+# Loading work.checkleftmostbit(behavior)
+force -freeze sim:/checkleftmostbit/x 30'd1000 0
+run
+restart
+force -freeze sim:/checkleftmostbit/x 30'd1000 0
+run
+add wave -position insertpoint  \
+sim:/checkleftmostbit/BIT_WIDTH \
+sim:/checkleftmostbit/x \
+sim:/checkleftmostbit/y \
+sim:/checkleftmostbit/tmp1 \
+sim:/checkleftmostbit/tmp2 \
+sim:/checkleftmostbit/tmp3 \
+sim:/checkleftmostbit/tmp4 \
+sim:/checkleftmostbit/tmp5 \
+sim:/checkleftmostbit/tmp6 \
+sim:/checkleftmostbit/tmp7
+restart
+force -freeze sim:/checkleftmostbit/x 30'd1000 0
+run
+run
+run
+restart
+force -freeze sim:/checkleftmostbit/x 30'd1000 0
+run
+restart
+# Loading work.checkleftmostbit(behavior)
+add wave -position insertpoint  \
+sim:/checkleftmostbit/BIT_WIDTH \
+sim:/checkleftmostbit/x \
+sim:/checkleftmostbit/y \
+sim:/checkleftmostbit/tmp1 \
+sim:/checkleftmostbit/tmp2 \
+sim:/checkleftmostbit/tmp3 \
+sim:/checkleftmostbit/tmp4 \
+sim:/checkleftmostbit/tmp5 \
+sim:/checkleftmostbit/tmp6 \
+sim:/checkleftmostbit/tmp7
+force -freeze sim:/checkleftmostbit/x 30'd1000 0
+run
+restart
+# Loading work.checkleftmostbit(behavior)
+force -freeze sim:/checkleftmostbit/x 30'd1000 0
+run
+restart
+# Loading work.checkleftmostbit(behavior)
+restart -r
+restart -f
+force -freeze sim:/checkleftmostbit/x 30'd1000 0
+restart -f; force -freeze sim:/checkleftmostbit/x 30'd1000 0; run
+# End time: 14:30:45 on Sep 13,2017, Elapsed time: 0:13:13
+# Errors: 1, Warnings: 1

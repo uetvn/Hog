@@ -1,0 +1,92 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/h3/Hog/svn/sishog/trunk/tb Epix_bin_comp Z1 w1502349355
+Z2 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+Z3 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z4 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z5 8../rtl/pix_bin_comp.vhd
+Z6 F../rtl/pix_bin_comp.vhd
+l0
+L14
+VIA=;URN]D5YeGeLB;OF^R3
+!s100 V2o0d`hYQ`205a[`dTe521
+Z7 OV;C;10.5b;63
+32
+Z8 !s110 1502360767
+!i10b 1
+Z9 !s108 1502360767.000000
+Z10 !s90 ../rtl/pix_bin_comp.vhd|
+Z11 !s107 ../rtl/pix_bin_comp.vhd|
+!i113 1
+Z12 tExplicit 1 CvgOpt 0
+Abehav
+R2
+R3
+R4
+DEx4 work 12 pix_bin_comp 0 22 IA=;URN]D5YeGeLB;OF^R3
+l86
+L38
+V>I9a[6nR8aTB=Z6HA>a9N1
+!s100 1He>TSUHh[8]<IQ71<1n12
+R7
+32
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+Etb_pix_bin_comp
+Z13 w1502360566
+Z14 DPx4 ieee 9 math_real 0 22 Sk6CSihbPL<f[^Shm]=KX0
+Z15 DPx3 std 3 env 0 22 d?`1ck@NdeD@H3RZG7FgZ2
+Z16 DPx4 ieee 16 std_logic_textio 0 22 V5TSK`;aJKC<l]CEg1>mz1
+R2
+R3
+R4
+R0
+Z17 8tb_pix_bin_comp.vhd
+Z18 Ftb_pix_bin_comp.vhd
+l0
+L10
+V@A8VAZYc6@LR2>Vh2@8`R3
+!s100 LCJRnmX2i8D=?c_8o5Eii0
+R7
+32
+R8
+!i10b 1
+R9
+Z19 !s90 tb_pix_bin_comp.vhd|
+Z20 !s107 tb_pix_bin_comp.vhd|
+!i113 1
+R12
+Atb_pix_bin_comp_impl
+R14
+R15
+R16
+R2
+R3
+R4
+DEx4 work 15 tb_pix_bin_comp 0 22 @A8VAZYc6@LR2>Vh2@8`R3
+l51
+L13
+VdTH_BjBHi61JJQVY6SLI20
+!s100 QEWhW]>TJ7L6^D<[U3FCP0
+R7
+32
+R8
+!i10b 1
+R9
+R19
+R20
+!i113 1
+R12
