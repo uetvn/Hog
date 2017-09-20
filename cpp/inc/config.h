@@ -6,8 +6,9 @@
  * Last modified  : Wed 16 Aug 2017 02:57:49 PM ICT
  * Desc           :
  */
-#include <stdio.h>
-#include <stdlib.h>
+#include <iostream>
+#include <cstdlib>
+using namespace std;
 
 #ifndef CONFIG_H
 #define CONFIG_H

@@ -12,11 +12,13 @@
 #include <fstream>
 #include "config.h"
 #include "HOGProcessor.h"
+#include "approximatedDivision.h"
 using namespace std;
 
 
 int main(int argc, char *argv[])
 {
+    /*
 	int m_wcell		= 8;
 	int m_hcell		= 8;
 	int m_wblock	= 2;
@@ -36,6 +38,12 @@ int main(int argc, char *argv[])
     CvMat* features;
     features = hog.calcHOGFromImage(imgname,cvSize(m_wwindow,m_hwindow),1);
     hog.writeFeatureVector(features, fileFeatures);
+    */
+    int a, b;
+    a = 1321;
+    b = 235;
+    cout << "(" << a << " / " << b << ") = " << a / (double)b << endl;
+    cout << approximatedDivision(a, b) / 1024.0 << endl;
 
 	return 0;
 }
