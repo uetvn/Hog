@@ -9,7 +9,7 @@
 
 use ieee.numeric_std.all;
 
-package 
+package
 entity checkLeftMostBit is
     generic (
         BIT_WIDTH : integer := 30

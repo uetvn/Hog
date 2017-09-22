@@ -8,8 +8,9 @@
  */
 #include "approximatedDivision.h"
 #include <cmath>
+#include <fstream>
 
-uint32 checkLeftMostBit(uint32 n)
+uint32 check_nearest_smaller_power_of_2(uint32 n)
 {
 	n |= (n >>  1);
     n |= (n >>  2);
@@ -20,43 +21,61 @@ uint32 checkLeftMostBit(uint32 n)
 }
 
 
+//--NOTE Num using 13 bit */
 uint32 approximatedDivision(uint32 num, uint32 den)
 {
-    uint32 scaleNum;
     uint32 result;
-    uint32 leftMostSquareNum;
-    uint32 leftBit, bits0, bits1, bits2;
+    uint32 nearest_smaller_power_of_2;
+    uint32 nearest_smaller_add_one_quarter;
+    uint32 nearest_smaller_add_two_quarters;
+    uint32 nearest_smaller_add_three_quarters;
+    uint32 leftMostBit;
+    uint32 num_shift_16_bit = num << 16;
 
-    scaleNum = num * 1024;
-    leftMostSquareNum = checkLeftMostBit(den);
-    leftBit = (uint32)log2((double)leftMostSquareNum);
-    bits0 = leftBit + 1;
-    bits1 = leftBit + 2;
-    bits2 = leftBit + 3;
-    cout << "den = " << den << endl;
-    cout << "leftMostSquareNum = " << leftMostSquareNum << endl;
+    nearest_smaller_power_of_2 = check_nearest_smaller_power_of_2(den);
+    leftMostBit = (uint32)log2((double) nearest_smaller_power_of_2);
 
-    if (den <= (leftMostSquareNum + (leftMostSquareNum >> 2))) {
-        cout << "TH1 " << bits0 << endl;
-        result = (scaleNum >> bits0)
-               + (scaleNum >> bits1)
-               + (scaleNum >> bits2);
+    nearest_smaller_add_one_quarter = nearest_smaller_power_of_2
+                                    + (nearest_smaller_power_of_2 >> 2);
+    nearest_smaller_add_two_quarters = nearest_smaller_power_of_2
+                                     + (nearest_smaller_power_of_2 >> 1);
+    nearest_smaller_add_three_quarters = nearest_smaller_power_of_2
+                                       + ((3 * nearest_smaller_power_of_2) >> 2);
+
+    /* Have event shift 33 bit */
+    if (den > nearest_smaller_add_three_quarters) {
+        //printf("TH4\n");
+        result = num_shift_16_bit >> (leftMostBit + 1);
     }
-    else if (den <= (leftMostSquareNum + (leftMostSquareNum >> 1))) {
-        cout << "TH2" << endl;
-        result = (scaleNum >> bits0)
-               + (scaleNum >> bits1);
-    }
-    else if (den <= (leftMostSquareNum + (3 * leftMostSquareNum >> 2)))
+    else if (den > nearest_smaller_add_two_quarters)
     {
-        cout << "TH3" << endl;
-        result = (scaleNum >> bits0)
-               + (scaleNum >> bits2);
+        //printf("TH3\n");
+        result = (num_shift_16_bit >> (leftMostBit + 1))
+               + (num_shift_16_bit >> (leftMostBit + 3));
+    }
+    else if (den > nearest_smaller_add_one_quarter) {
+        //printf("TH2\n");
+        result = (num_shift_16_bit >> (leftMostBit + 1))
+               + (num_shift_16_bit >> (leftMostBit + 2));
+    }
+    else if (den >= nearest_smaller_power_of_2) {
+        //printf("TH1\n");
+        result = (num_shift_16_bit >> (leftMostBit + 1))
+               + (num_shift_16_bit >> (leftMostBit + 2))
+               + (num_shift_16_bit >> (leftMostBit + 3));
     }
     else {
-        cout << "TH4" << endl;
-        result = scaleNum >> bits0;
+        //printf("TH0\n");
+        result = num_shift_16_bit;
     }
+    /*
+    printf("nearest_smaller_power_of_2        = %d \n", nearest_smaller_power_of_2);
+    printf("nearest_smaller_add_one_quarter   = %d \n", nearest_smaller_add_one_quarter);
+    printf("nearest_smaller_add_two_quarters  = %d \n", nearest_smaller_add_two_quarters);
+    printf("nearest_smaller_add_three_quarters= %d \n", nearest_smaller_add_three_quarters);
 
+    printf("\n num = %d \t den = %d leftMostBit = %d\n", num, den, leftMostBit);
+    printf("result = %d \n\n", result);
+*/
 	return result;
 }

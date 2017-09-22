@@ -17,9 +17,9 @@ New approach of HOG using class C++
 
 # TODO
 
-Edit HOGProcessor cohenrent myself HOG
+v Edit HOGProcessor cohenrent myself HOG
 
-
+- Approximated normalization unit
 
 
 # Features

@@ -30,6 +30,3 @@ To build this software you just need to:
 - `make`
 - `make run`
 - or `./hog -i <path/to/image>`
-
-
-
