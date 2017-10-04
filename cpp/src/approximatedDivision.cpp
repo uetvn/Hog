@@ -68,14 +68,14 @@ uint32 approximatedDivision(uint32 num, uint32 den)
         //printf("TH0\n");
         result = num_shift_16_bit;
     }
-    /*
-    printf("nearest_smaller_power_of_2        = %d \n", nearest_smaller_power_of_2);
-    printf("nearest_smaller_add_one_quarter   = %d \n", nearest_smaller_add_one_quarter);
-    printf("nearest_smaller_add_two_quarters  = %d \n", nearest_smaller_add_two_quarters);
-    printf("nearest_smaller_add_three_quarters= %d \n", nearest_smaller_add_three_quarters);
 
-    printf("\n num = %d \t den = %d leftMostBit = %d\n", num, den, leftMostBit);
-    printf("result = %d \n\n", result);
-*/
+    //printf("nearest_smaller_power_of_2        = %d \n", nearest_smaller_power_of_2);
+    //printf("nearest_smaller_add_one_quarter   = %d \n", nearest_smaller_add_one_quarter);
+    //printf("nearest_smaller_add_two_quarters  = %d \n", nearest_smaller_add_two_quarters);
+    //printf("nearest_smaller_add_three_quarters= %d \n", nearest_smaller_add_three_quarters);
+
+    //printf("\nnum = %d \t den = %d leftMostBit = %d\n", num, den, leftMostBit);
+    //printf("num_shift_16_bit = %d \nresult = %d \n\n", num_shift_16_bit, result);
+
 	return result;
 }

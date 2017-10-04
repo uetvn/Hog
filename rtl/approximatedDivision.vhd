@@ -18,6 +18,8 @@ entity approximatedDivision is
         DATA_WIDTH: integer := 32
     );
     port (
+        clk         : in std_logic;
+        reset       : in std_logic;
         num         : in unsigned(DATA_WIDTH - 1 downto 0);
         den         : in unsigned(DATA_WIDTH - 1 downto 0);
         data_out    : out unsigned(DATA_WIDTH - 1 downto 0)
@@ -25,8 +27,8 @@ entity approximatedDivision is
 end entity;
 
 architecture behavior of approximatedDivision is
-    signal leftMostBit  : integer := 0;
     signal s_condition_selection    : std_logic_vector(3 downto 0);
+    signal leftMostBit      : integer := 0;
     signal num_shift_16_bit : unsigned(DATA_WIDTH - 1 downto 0);
     signal s_data_out_tmp   : unsigned(DATA_WIDTH - 1 downto 0);
 
@@ -50,14 +52,14 @@ begin
             nearest_smaller_add_one_quarter(leftMostBit - 1)    <= '1';
             nearest_smaller_add_two_quarters(leftMostBit - 1)   <= '1';
             nearest_smaller_add_three_quarters(leftMostBit - 1) <= '1';
-            if (leftMostBit > 1) then
-                nearest_smaller_add_two_quarters(leftMostBit - 2)   <= '1';
-                nearest_smaller_add_three_quarters(leftMostBit - 2) <= '1';
-                if (leftMostBit > 2) then
-                    nearest_smaller_add_one_quarter(leftMostBit - 3)    <= '1';
-                    nearest_smaller_add_three_quarters(leftMostBit - 3) <= '1';
-                end if;
-            end if;
+        end if;
+        if (leftMostBit > 1) then
+            nearest_smaller_add_two_quarters(leftMostBit - 2)   <= '1';
+            nearest_smaller_add_three_quarters(leftMostBit - 2) <= '1';
+        end if;
+        if (leftMostBit > 2) then
+            nearest_smaller_add_one_quarter(leftMostBit - 3)    <= '1';
+            nearest_smaller_add_three_quarters(leftMostBit - 3) <= '1';
         end if;
     end process;
 
@@ -81,7 +83,13 @@ begin
                           (num_shift_16_bit srl leftMostBit)       when "1111",
                           (num_shift_16_bit)                       when others;
 
-    data_out <= s_data_out_tmp;
-
+    output: process(clk, reset)
+    begin
+        if (reset = '1') then
+            data_out <= (others => '0');
+        elsif rising_edge(clk) then
+            data_out <= s_data_out_tmp;
+        end if;
+    end process;
 end behavior;
 

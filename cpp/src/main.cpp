@@ -14,43 +14,39 @@
 #include "config.h"
 #include "HOGProcessor.h"
 #include "approximatedDivision.h"
-#include "window_hog_comp.h"
+#include "block_norm_comp.h"
 using namespace std;
 
 
 int main(int argc, char *argv[])
 {
-    /* Test case for block
-    const uint32 SIZE_BLOCK = 36 + 4;
-    FILE *testCase = fopen("divisionTest.txt", "w");
-    uint32 *block = malloc(sizeof(uint32) * SIZE_BLOCK);
+    block_norm_comp();
 
-    uint32 i;
-    fclose(testCase);
-    */
-    //approximatedDivision(1, 3);
-    /* Print test case by C - max error rateis 1.00% now (denTest < 2^20) */
-    FILE *testCase = fopen("divisionTest.txt", "w");
+    /* Print test case by C - max error rateis 20% now (denTest < 2^20)
+    FILE *testCase = fopen("inf.txt", "w");
     int32 numTest;
     int32 denTest;
     int32 real;
     int32 appx;
     float errorRate;
     float maxErrorRate = 0;
-    for (numTest = 0; numTest < pow(2, 13); numTest++) {
-        for (denTest = 1; denTest < pow(2, 15); denTest++) {
-            real = (numTest << 16) / (denTest + 1);
+    fprintf(testCase, "       num        den       appx       real     error \n");
+    for (numTest = 0;numTest <= pow(2, 7); numTest++){// numTest < pow(2, 13); numTest++) {
+        for (denTest = 1;denTest <= pow(2, 13); denTest++){//pow(2, 30); denTest >= (pow(2, 30) - 100); denTest--) {
+            real = (numTest << 16) / (denTest + 0.01);
             appx = approximatedDivision(numTest, denTest);
-            errorRate = abs(real - appx) / (real + 0.001);
+            errorRate = abs(real - appx) / (real + 0.01) * 100;
             if (errorRate > maxErrorRate)
                 maxErrorRate = errorRate;
-            fprintf(testCase, "%10d %10d %10d %10d %4.4f \n",
+            fprintf(testCase, "%10d %10d %10d %10d %8.2f%% \n",
                     numTest, denTest, appx, real, errorRate);
+            //fprintf(testCase, "%10d %10d %10d \n",
+            //        numTest, denTest, appx);
         }
     }
     fclose(testCase);
     printf("Max error rate is %.2f %% \n",  maxErrorRate);
-    //*/
+    */
 
 
     /* Test of shift

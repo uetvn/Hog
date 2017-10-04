@@ -106,6 +106,8 @@ begin
                 push_data_tmp <= '0';
             elsif (mode = "11" AND counter_block = to_unsigned(7, COUNTER_B_W)) then
                 push_data_tmp <= '0';
+            else
+                push_data_tmp <= push_data_tmp;
             end if;
         end if;
     end process;
