@@ -48,7 +48,7 @@ clean:
 
 cleanall:
 	@$(CLEAR_SCREEN)
-	@-rm -rf $(SUB_DIR) $(TARGET)
+	@-rm -rf $(SUB_DIR) $(TARGET) *.txt
 
 tags : $(SRCS) $(INCS)
 	ctags -f ./.tags --c-kinds=+p --fields=+iaS --extra=+fq ./inc

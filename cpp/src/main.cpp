@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
     fprintf(testCase, "       num        den       appx       real     error \n");
     for (numTest = 0;numTest <= pow(2, 7); numTest++){// numTest < pow(2, 13); numTest++) {
         for (denTest = 1;denTest <= pow(2, 13); denTest++){//pow(2, 30); denTest >= (pow(2, 30) - 100); denTest--) {
-            real = (numTest << 16) / (denTest + 0.01);
+            real = roundf((numTest << 16) / (denTest + 0.01));
             appx = approximatedDivision(numTest, denTest);
             errorRate = abs(real - appx) / (real + 0.01) * 100;
             if (errorRate > maxErrorRate)
