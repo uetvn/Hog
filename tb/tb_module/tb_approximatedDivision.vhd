@@ -21,6 +21,7 @@ end tb_approximatedDivision;
 architecture tb of tb_approximatedDivision is
 
     component approximatedDivision
+        generic (DATA_WIDTH : integer := 32);
         port (num      : in unsigned (DATA_WIDTH - 1 downto 0);
               den      : in unsigned (DATA_WIDTH - 1 downto 0);
               data_out : out unsigned (DATA_WIDTH - 1 downto 0));
@@ -89,9 +90,3 @@ begin
         wait;
     end process READIO;
 end tb;
-
-configuration cfg_tb_approximatedDivision of tb_approximatedDivision is
-    for tb
-    end for;
-end cfg_tb_approximatedDivision;
-

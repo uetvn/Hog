@@ -2,18 +2,28 @@
 /*******************************************************************************
 // Project name   :
 // File name      : README.md
-// Created date   : Fri 04 Aug 2017 03:15:28 PM ICT
+// Created date   : Fri 14 Jul 2017 11:05:59 AM +07
 // Author         : Huy-Hung Ho
-// Last modified  : Fri 04 Aug 2017 03:15:28 PM ICT
+// Last modified  : Thu 07 Sep 2017 02:47:24 PM ICT
 // Desc           :
 *******************************************************************************/
 -->
 # Introduction
-Project HOG - Histogram of Oriented Gradient
 
-# Contributors
-1. hunghh
-2. sinhnn 
+Human detection by Histogram of Oriented Gradient
+
 
 # Feature
-Optimzed HOG algorithm (cell histogram generation part).
+
+Cell histogram generation without complex operators(arctan, tan, sin, cos)
+
+
+# Folder/File Structures
+
+    cpp        	Reference CPP, used for check results
+	doc			Information
+    rtl        	RTL code
+    scripts   	Others scripts
+    tb         	Testbench 
+
+
