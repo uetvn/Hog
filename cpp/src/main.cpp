@@ -13,17 +13,19 @@
 #include <cmath>
 #include "config.h"
 #include "HOGProcessor.h"
-#include "approximatedDivision.h"
+#include "appx_div.h"
 #include "block_norm_comp.h"
+#include "window_norm_comp.h"
 using namespace std;
 
 
 int main(int argc, char *argv[])
 {
-    block_norm_comp();
+    window_norm_comp();
+    //block_norm_comp();
 
     /* Print test case by C - max error rateis 20% now (denTest < 2^20)
-    FILE *testCase = fopen("inf.txt", "w");
+    FILE *testCase = fopen("text/inf.txt", "w");
     int32 numTest;
     int32 denTest;
     int32 real;
@@ -31,13 +33,15 @@ int main(int argc, char *argv[])
     float errorRate;
     float maxErrorRate = 0;
     fprintf(testCase, "       num        den       appx       real     error \n");
-    for (numTest = 0;numTest <= pow(2, 7); numTest++){// numTest < pow(2, 13); numTest++) {
-        for (denTest = 1;denTest <= pow(2, 13); denTest++){//pow(2, 30); denTest >= (pow(2, 30) - 100); denTest--) {
-            real = roundf((numTest << 16) / (denTest + 0.01));
-            appx = approximatedDivision(numTest, denTest);
+    for (numTest = 0; numTest <= pow(2, 7); numTest++){// numTest < pow(2, 13); numTest++) {
+        for (denTest = 1; denTest <= pow(2, 13); denTest++){//pow(2, 30); denTest >= (pow(2, 30) - 100); denTest--) {
+            appx = appx_div(numTest, denTest);
+            real = roundf((numTest << HIST_WIDTH) / (denTest + 0.01));
+
             errorRate = abs(real - appx) / (real + 0.01) * 100;
             if (errorRate > maxErrorRate)
                 maxErrorRate = errorRate;
+
             fprintf(testCase, "%10d %10d %10d %10d %8.2f%% \n",
                     numTest, denTest, appx, real, errorRate);
             //fprintf(testCase, "%10d %10d %10d \n",
@@ -83,7 +87,7 @@ int main(int argc, char *argv[])
     cin >> b;
 
     cout << "(" << a << " / " << b << ") = " << a / (double)b << endl;
-    cout << approximatedDivision(a, b) / 1024.0 << endl;
+    cout << appx_div(a, b) / 1024.0 << endl;
     */
 
 	return 0;

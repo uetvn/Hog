@@ -8,17 +8,15 @@
  */
 #include <cstdlib>
 #include <cmath>
-#include "approximatedDivision.h"
+#include "appx_div.h"
 #include "block_norm_comp.h"
 
 #define     MAX         1000
-#define     BIN_NUM     9
-#define     BLOCK_NUM   36
 
 unsigned block_norm_comp(void)
 {
-    FILE *inFile  = fopen("cpp_block_inf.txt", "w");
-    FILE *outFile = fopen("cpp_block_ouf.txt", "w");
+    FILE *inFile  = fopen("text/block_inf.txt", "w");
+    FILE *outFile = fopen("text/block_ouf.txt", "w");
 
     uint32 *bin     = (uint32 *)malloc(sizeof(uint32) * BLOCK_NUM);
     uint32 *cb      = (uint32 *)calloc(sizeof(uint32), 5);
@@ -37,7 +35,7 @@ unsigned block_norm_comp(void)
 
         for (k = 0; k < 4; k++) {
             for (i = 9 * k; i < 9 * k + 8; i+=2) {
-                fprintf(inFile, "%10d\n", (bin[i+1] << 16) + bin[i]);
+                fprintf(inFile, "%10d\n", (bin[i+1] << HIST_WIDTH) + bin[i]);
             }
             fprintf(inFile, "%10d\n", bin[9 * k + 8]);
             fprintf(inFile, "%10d\n", cb[k]);
@@ -46,11 +44,11 @@ unsigned block_norm_comp(void)
         cb[4] = cb[0] + cb[1] + cb[2] + cb[3];
 
         for (i = 0; i < 36; i++) {
-            output[i] = approximatedDivision(bin[i], cb[4]);
+            output[i] = appx_div(bin[i], cb[4]);
         }
         for (k = 0; k < 4; k++) {
             for (i = 9 * k; i < 9 * k + 8; i+=2) {
-                fprintf(outFile, "%10d\n", (output[i+1] << 16) + output[i]);
+                fprintf(outFile, "%10d\n", (output[i+1] << HIST_WIDTH) + output[i]);
             }
             fprintf(outFile, "%10d\n", output[9 * k + 8]);
         }

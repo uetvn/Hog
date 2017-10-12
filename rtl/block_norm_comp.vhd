@@ -13,27 +13,19 @@ use ieee.numeric_std.all;
 use work.config_pkg.all;
 
 entity block_norm_comp is
-    generic (
-        BIN_WIDTH       : integer := 16;
-        DATA_WIDTH      : integer := 32
-    );
     port (
         clk         : in std_logic;
-        set         : in std_logic;
-        reset         : in std_logic;
+        enable      : in std_logic;
+        reset       : in std_logic;
         data_in     : in unsigned(DATA_WIDTH - 1 downto 0);
         data_out    : out unsigned(DATA_WIDTH - 1 downto 0)
     );
 end entity;
 
 architecture behavior of block_norm_comp is
-    component approximatedDivision is
-        generic (
-            DATA_WIDTH: integer := 32
-        );
+    component appx_div is
         port (
             clk         : in std_logic;
-            reset       : in std_logic;
             num         : in unsigned(DATA_WIDTH - 1 downto 0);
             den         : in unsigned(DATA_WIDTH - 1 downto 0);
             data_out    : out unsigned(DATA_WIDTH - 1 downto 0)
@@ -63,12 +55,12 @@ architecture behavior of block_norm_comp is
     signal bin_2        : unsigned(DATA_WIDTH - 1 downto 0);
 begin
 
-    count: process(clk, reset, set)
+    count: process(clk, reset, enable)
     begin
         if (reset = '1') then
             counter <= (others => '0');
         elsif rising_edge(clk) then
-            if (set = '1') then
+            if (enable = '1') then
                 if (sum_enable = '1') then
                     counter <= to_unsigned(2, COUNTER_W);
                 else
@@ -81,7 +73,7 @@ begin
     sum_enable <= '1' when counter = to_unsigned(25, COUNTER_W) else '0';
 
 
-    shift_reg: process(clk, reset, set)
+    shift_reg: process(clk, reset, enable)
     begin
         if (reset = '1') then
             cell_bin_1 <= (others => '0');
@@ -89,7 +81,7 @@ begin
             cell_bin_3 <= (others => '0');
             cell_bin_4 <= (others => '0');
         elsif rising_edge(clk) then
-            if (set = '1') then
+            if (enable = '1') then
                 input_header <= cell_bin_4(DATA_WIDTH - 1 downto 0);
 
                 cell_bin_4(CELL_WIDTH - DATA_WIDTH - 1 downto 0)
@@ -122,13 +114,13 @@ begin
     cb_sum_tmp <= cb_tmp_1 + cb_tmp_2;
 
 
-    reg: process(reset, set, clk)
+    reg: process(reset, enable, clk)
     begin
         if (reset = '1') then
             cb_sum   <= (others => '0');
             data_out <= (others => '0');
         elsif rising_edge(clk) then
-            if (set = '1') then
+            if (enable = '1') then
                 data_out <= data_out_tmp_1(BIN_WIDTH - 1 downto 0)
                           & data_out_tmp_2(BIN_WIDTH - 1 downto 0);
                 if (sum_enable = '1') then
@@ -141,14 +133,12 @@ begin
     bin_1 <= X"0000" & input_header(2 * BIN_WIDTH - 1 downto BIN_WIDTH);
     bin_2 <= X"0000" & input_header(BIN_WIDTH - 1 downto 0);
 
-    division1: approximatedDivision
-    generic map (DATA_WIDTH => DATA_WIDTH)
+    division1: appx_div
     port map (num       => bin_1,
               den       => cb_sum,
               data_out  => data_out_tmp_1);
 
-    division2: approximatedDivision
-    generic map (DATA_WIDTH => DATA_WIDTH)
+    division2: appx_div
     port map (num       => bin_2,
               den       => cb_sum,
               data_out  => data_out_tmp_2);

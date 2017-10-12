@@ -13,6 +13,7 @@ using namespace std;
 #ifndef CONFIG_H
 #define CONFIG_H
 
+
 /* my type */
 typedef int                  int32;
 typedef unsigned int         uint32;
@@ -39,12 +40,17 @@ typedef unsigned char        uint8;
 #define COS90_MULT_1024   0
 
 #define PI              3.14
+#define HIST_WIDTH      13
+
+#define     CELL_NUM     9
+#define     BLOCK_NUM   36
+
 /* prameters for hog
 #define PI_DEGREE       180
 #define BIAS            -3.35
 #define window_h        128
 #define window_w        64
-#define rows            7
+edefine rows            7
 #define columns         15
 #define HOG_number	    3780
 #define block_num_bin   36

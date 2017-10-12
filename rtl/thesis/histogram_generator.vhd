@@ -15,10 +15,10 @@ use ieee.std_logic_arith.all;
 
 entity hist_gen is
     generic (
-        rows:	    integer := 32;
-        columns:	integer := 24;
-        w_win_bits:	integer := 10;
-        h_win_bits:	integer := 9;
+        --rows:	    integer := 32;
+        --columns:	integer := 24;
+        --w_win_bits:	integer := 10;
+        --h_win_bits:	integer := 9;
         pixel_width: integer := 8
     );
     port (
@@ -33,7 +33,7 @@ entity hist_gen is
         addwr:		in std_logic_vector (12 downto 0);
         addrd:		in std_logic_vector (12 downto 0);
         sl_in:		in std_logic_vector (1 downto 0)
-        memory_out:	out std_logic_vector (125 downto 0);
+        memory_out:	out std_logic_vector (125 downto 0)
     );
 end entity;
 

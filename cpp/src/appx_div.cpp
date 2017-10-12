@@ -1,12 +1,12 @@
 /*
  * Project name   :
- * File name      : approximatedDivision.cpp
+ * File name      : appx_div.cpp
  * Created date   : Fri 15 Sep 2017 11:24:19 AM ICT
  * Author         : Huy-Hung Ho
  * Last modified  : Fri 15 Sep 2017 11:28:40 AM ICT
  * Desc           :
  */
-#include "approximatedDivision.h"
+#include "appx_div.h"
 #include <cmath>
 #include <fstream>
 
@@ -20,9 +20,8 @@ uint32 check_nearest_smaller_power_of_2(uint32 n)
     return n - (n >> 1);
 }
 
-
 //--NOTE Num using 13 bit */
-uint32 approximatedDivision(uint32 num, uint32 den)
+uint32 appx_div(uint32 num, uint32 den)
 {
     uint32 result;
     uint32 result_case = -1;
@@ -31,7 +30,7 @@ uint32 approximatedDivision(uint32 num, uint32 den)
     uint32 nearest_smaller_add_two_quarters;
     uint32 nearest_smaller_add_three_quarters;
     uint32 leftMostBit;
-    uint32 num_shift_16_bit = num << 16;
+    uint32 num_shift_16_bit = num << HIST_WIDTH;
 
     nearest_smaller_power_of_2 = check_nearest_smaller_power_of_2(den);
     leftMostBit = (uint32)log2((double) nearest_smaller_power_of_2);
@@ -68,17 +67,18 @@ uint32 approximatedDivision(uint32 num, uint32 den)
         result_case = 0;
         result = num_shift_16_bit;
     }
-
-    if (num == 1 && den == 3049) {
+    ///*
+    if (num == 1 && den == 4098) {
+        printf("den                               = %d \n", den);
         printf("nearest_smaller_power_of_2        = %d \n", nearest_smaller_power_of_2);
         printf("nearest_smaller_add_one_quarter   = %d \n", nearest_smaller_add_one_quarter);
         printf("nearest_smaller_add_two_quarters  = %d \n", nearest_smaller_add_two_quarters);
         printf("nearest_smaller_add_three_quarters= %d \n", nearest_smaller_add_three_quarters);
 
-        printf("\nnum = %d \t den = %d leftMostBit = %d\n", num, den, leftMostBit);
+        printf("\nnum = %d \t  leftMostBit = %d\n", num, leftMostBit);
         printf("num_shift_16_bit = %d \nresult = %d \n", num_shift_16_bit, result);
         printf("TH = %d \n\n", result_case);
-    }
+    } //*/
 
 	return result;
 }

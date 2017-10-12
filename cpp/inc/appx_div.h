@@ -1,6 +1,6 @@
 /*
  * Project name   :
- * File name      : approximatedDivision.h
+ * File name      : appx_div.h
  * Created date   : Fri 15 Sep 2017 11:15:43 AM ICT
  * Author         : Huy-Hung Ho
  * Last modified  : Fri 15 Sep 2017 11:15:43 AM ICT
@@ -12,6 +12,6 @@
 
 #include "config.h"
 
-uint32 approximatedDivision(uint32 num, uint32 den);
+uint32 appx_div(uint32 num, uint32 den);
 
 #endif

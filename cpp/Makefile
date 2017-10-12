@@ -34,7 +34,7 @@ all : $(TARGET)
 $(TARGET) : $(OBJS)
 	@$(CXX) $(LFLAGS) $(INC) $(OBJS) -o $@ -lm $(LIBS)
 
-$(SUB_DIR)/%.o: %.$(LANG)
+$(SUB_DIR)/%.o: %.$(LANG) $(INCS)
 	@$(CXX) -c $(CFLAGS) $(INC) -MMD -MP $< -o $@
 
 
@@ -48,7 +48,7 @@ clean:
 
 cleanall:
 	@$(CLEAR_SCREEN)
-	@-rm -rf $(SUB_DIR) $(TARGET) *.txt
+	@-rm -rf $(SUB_DIR) $(TARGET) text/*
 
 tags : $(SRCS) $(INCS)
 	ctags -f ./.tags --c-kinds=+p --fields=+iaS --extra=+fq ./inc

@@ -13,19 +13,16 @@ use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 use std.textio.all;
 use ieee.std_logic_textio.all;
+use work.config_pkg.all;
 
 entity tb_block_norm_comp is
-        generic (DATA_WIDTH : integer := 32);
 end tb_block_norm_comp;
 
 architecture tb of tb_block_norm_comp is
     component block_norm_comp is
-        generic (
-            DATA_WIDTH      : integer := 32
-        );
         port (
             clk         : in std_logic;
-            set         : in std_logic;
+            enable         : in std_logic;
             reset         : in std_logic;
             data_in     : in unsigned(DATA_WIDTH - 1 downto 0);
             data_out    : out unsigned(DATA_WIDTH - 1 downto 0)
@@ -38,13 +35,12 @@ architecture tb of tb_block_norm_comp is
     constant PERIOD : time := 100 ps;
     signal clk      : std_logic := '1';
     signal reset    : std_logic := '1';
-    signal set      : std_logic := '0';
+    signal enable      : std_logic := '0';
 
 begin
     dut: block_norm_comp
-    generic map(DATA_WIDTH => 32)
     port map (clk => clk,
-              set => set,
+              enable => enable,
               reset => reset,
               data_in  => data_in,
               data_out => data_out);
@@ -58,7 +54,7 @@ begin
     --    wait until reset = '0';
 
     --    -- Main simulation
-    --    set <= '1';
+    --    enable <= '1';
     --    wait for PERIOD;
     --    for i in 1 to 100 loop
     --        data_in <= to_unsigned(i*100, DATA_WIDTH);
@@ -79,11 +75,11 @@ begin
         file inf : text;
         file ouf : text;
     begin
-        file_open(inf, "../cpp/cpp_block_inf.txt", read_mode);
-        file_open(ouf, "../cpp/rtl_block_ouf.txt", write_mode);
+        file_open(inf, "../cpp/text/cpp_block_inf.txt", read_mode);
+        file_open(ouf, "../cpp/text/rtl_block_ouf.txt", write_mode);
 
         wait until reset = '0';
-        set <= '1';
+        enable <= '1';
         wait for PERIOD;
 
         while not endfile(inf) loop

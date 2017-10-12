@@ -13,7 +13,11 @@ use ieee.numeric_std.all;
 
 package config_pkg is
     -- Constant
-    constant CB_WIDTH : integer := 32;
+    constant CB_WIDTH   : integer := 32;
+    constant DATA_WIDTH : integer := 32;
+    constant BIN_WIDTH  : integer := 13;
+    constant HIST_WIDTH : integer := 13;
+    constant ROM_WIDTH  : integer := 9;
 
     -- Function & procedure decralation
     function checkLeftMostBit (x : unsigned) return unsigned;
