@@ -17,11 +17,26 @@
 #include "block_norm_comp.h"
 #include "window_norm_comp.h"
 using namespace std;
+using namespace cv ;
 
+/*! \brief Brief function description here
+ *
+ *  Detailed description of the function
+ *
+ * \return Return parameter description
+ */
+void function_name()
+{
+    
+}
+
+float Q_rsqrt( float number );
 
 int main(int argc, char *argv[])
 {
-    window_norm_comp();
+    float x = 12.0;
+    printf("Q_rsqrt(%f) = %f\n", x, Q_rsqrt(x));
+    //window_norm_comp();
     //block_norm_comp();
 
     /* Print test case by C - max error rateis 20% now (denTest < 2^20)
@@ -93,3 +108,18 @@ int main(int argc, char *argv[])
 	return 0;
 }
 
+float Q_rsqrt( float number )
+{
+	long i;
+	float x2, y;
+	const float threehalfs = 1.5F;
+
+	x2 = number * 0.5F;
+	y  = number;
+	i  = * ( long * ) &y;                       // evil floating point bit level hacking
+	i  = 0x5f3759df - ( i >> 1 );               // what the fuck?
+	y  = * ( float * ) &i;
+	y  = y * ( threehalfs - ( x2 * y * y ) );   // 1st iteration
+    //	y  = y * ( threehalfs - ( x2 * y * y ) );   // 2nd iteration, this can be removed
+	return y;
+}

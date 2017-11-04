@@ -11,12 +11,17 @@
 #include "appx_div.h"
 #include "window_norm_comp.h"
 
-#define     MAX         pow(2,13)
+#define     MAX         pow(2,7)
+
+/* The functions */
+int32  floorSqrt(int x);
+uint32 sqrt32(unsigned long n);
+
 
 unsigned window_norm_comp(void)
 {
-    FILE *inFile  = fopen("text/window_inf.txt", "w");
-    FILE *outFile = fopen("text/window_ouf.txt", "w");
+    FILE *outFileIn = fopen("text/window_inf.txt", "w");
+    FILE *outFile   = fopen("text/window_ouf.txt", "w");
 
     uint32 *bin     = (uint32 *)malloc(sizeof(uint32) * BLOCK_NUM);
     uint32 *cb      = (uint32 *)calloc(sizeof(uint32), 5);
@@ -35,13 +40,13 @@ unsigned window_norm_comp(void)
 
         for (k = 0; k < 4; k++) {
             for (i = 9 * k; i < 9 * k + 8; i+=2) {
-                fprintf(inFile, "%10d\n", (bin[i+1] << 16) + bin[i]);
+                fprintf(outFileIn, "%10d\n", (bin[i+1] << 16) + bin[i]);
             }
-            fprintf(inFile, "%10d\n", bin[9 * k + 8]);
-            fprintf(inFile, "%10d\n", cb[k]);
+            fprintf(outFileIn, "%10d\n", bin[9 * k + 8]);
+            fprintf(outFileIn, "%10d\n", cb[k]);
         }
 
-        cb[4] = cb[0] + cb[1] + cb[2] + cb[3];
+        cb[4] = floorSqrt(cb[0] + cb[1] + cb[2] + cb[3]);
 
         for (i = 0; i < BLOCK_NUM; i++) {
             output[i] = appx_div(bin[i], cb[4]);
@@ -50,7 +55,7 @@ unsigned window_norm_comp(void)
         /* Output */
         for (i = 0; i < 8; i+=2) {
             fprintf(outFile, "%10d%10d", output[i], output[i+1]);
-            fprintf(outFile, "%10d%10d\n", output[18 + i], output[18 + i + 1]);
+            fprintf(outFile, "%10d%10d   %10d\n", output[18 + i], output[18 + i + 1], cb[4]);
         }
         fprintf(outFile, "%10d%10d", output[8], 0);
         fprintf(outFile, "%10d%10d\n", output[26], 0);
@@ -64,7 +69,7 @@ unsigned window_norm_comp(void)
 
         counter = counter - 18;
 
-        cb[0] = cb[1] = cb[2] = cb[3] = 0;
+        cb [4] = cb[0] = cb[1] = cb[2] = cb[3] = 0;
 
         // NEXT PHASE
         for (k = 0; k < 4; k++) {
@@ -74,7 +79,7 @@ unsigned window_norm_comp(void)
             }
         }
 
-        cb[4] = cb[0] + cb[1] + cb[2] + cb[3];
+        cb[4] = floorSqrt(cb[0] + cb[1] + cb[2] + cb[3]);
 
         for (i = 0; i < BLOCK_NUM; i++) {
             output[i] = appx_div(bin[i], cb[4]);
@@ -98,8 +103,52 @@ unsigned window_norm_comp(void)
 
         counter = counter - 18;
 
-        cb[0] = cb[1] = cb[2] = cb[3] = 0;
+        cb[4] = cb[0] = cb[1] = cb[2] = cb[3] = 0;
     }
 
     return 0;
+}
+
+int32 floorSqrt(int32 x)
+{
+    // Base cases
+    if (x == 0 || x == 1)
+       return x;
+
+    // Do Binary Search for floor(sqrt(x))
+    int32 start = 1, end = x, ans;
+    while (start <= end)
+    {
+        int mid = (start + end) / 2;
+
+        // If x is a perfect square
+        if (mid*mid == x)
+            return mid;
+
+        // Since we need floor, we update answer when mid*mid is
+        // smaller than x, and move closer to sqrt(x)
+        if (mid*mid < x)
+        {
+            start = mid + 1;
+            ans = mid;
+        }
+        else // If mid*mid is greater than x
+            end = mid - 1;
+    }
+    return ans;
+}
+
+uint32 sqrt32(unsigned long n)
+{
+    uint32 c = 0x8000;
+    uint32 g = 0x8000;
+
+    for(;;) {
+        if(g*g > n)
+            g ^= c;
+        c >>= 1;
+        if(c == 0)
+            return g;
+        g |= c;
+    }
 }
