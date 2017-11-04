@@ -1,29 +1,45 @@
-<!---
-/*******************************************************************************
-// Project name   :
-// File name      : README.md
-// Created date   : Fri 14 Jul 2017 11:05:59 AM +07
-// Author         : Huy-Hung Ho
-// Last modified  : Thu 07 Sep 2017 02:47:24 PM ICT
-// Desc           :
-*******************************************************************************/
--->
-# Introduction
-
-Human detection by Histogram of Oriented Gradient
-
-
-# Feature
-
-Cell histogram generation without complex operators(arctan, tan, sin, cos)
-
-
-# Folder/File Structures
-
-    cpp        	Reference CPP, used for check results
-	doc			Information
-    rtl        	RTL code
-    scripts   	Others scripts
-    tb         	Testbench 
-
-
+00000000: 3c21 2d2d 2d0a 2f2a 2a2a 2a2a 2a2a 2a2a  <!---./*********
+00000010: 2a2a 2a2a 2a2a 2a2a 2a2a 2a2a 2a2a 2a2a  ****************
+00000020: 2a2a 2a2a 2a2a 2a2a 2a2a 2a2a 2a2a 2a2a  ****************
+00000030: 2a2a 2a2a 2a2a 2a2a 2a2a 2a2a 2a2a 2a2a  ****************
+00000040: 2a2a 2a2a 2a2a 2a2a 2a2a 2a2a 2a2a 2a2a  ****************
+00000050: 2a2a 2a2a 2a2a 0a2f 2f20 5072 6f6a 6563  ******.// Projec
+00000060: 7420 6e61 6d65 2020 203a 0a2f 2f20 4669  t name   :.// Fi
+00000070: 6c65 206e 616d 6520 2020 2020 203a 2052  le name      : R
+00000080: 4541 444d 452e 6d64 0a2f 2f20 4372 6561  EADME.md.// Crea
+00000090: 7465 6420 6461 7465 2020 203a 2046 7269  ted date   : Fri
+000000a0: 2031 3420 4a75 6c20 3230 3137 2031 313a   14 Jul 2017 11:
+000000b0: 3035 3a35 3920 414d 202b 3037 0a2f 2f20  05:59 AM +07.// 
+000000c0: 4175 7468 6f72 2020 2020 2020 2020 203a  Author         :
+000000d0: 2048 7579 2d48 756e 6720 486f 0a2f 2f20   Huy-Hung Ho.// 
+000000e0: 4c61 7374 206d 6f64 6966 6965 6420 203a  Last modified  :
+000000f0: 2054 6875 2030 3720 5365 7020 3230 3137   Thu 07 Sep 2017
+00000100: 2030 323a 3437 3a32 3420 504d 2049 4354   02:47:24 PM ICT
+00000110: 0a2f 2f20 4465 7363 2020 2020 2020 2020  .// Desc        
+00000120: 2020 203a 0a2a 2a2a 2a2a 2a2a 2a2a 2a2a     :.***********
+00000130: 2a2a 2a2a 2a2a 2a2a 2a2a 2a2a 2a2a 2a2a  ****************
+00000140: 2a2a 2a2a 2a2a 2a2a 2a2a 2a2a 2a2a 2a2a  ****************
+00000150: 2a2a 2a2a 2a2a 2a2a 2a2a 2a2a 2a2a 2a2a  ****************
+00000160: 2a2a 2a2a 2a2a 2a2a 2a2a 2a2a 2a2a 2a2a  ****************
+00000170: 2a2a 2a2a 2f0a 2d2d 3e0a 2320 496e 7472  ****/.-->.# Intr
+00000180: 6f64 7563 7469 6f6e 0a0a 4875 6d61 6e20  oduction..Human 
+00000190: 6465 7465 6374 696f 6e20 6279 2048 6973  detection by His
+000001a0: 746f 6772 616d 206f 6620 4f72 6965 6e74  togram of Orient
+000001b0: 6564 2047 7261 6469 656e 740a 0a0a 2320  ed Gradient...# 
+000001c0: 4665 6174 7572 650a 0a43 656c 6c20 6869  Feature..Cell hi
+000001d0: 7374 6f67 7261 6d20 6765 6e65 7261 7469  stogram generati
+000001e0: 6f6e 2077 6974 686f 7574 2063 6f6d 706c  on without compl
+000001f0: 6578 206f 7065 7261 746f 7273 2861 7263  ex operators(arc
+00000200: 7461 6e2c 2074 616e 2c20 7369 6e2c 2063  tan, tan, sin, c
+00000210: 6f73 290a 0a0a 2320 466f 6c64 6572 2f46  os)...# Folder/F
+00000220: 696c 6520 5374 7275 6374 7572 6573 0a0a  ile Structures..
+00000230: 2020 2020 6370 7020 2020 2020 2020 2009      cpp        .
+00000240: 5265 6665 7265 6e63 6520 4350 502c 2075  Reference CPP, u
+00000250: 7365 6420 666f 7220 6368 6563 6b20 7265  sed for check re
+00000260: 7375 6c74 730a 0964 6f63 0909 0949 6e66  sults..doc...Inf
+00000270: 6f72 6d61 7469 6f6e 0a20 2020 2072 746c  ormation.    rtl
+00000280: 2020 2020 2020 2020 0952 544c 2063 6f64          .RTL cod
+00000290: 650a 2020 2020 7363 7269 7074 7320 2020  e.    scripts   
+000002a0: 094f 7468 6572 7320 7363 7269 7074 730a  .Others scripts.
+000002b0: 2020 2020 7462 2020 2020 2020 2020 2009      tb         .
+000002c0: 5465 7374 6265 6e63 6820 0a              Testbench .

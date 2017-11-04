@@ -1,0 +1,41 @@
+# vsim Test_SquareRoot 
+# Start time: 13:37:08 on Oct 18,2017
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading ieee.math_real(body)
+# Loading work.test_squareroot(test)
+# Loading work.squareroot(circuit)
+add wave -position insertpoint  \
+sim:/test_squareroot/x \
+sim:/test_squareroot/xx \
+sim:/test_squareroot/root \
+sim:/test_squareroot/remainder \
+sim:/test_squareroot/clk \
+sim:/test_squareroot/reset \
+sim:/test_squareroot/start \
+sim:/test_squareroot/done \
+sim:/test_squareroot/end_sim \
+sim:/test_squareroot/n \
+sim:/test_squareroot/NUM_SIM \
+sim:/test_squareroot/OFFSET \
+sim:/test_squareroot/PERIOD
+run -all
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /test_squareroot
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /test_squareroot
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /test_squareroot
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /test_squareroot
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /test_squareroot/dut
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /test_squareroot/dut
+# ** Note: simulation OK
+#    Time: 550685 ns  Iteration: 0  Instance: /test_squareroot
+# End time: 15:29:04 on Oct 18,2017, Elapsed time: 1:51:56
+# Errors: 0, Warnings: 6

@@ -1,0 +1,75 @@
+\documentclass[conference]{IEEEtran}
+
+\usepackage{url}
+\usepackage{graphicx}
+\usepackage{enumitem}
+%-------------------- NO need for IEEEtran  ------------------------------------
+%\usepackage{cite}
+%\usepackage{float}
+%%\usepackage[ruled,vlined]{algorithm2e}
+\usepackage{amsmath}
+%\usepackage{amsfonts}
+%\usepackage{amssymb}
+%\usepackage{subcaption}
+%\usepackage[table]{xcolor}
+%\usepackage{makecell}
+%\usepackage[hidelinks]{hyperref}
+%\usepackage{multirow}
+%\usepackage{array}
+\renewcommand{\arraystretch}{2}
+
+
+% For development version  -----------------------------------------------------------
+%\usepackage{color}
+%\usepackage{soul}
+%\usepackage{ulem}
+%\newcommand{\del}[1]{\textcolor{red}{\st{#1}$^{\textrm{\tiny RM}}$}}
+%\newcommand{\fixme}[1]{\textcolor{blue}{\uwave{#1}$^{\textrm{\tiny FIXME}}$}}
+%\usepackage{lipsum}
+%\usepackage{setspace}
+%\linespread{1.3}
+
+%  -----------------------------------------------------------------------------
+
+% Common values  ---------------------------------------------------------------
+\newcommand{\gra}[1]{\overrightarrow{#1}}
+\newcommand{\magni}[1]{||\gra{#1}||}
+
+\def\graM{\gra{M(x,y)}}
+\def\magM{\magni{M(x,y)}}
+
+\def\graBi{\gra{B_{\theta_i}}}
+\def\magBi{\magni{B_{\theta_i}}}
+
+\def\graBii{\gra{B_{\theta_{i+1}}}}
+\def\magBii{\magni{B_{\theta_{i+1}}}}
+%-------------------------------------------------------------------------------
+
+
+\title{Accurate and Low Complex Cell Histogram Generation By Bypass The
+Gradient of Pixel Computation}
+
+\author{\IEEEauthorblockN{Huy-Hung Ho, Ngoc-Sinh Nguyen, Duy-Hieu Bui, Xuan-Tu Tran}
+	\IEEEauthorblockA{
+		SISLAB, VNU University of Engineering and Technology
+		(VNU-UET),\\
+		144 Xuan Thuy road, Cau Giay, Hanoi, Vietnam. Email:
+		\{sinhnn\_55,hieubd,tutx\}@vnu.edu.vn}
+	}
+\begin{document}
+\maketitle
+\makeatletter
+\input{abstract}
+\input{intro}
+% More modules here
+\input{Conventional_non-normalize_feature_extraction_in_HOG}
+\input{Proposed_non-normalize_feature_extraction}
+\input{Experimental_results}
+
+\input{conclu.tex}
+\bibliographystyle{IEEEtran}
+\bibliography{IEEEabrv,index}
+\end{document}
+
+
+

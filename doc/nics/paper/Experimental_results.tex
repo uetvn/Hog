@@ -1,0 +1,117 @@
+%
+% Project name   :
+% File name      : Experimental_results.tex
+% Created date   : Mon 17 Jul 2017 11:16:25 AM +07
+% Author         : Ngoc-Sinh Nguyen
+% Last modified  : Mon 17 Jul 2017 11:16:25 AM +07
+% Desc           :
+%
+
+
+\section{Hardware implementation and experimental results}
+\label{sec:experimental_results}
+%\subsection{Hardware implementation}
+%\label{sub:hardware_pipeline_model}
+
+We implemented the proposed methodology into hardware and examined
+its results.
+Figure \ref{fig:hw_implementation_002} shows the hardware module of
+the proposed methodology.
+It includes 4 input pixels $I(x + 1, y), I(x - 1, y), I(x, y + 1), I(x, y - 1)$
+with 8-bit pixel length.
+The output contains the magnitude and the direction of two bins.
+Angle  is 4-bit length data, and magnitude is 17-bit length data with
+8-bit of fractional part.
+
+\begin{figure}[h]
+	\centering
+	\def\sscale{1\linewidth}
+	\includegraphics[width=\sscale]{"imgs/hw_implementation"}
+	\caption{Hardware implementation of proposed methodology}
+	\label{fig:hw_implementation_002}
+\end{figure}
+
+
+
+As shown in Figure~\ref{fig:hw_implementation_002}, the module includes 4
+states.
+Firstly, the difference $d_x$ and $d_y$ are computed from the 4 input
+pixels.
+In the second state, the absolute of $d_x$, $d_y$ are computed, and the quadrant
+position of the gradient of pixel $I(x,y)$ is  detected.
+After having those absolute values, the pre-calculating state calculates
+all the multiplications in Table \ref{tab:mult_2_shift_add}.
+The fourth state produces two voted bins, include  orientation and magnitude.
+
+Figure \ref{fig:angle_and_magnitude_calculation} presents the detail of the
+fourth state.
+It has two multiplexers.
+The first multiplexer has 4 input from 4 angle comparisons.
+This multiplexer chooses the highest angle $\theta$ in the first quadrant. 
+For each quantized angle, it also produces corresponding gradient
+magnitude from Equation \ref{eq:b1} and \ref{eq:b2}.
+The second multiplexer converts the $\theta$ in first quadrant into the second
+quadrant if the $sign(d_x)$ is opposite $sign(d_y)$.
+
+\begin{figure}[h]
+	\centering
+	\def\sscale{.8\linewidth}
+	\includegraphics[width=\sscale]{"imgs/angle_and_magnitude_calculation"}
+	\caption{Submodule angle and magnitude calculation}
+	\label{fig:angle_and_magnitude_calculation}
+\end{figure}
+
+Table \ref{tab:cell_histogram_generation_hardware_comparison} shows the hardware
+results of some state-of-the-art publications and our proposed.
+Pei-Yin and Hsiao's works calculated the gradient of  current pixels with
+approximate model  via the SRA approximation for magnitude and CORDIC for angle.
+Munteanu combined Equation \ref{eq:munteanu} and bin's boundary angles method.
+As shown, the proposed methodology and Munteanu's works  can run at highest
+frequency 400\textit{MHz}.
+They are  also the two smallest areas cost of implementation.
+However, the area of  Munteanu's module still more than   fifth times as much as
+our proposed.
+
+
+% Please add the following required packages to your document preamble:
+% \usepackage{multirow}
+% \usepackage[table,xcdraw]{xcolor}
+% If you use beamer only pass "xcolor=table" option, i.e. \documentclass[xcolor=table]{beamer}
+\begin{table}[h]
+\centering
+\caption{Hardware comparison of Cell Histogram Generation }
+\label{tab:cell_histogram_generation_hardware_comparison}
+\begin{tabular}{|l|c|c|c|}
+\hline
+%\rowcolor{lightgray}
+\textbf{Publications} & \textbf{Technology} & \textbf{Areas (KGates)} & \textbf{Frequency} \\ \hline
+Pei-Yin \cite{pei-yinchen2014ehia}          & 130\textit{nm}               & 85.5                    & 167\textit{MHz} (all HOG)   \\ \hline
+Hsiao \cite{hsiao2016hdh}                   & 90\textit{nm}                & 29.1                    & N/A                \\ \hline
+Munteanu \cite{munteanu2016mph}             & N/A                 & 20                      & Max. 400\textit{MHz}        \\ \hline
+Our Proposed                                & 45\textit{nm} NanGate        & 3.57                    & Max. 400\textit{MHz}        \\ \hline
+\end{tabular}
+\end{table}
+
+
+
+%\subsection{Verification model}
+%\label{sub:experimental_results}
+
+Figure \ref{fig:verification_model} shows our error of calculation model for the
+proposed methodology.
+From the voted bin, we calculate a model of $d_x$ and $d_y$ by Equation
+\ref{eq:x_to_b_b} and \ref{eq:y_to_b_b}, called $d'_x$ and $d'_y$.
+With the $d'_x$, $d'_y$, $d_x$, $d_y$, the percentage error of calculation at
+both \textit{Ox} and \textit{Oy} axises are  computed.
+Tested with all cases, the results prove that our proposed methodology provides
+the  percentage error of calculations $e_x$ $e_y$, which  are always  less than 2\% with 8-bit length of
+fractional part.
+\begin{figure}[h]
+	\centering
+	\def\sscale{0.8\linewidth}
+	\includegraphics[width=\sscale]{"imgs/verification_model"}
+	\caption{Error of calculation model}
+	\label{fig:verification_model}
+\end{figure}
+
+

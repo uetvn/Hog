@@ -1,6 +1,3 @@
-
-
-
 Modules:
 	- cell_bin_comp		Cell: bin computation
 	- blk_bin_norm  	Block: normalization bin in Block 16x16	

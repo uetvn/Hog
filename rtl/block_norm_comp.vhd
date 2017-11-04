@@ -32,6 +32,12 @@ architecture behavior of block_norm_comp is
         );
     end component;
 
+    component sqrt32
+        port (  data_in     : in  unsigned(31 downto 0);
+                data_out    : out unsigned(15 downto 0)
+            );
+    end component;
+
     -- 5 byte for 9 bin & 1 byte for cb
     constant CELL_WIDTH : integer := 192;
     --type CELL_BIN_TYPE is array (integer range <>) of unsigned;
@@ -111,7 +117,9 @@ begin
               + cell_bin_2(CELL_WIDTH - 1 downto CELL_WIDTH - DATA_WIDTH);
     cb_tmp_2 <= cell_bin_3(CELL_WIDTH - 1 downto CELL_WIDTH - DATA_WIDTH)
               + cell_bin_4(CELL_WIDTH - 1 downto CELL_WIDTH - DATA_WIDTH);
-    cb_sum_tmp <= cb_tmp_1 + cb_tmp_2;
+    sqrt: sqrt32
+        port map(data_in  => cb_tmp_1 + cb_tmp_2,
+                 data_out => cb_sum_tmp);
 
 
     reg: process(reset, enable, clk)

@@ -1,0 +1,43 @@
+%
+% Project name   :
+% File name      : abstract.tex
+% Created date   : Mon 17 Jul 2017 10:29:12 AM +07
+% Author         : Ngoc-Sinh Nguyen
+% Last modified  : Sat 29 Jul 2017 03:33:28 PM ICT
+% Desc           :
+%
+\begin{abstract}
+Histogram of Oriented Gradient (HOG) is a popular feature description for the purpose of object detection.
+However, HOG algorithm requires a performance system because of its complex
+operation set.
+Especially, the cell histogram generation is one
+of the most complex part, it uses inverse tangent, square, square root, floating
+point multiplication.
+In this paper, we propose an \MakeLowercase{\@title}.
+%\del{,which is suitable for low resource system and hardware implementation}.
+%\del{It determines the quantized angles exactly from bounding the \textit{tan}
+%values of quantized angles by rational numbers from ratio between the pixel
+%derivatives with respect to both  \textit{y} and \textit{x} direction}.
+It employs the bin's boundary angle method to determine the two quantized angles.
+However, instead of choosing an approximate value of tan, the nearest
+greater and the nearest  smaller of each \textit{tan} values from ratio between
+pixel's derivative in $y$ and $x$ direction are used.
+Magnitude of two bins are  solutions of a system of two equations, which
+represent the equality of the gradient of a pixel and  its two
+bins in both vertical and horizontal direction.
+The proposed method spends only 30 addition and 40 shift operations to identify
+two bins of a pixel.
+Simulation results show that the percentage error when reconstructing the
+difference in $x$ and $y$ direction are  always less than 2\% with 8-bit length of the fractional part.
+Additionally, manipulating the precision of gradient  magnitude
+is very simple by pre-defined \textit{sine} and \textit{cosine}  values of quantized angles.
+Synthesizing the hardware implementation presents that its area cost is 3.57\textit{KGates} with
+45\textit{nm} NanGate standard cell library.
+The hardware module runs at the maximum frequency of 400 MHz, and the throughput is
+0.4 (\textit{pixel/ns}) for a single module.
+It is able to support about 48\textit{fps} with $4K$ UHD resolution.
+
+
+\end{abstract}
+
+

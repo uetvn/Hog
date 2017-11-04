@@ -1,0 +1,68 @@
+%
+% Project name   :
+% File name      : intro.tex
+% Created date   : Mon 17 Jul 2017 10:42:25 AM +07
+% Author         : Ngoc-Sinh Nguyen
+% Last modified  : Mon 17 Jul 2017 10:42:25 AM +07
+% Desc           :
+%
+
+\section{Introduction}
+\label{sec:introduction}
+The Histogram of Oriented Gradients (HOG) \cite{dalal2005hog} is a feature descriptor used in
+computer vision and image processing for object detection.
+It gets the quantity of strong characteristic from the shape change of the object by
+dividing a local domain into plural blocks and making the incline of each the
+histogram.
+Practically, HOG feature achieves very high accuracy level,  it is up to
+96.6\% of the detection rate with 20.7\% of the false positive rate
+\cite{negi2011dpo}.
+Hence, it is the key role of wide  range application domains including robotic,
+security surveillance, automotive.
+However,  the complexity level of HOG is the most difficult problem when
+using in embedded systems or implementing into hardware.
+
+
+The HOG algorithm can be separated into 3 phases: cell histogram generation,
+block normalization, and the SVM classification.
+The first phase plays as the most complex one and consumes the most energy.
+Because, extracting the feature of each pixel requires series of  complex
+operations: inverse tangent, square, square root, floating point multiplication.
+Additionally, in the age of cloud computing, the two last phases can be done in the
+server  for IoT devices.
+Hence, simplifying cell histogram generation part is  very necessary,
+especially for IoT devices.
+
+Many researchers have proposed diverse approximate methods such as LUT or CORDIC
+or bin's boundary angles in cell histogram generation to reduce complexity
+level.
+Even though approximate models reduce the  accuracy of extracting pixel feature,
+they still require too much memory areas or use many iterations.
+
+%
+In this work, we  would like to propose a new methodology, which extracts
+features of pixel accurately and is suitable for low resource systems and
+hardware implementation.
+The difference in this methodology is that it is not an approximate model, and it
+computes the quantized orientations and gradient magnitude of quantized organized directly.
+The idea comes from the properties of decomposing the gradient of a pixel into
+two components (bins).
+The proposed methodology includes only addition and shift operation.
+As our simulation results, it requires about 30 additions
+and 40 shifts for 8-bit of fraction of magnitude.
+In the accurate side, error when reconstructing the pixel's derivatives in both
+direction from voted bins is always less than 2\%.
+A hardware implementation  consumes about 3.57\textit{KGates} with 45\textit{nm}
+NanGate standard cell library.
+The maximum frequency of the hardware is 400\textit{MHz}, and its throughput is up to 0.4\textit{pixel/ns}.
+
+
+The rests of the paper are organized as follows.
+Section \ref{sec:conventional_non_normalize_feature_extraction_in_hog}
+introduces the cell histogram generation and some previous optimization works.
+Section \ref{sec:proposed_non_normalize_feature_extraction} shows the detail of
+proposed methodology.
+Section \ref{sec:experimental_results} presents details of the hardware
+implementation of proposed methodology and simulation results.
+Finally, section \ref{sec:conclusion} gives a summary and our expected
+future.

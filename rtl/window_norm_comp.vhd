@@ -38,14 +38,23 @@ architecture behavior of window_norm_comp is
         );
     end component;
 
-    type BIN_CELL_TYPE is array (9 downto 0) of unsigned(BIN_WIDTH - 1 downto 0);
+    component sqrt32
+        port (  data_in     : in  unsigned(31 downto 0);
+                data_out    : out unsigned(15 downto 0)
+            );
+    end component;
+
+   type BIN_CELL_TYPE is array (9 downto 0) of unsigned(BIN_WIDTH - 1 downto 0);
     signal bin_cell_0   : BIN_CELL_TYPE;
     signal bin_cell_1   : BIN_CELL_TYPE;
     signal bin_cell_2   : BIN_CELL_TYPE;
     signal bin_cell_3   : BIN_CELL_TYPE;
 
-    type HEADER_TYPE is array(3 downto 0) of unsigned(BIN_WIDTH - 1 downto 0);
-    signal header       : HEADER_TYPE;
+    constant BUFFER_SIZE    : integer := 4;
+    type HEADER_TYPE is array(BUFFER_SIZE - 1 downto 0)
+                        of unsigned(BIN_WIDTH - 1 downto 0);
+    signal buffer_1         : HEADER_TYPE;
+    signal buffer_2         : HEADER_TYPE;
 
     constant BIN_CNT_W  : integer := 4;
     signal bin_counter  : unsigned(BIN_CNT_W - 1 downto 0);
@@ -54,14 +63,16 @@ architecture behavior of window_norm_comp is
     signal block_counter    : unsigned(BLOCK_CNT_W - 1 downto 0);
     signal end_w_counter    : unsigned(BLOCK_CNT_W - 1 downto 0);
 
-    type CB_BLOCK_TYPE is array (3 downto 0) of unsigned(CB_WIDTH - 1 downto 0);
-    signal cb_block     : CB_BLOCK_TYPE;
-    signal cb_sum       : unsigned(DATA_WIDTH - 1 downto 0);
-    signal read_cb_enb  : std_logic;
+    type CB_BLOCK_TYPE is array (3 downto 0) of unsigned(DATA_WIDTH - 1 downto 0);
+    signal cb_block         : CB_BLOCK_TYPE;
+    signal cb_sum           : unsigned(DATA_WIDTH - 1 downto 0);
+    signal cb_sum_sqrt_tmp  : unsigned(CB_WIDTH - 1 downto 0);
+    signal cb_sum_sqrt      : unsigned(CB_WIDTH - 1 downto 0);
+    signal read_cb_enb      : std_logic;
 
     signal wr_enb           : std_logic;
-    signal hist_0, hist_1   : unsigned(HIST_WIDTH - 1 downto 0);
-    signal hist_2, hist_3   : unsigned(HIST_WIDTH - 1 downto 0);
+    type HISTOGRAM_TYPE is array (3 downto 0) of unsigned(HIST_WIDTH - 1 downto 0);
+    signal histogram        : HISTOGRAM_TYPE;
 begin
 
     -- Case of DATA_WIDTH =  2 * CELL_WITH
@@ -73,15 +84,16 @@ begin
             bin_cell_2 <= (others => (others => '0'));
             bin_cell_3 <= (others => (others => '0'));
             cb_block   <= (others => (others => '0'));
-            header     <= (others => (others => '0'));
+            buffer_1   <= (others => (others => '0'));
+            buffer_2   <= (others => (others => '0'));
         elsif rising_edge(clk) then
             if (enable = '1') then
                 if (read_cb_enb = '0') then
-                    bin_cell_0(9)  <= data_in(DATA_WIDTH / 2 + BIN_WIDTH - 1
+                    bin_cell_0(9) <= data_in(DATA_WIDTH / 2 + BIN_WIDTH - 1
                                                downto DATA_WIDTH / 2);
-                    bin_cell_1(9)  <= bin_cell_0(1);
-                    bin_cell_2(9)  <= bin_cell_1(1);
-                    bin_cell_3(9)  <= bin_cell_2(1);
+                    bin_cell_1(9) <= bin_cell_0(1);
+                    bin_cell_2(9) <= bin_cell_1(1);
+                    bin_cell_3(9) <= bin_cell_2(1);
 
                     bin_cell_0(8) <= data_in(BIN_WIDTH - 1 downto 0);
                     bin_cell_1(8) <= bin_cell_0(0);
@@ -100,10 +112,8 @@ begin
                         bin_cell_3(i) <= bin_cell_3(i + 2);
                     end loop;
 
-                    header(0) <= bin_cell_3(0);
-                    header(1) <= bin_cell_3(1);
-                    header(2) <= bin_cell_1(0);
-                    header(3) <= bin_cell_1(1);
+                    buffer_1(1 downto 0) <= bin_cell_3(1 downto 0);
+                    buffer_2(1 downto 0) <= bin_cell_1(1 downto 0);
                 else
                     cb_block(0) <= data_in;
                     cb_block(1) <= cb_block(0);
@@ -118,14 +128,14 @@ begin
     ouput_ctrl: process(clk, reset)
     begin
         if (reset = '1') then
-            end_w_counter <= (others => '0');
-            wr_enb <= '0';
+            end_w_counter       <= (others => '0');
+            wr_enb              <= '0';
         elsif rising_edge(clk) then
             if (enable = '1') then
                 case mode is
-                    when "00" => end_w_counter <= "1101001";
-                    when "01" => end_w_counter <= "0000111";
-                    when "10" => end_w_counter <= "0001111";
+                    when "00"   => end_w_counter <= "1101001";
+                    when "01"   => end_w_counter <= "0000111";
+                    when "10"   => end_w_counter <= "0001111";
                     when others => end_w_counter <= (others => '0');
                 end case;
 
@@ -142,8 +152,8 @@ begin
     counter: process(clk, reset)
     begin
         if (reset = '1') then
-            bin_counter <= (others => '0');
-            block_counter <= (others => '0');
+            bin_counter         <= (others => '0');
+            block_counter       <= (others => '0');
         elsif rising_edge(clk) then
             if (enable = '1') then
                 if (bin_counter = to_unsigned(12, BIN_CNT_W)) then
@@ -164,43 +174,47 @@ begin
     read_cb_enb <= '1' when (bin_counter = to_unsigned(6, BIN_CNT_W)
                           or bin_counter = to_unsigned(12, BIN_CNT_W)) else '0';
 
+    cb_sum <= (cb_block(0) + cb_block(1)) + (cb_block(2) + cb_block(3));
+
+    sqrt: sqrt32
+        port map(data_in  => cb_sum,
+                 data_out => cb_sum_sqrt_tmp);
 
     -- Calculate sum of cb (denominator)
     reg: process(reset, clk)
     begin
         if (reset = '1') then
-            cb_sum <= (others => '0');
+            cb_sum_sqrt          <= (others => '0');
         elsif rising_edge(clk) then
             if (bin_counter = to_unsigned(1, BIN_CNT_W)) then
-                cb_sum <= (cb_block(0) + cb_block(1))
-                        + (cb_block(2) + cb_block(3));
+                cb_sum_sqrt      <= cb_sum_sqrt_tmp;
             end if;
         end if;
     end process;
 
-
     -- Calculate histogram by division between bin and sum of cb
-    div0: appx_div port map (clk, header(0), cb_sum, hist_0);
-    div1: appx_div port map (clk, header(1), cb_sum, hist_1);
+    div0: appx_div port map (clk, buffer_1(0), cb_sum_sqrt, histogram(0));
+    div1: appx_div port map (clk, buffer_1(1), cb_sum_sqrt, histogram(1));
 
-    div2: appx_div port map (clk, header(2), cb_sum, hist_2);
-    div3: appx_div port map (clk, header(3), cb_sum, hist_3);
+    div2: appx_div port map (clk, buffer_2(0), cb_sum_sqrt, histogram(2));
+    div3: appx_div port map (clk, buffer_2(1), cb_sum_sqrt, histogram(3));
 
     out_enable: process(reset, clk)
     begin
         if (reset = '1') then
-            wr <= '0';
-            data_out_0 <= (others => '0');
-            data_out_1 <= (others => '0');
-            data_out_2 <= (others => '0');
-            data_out_3 <= (others => '0');
+            wr             <= '0';
+            data_out_0     <= (others => '0');
+            data_out_1     <= (others => '0');
+            data_out_2     <= (others => '0');
+            data_out_3     <= (others => '0');
         elsif rising_edge(clk) then
-            wr <= wr_enb;
+            wr  <= wr_enb;
+
             if (wr_enb = '1') then
-                data_out_0 <= hist_0;
-                data_out_1 <= hist_1;
-                data_out_2 <= hist_2;
-                data_out_3 <= hist_3;
+                data_out_0 <= histogram(0);
+                data_out_1 <= histogram(1);
+                data_out_2 <= histogram(2);
+                data_out_3 <= histogram(3);
             end if;
         end if;
     end process;

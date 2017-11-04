@@ -13,6 +13,7 @@ use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 use work.config_pkg.all;
 
+
 entity appx_div is
     port (
         clk         : in std_logic;
@@ -23,20 +24,20 @@ entity appx_div is
 end entity;
 
 architecture behavior of appx_div is
-    signal data_out_tmp     : unsigned(CB_WIDTH - 1 downto 0);
-    signal select_condition : std_logic_vector(3 downto 0);
-    signal num_mul_hist_bit : unsigned(CB_WIDTH - 1 downto 0);
     signal leftMostBit      : integer := 0;
+    signal select_condition : std_logic_vector(3 downto 0);
+    signal num_mul_hist_bit : unsigned(BIN_WIDTH + HIST_WIDTH - 1 downto 0);
+    signal data_appx        : unsigned(BIN_WIDTH + HIST_WIDTH - 1 downto 0);
+    signal data_out_tmp     : unsigned(HIST_WIDTH - 1 downto 0) := (others =>
+        '0');
 
     signal nearest_smaller_power_of_2        : unsigned (CB_WIDTH - 1 downto 0);
     signal nearest_smaller_add_one_quarter   : unsigned (CB_WIDTH - 1 downto 0);
     signal nearest_smaller_add_two_quarters  : unsigned (CB_WIDTH - 1 downto 0);
     signal nearest_smaller_add_three_quarters: unsigned (CB_WIDTH - 1 downto 0);
 begin
-    num_mul_hist_bit <= (to_unsigned(0, CB_WIDTH - BIN_WIDTH) & num)
-                            sll HIST_WIDTH;
-
-    leftMostBit <= mostLeftBit(den);
+    num_mul_hist_bit <= (to_unsigned(0, HIST_WIDTH) & num) sll HIST_WIDTH;
+leftMostBit <= mostLeftBit(den);
 
     process (num, den, leftMostBit)
     begin
@@ -70,7 +71,7 @@ begin
         when (den > nearest_smaller_add_three_quarters) else '0';
 
     with select_condition select
-        data_out_tmp <= (num_mul_hist_bit srl leftMostBit)
+        data_appx <= (num_mul_hist_bit srl leftMostBit)
                         + (num_mul_hist_bit srl (leftMostBit + 1))
                         + (num_mul_hist_bit srl (leftMostBit + 2)) when "0001",
                           (num_mul_hist_bit srl leftMostBit)
@@ -84,11 +85,12 @@ begin
     begin
         if rising_edge(clk) then
             if (den = to_unsigned(0, CB_WIDTH)) then
-                data_out <= (others => '0');
+                data_out_tmp <= (others => '0');
             else
-                data_out <= data_out_tmp(HIST_WIDTH - 1 downto 0);
+                data_out_tmp <= data_appx(HIST_WIDTH - 1 downto 0);
             end if;
         end if;
     end process;
+    data_out <= data_out_tmp;
 end behavior;
 

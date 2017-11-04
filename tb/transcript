@@ -1,0 +1,509 @@
+# do compile_window.do
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 08:52:04 on Oct 18,2017
+# vcom -reportprogress 300 ../rtl/appx_div.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package config_pkg
+# -- Compiling entity appx_div
+# -- Compiling architecture behavior of appx_div
+# End time: 08:52:04 on Oct 18,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 08:52:04 on Oct 18,2017
+# vcom -reportprogress 300 ../rtl/sqrt32.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity Sm
+# -- Compiling architecture circuits of Sm
+# -- Compiling entity Sb
+# -- Compiling architecture circuits of Sb
+# -- Compiling entity S1
+# -- Compiling architecture circuits of S1
+# -- Compiling entity S0
+# -- Compiling architecture circuits of S0
+# -- Compiling entity Sn
+# -- Compiling architecture circuits of Sn
+# -- Compiling entity S0b
+# -- Compiling architecture circuits of S0b
+# -- Compiling entity S1b
+# -- Compiling architecture circuits of S1b
+# -- Loading package NUMERIC_STD
+# -- Compiling entity sqrt32
+# -- Compiling architecture circuits of sqrt32
+# -- Loading entity S0
+# -- Loading entity S1
+# -- Loading entity Sm
+# -- Loading entity Sn
+# -- Loading entity S0b
+# -- Loading entity S1b
+# -- Loading entity Sb
+# End time: 08:52:05 on Oct 18,2017, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 08:52:05 on Oct 18,2017
+# vcom -reportprogress 300 ../rtl/config_pkg.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling package config_pkg
+# -- Compiling package body config_pkg
+# -- Loading package config_pkg
+# End time: 08:52:05 on Oct 18,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 08:52:05 on Oct 18,2017
+# vcom -reportprogress 300 ../rtl/window_norm_comp.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package config_pkg
+# -- Compiling entity window_norm_comp
+# -- Compiling architecture behavior of window_norm_comp
+# End time: 08:52:05 on Oct 18,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 08:52:05 on Oct 18,2017
+# vcom -reportprogress 300 ./tb_module/tb_window_norm_comp.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package std_logic_textio
+# -- Loading package config_pkg
+# -- Compiling entity tb_window_norm_comp
+# -- Compiling architecture tb of tb_window_norm_comp
+# End time: 08:52:05 on Oct 18,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim tb_window_norm_comp 
+# Start time: 08:52:05 on Oct 18,2017
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.config_pkg(body)
+# Loading work.tb_window_norm_comp(tb)
+# Loading work.window_norm_comp(behavior)
+# Loading work.sqrt32(circuits)
+# Loading work.s0(circuits)
+# Loading work.s1(circuits)
+# Loading work.sm(circuits)
+# Loading work.sn(circuits)
+# Loading work.s0b(circuits)
+# Loading work.s1b(circuits)
+# Loading work.sb(circuits)
+# Loading work.appx_div(behavior)
+# Simulate
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div3
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div3
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div3
+# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div3
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div2
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div2
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div2
+# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div2
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div1
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div1
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div1
+# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div1
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div0
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div0
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div0
+# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div0
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut
+add wave -position insertpoint  \
+sim:/tb_window_norm_comp/dut/clk \
+sim:/tb_window_norm_comp/dut/reset \
+sim:/tb_window_norm_comp/dut/enable \
+sim:/tb_window_norm_comp/dut/mode \
+sim:/tb_window_norm_comp/dut/data_in \
+sim:/tb_window_norm_comp/dut/wr \
+sim:/tb_window_norm_comp/dut/data_out_0 \
+sim:/tb_window_norm_comp/dut/data_out_1 \
+sim:/tb_window_norm_comp/dut/data_out_2 \
+sim:/tb_window_norm_comp/dut/data_out_3 \
+sim:/tb_window_norm_comp/dut/bin_cell_0 \
+sim:/tb_window_norm_comp/dut/bin_cell_1 \
+sim:/tb_window_norm_comp/dut/bin_cell_2 \
+sim:/tb_window_norm_comp/dut/bin_cell_3 \
+sim:/tb_window_norm_comp/dut/header \
+sim:/tb_window_norm_comp/dut/bin_counter \
+sim:/tb_window_norm_comp/dut/block_counter \
+sim:/tb_window_norm_comp/dut/end_w_counter \
+sim:/tb_window_norm_comp/dut/cb_block \
+sim:/tb_window_norm_comp/dut/cb_sum \
+sim:/tb_window_norm_comp/dut/cb_sum_sqrt_tmp \
+sim:/tb_window_norm_comp/dut/cb_sum_sqrt \
+sim:/tb_window_norm_comp/dut/read_cb_enb \
+sim:/tb_window_norm_comp/dut/wr_enb \
+sim:/tb_window_norm_comp/dut/histogram \
+sim:/tb_window_norm_comp/dut/BIN_CNT_W \
+sim:/tb_window_norm_comp/dut/BLOCK_CNT_W
+restart -f; run 10ns;
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div3
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div3
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div3
+# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div3
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div2
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div2
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div2
+# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div2
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div1
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div1
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div1
+# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div1
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div0
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div0
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div0
+# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div0
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut
+restart -f; run 10ns;
+# Loading work.appx_div(behavior)
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div3
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div3
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div3
+# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div3
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div2
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div2
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div2
+# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div2
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div1
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div1
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div1
+# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div1
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div0
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div0
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div0
+# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div0
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut
+restart -f; run 10ns;
+# Loading work.appx_div(behavior)
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div3
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div3
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div3
+# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div3
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div2
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div2
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div2
+# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div2
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div1
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div1
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div1
+# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div1
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div0
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div0
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div0
+# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div0
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut
+restart -f; run 10ns;
+# Loading work.window_norm_comp(behavior)
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div3
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div3
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div3
+# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div3
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div2
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div2
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div2
+# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div2
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div1
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div1
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div1
+# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div1
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div0
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div0
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div0
+# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div0
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut
+restart -f; run 10ns;
+# Loading work.window_norm_comp(behavior)
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div3
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div3
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div3
+# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div3
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div2
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div2
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div2
+# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div2
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div1
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div1
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div1
+# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div1
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div0
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div0
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div0
+# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div0
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut
+restart -f; run 10ns;
+# Loading work.appx_div(behavior)
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div3
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div3
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div3
+# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div3
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div2
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div2
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div2
+# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div2
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div1
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div1
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div1
+# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div1
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div0
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div0
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div0
+# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div0
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut
+restart -f; run 10ns;
+# Loading work.appx_div(behavior)
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div3
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div3
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div3
+# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div3
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div2
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div2
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div2
+# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div2
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div1
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div1
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div1
+# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div1
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div0
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div0
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div0
+# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div0
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut
+run -over
+run -over
+run -over
+restart -f; run 10ns;
+# Loading work.window_norm_comp(behavior)
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div3
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div3
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div3
+# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div3
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div2
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div2
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div2
+# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div2
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div1
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div1
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div1
+# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div1
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div0
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div0
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div0
+# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div0
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut
+restart -f; run 1000 ns;
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div3
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div3
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div3
+# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div3
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div2
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div2
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div2
+# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div2
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div1
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div1
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div1
+# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div1
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div0
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div0
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div0
+# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut/div0
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_window_norm_comp/dut

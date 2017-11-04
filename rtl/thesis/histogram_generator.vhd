@@ -22,12 +22,12 @@ entity hist_gen is
         pixel_width: integer := 8
     );
     port (
-        clk:	in std_logic;
-        clr:	in std_logic;
-        bin:	in std_logic_vector (3 downto 0);
-        Gx, Gy:	in std_logic_vector (pixel_width-1 downto 0);
-        sl:		in std_logic;
-        wr_init: in std_logic;
+        clk:	    in std_logic;
+        clr:	    in std_logic;
+        bin:        in std_logic_vector (3 downto 0);
+        Gx, Gy:     in std_logic_vector (pixel_width-1 downto 0);
+        sl:         in std_logic;
+        wr_init:    in std_logic;
 
         mem_wr:		in std_logic;
         addwr:		in std_logic_vector (12 downto 0);
